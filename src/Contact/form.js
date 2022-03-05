@@ -136,7 +136,7 @@ function ContactForm() {
                     <div className="field col-12 mt-4">
                         <span className="w-full flex justify-content-center">
                             <Captcha
-                                siteKey="6Ldi1rUeAAAAACjUGiXhfgSrD_onK-ooXLWpPZHe"
+                                siteKey={process.env.REACT_APP_CAPTCHA_SITE_KEY}
                                 onExpire={() => {
                                     setCaptchaVerified(false);
                                     formik.setFieldValue('captchaVerified', false);
