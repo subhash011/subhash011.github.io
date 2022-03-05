@@ -3,11 +3,15 @@ import {useFormik} from 'formik';
 import {InputText} from 'primereact/inputtext';
 import {Button} from 'primereact/button';
 import {classNames} from 'primereact/utils';
-import {InputTextarea} from "primereact/inputtextarea";
 import {Toast} from 'primereact/toast';
+import {Captcha} from "primereact/captcha";
+import {InputTextarea} from "primereact/inputtextarea";
 
 function ContactForm() {
     const toast = useRef(null);
+
+    const [setCaptchaVerified] = React.useState(false);
+
 
     const showSuccess = () => {
         toast.current.show({
@@ -27,13 +31,13 @@ function ContactForm() {
         });
     }
 
-
     const formik = useFormik({
         initialValues: {
             name: '',
             email: '',
             message: '',
             subject: '',
+            captchaVerified: false
         },
         validate: (data) => {
             let errors = {};
@@ -52,23 +56,28 @@ function ContactForm() {
                 errors.message = 'You cannot send me an empty message!';
             }
 
+            if (!data.captchaVerified) {
+                errors.captchaVerified = 'You need to verify the captcha before you can send this message!';
+            }
+
             return errors;
         },
-        onSubmit: (data) => {
-            fetch('https://formspree.io/f/xgedyllq', {
+        onSubmit: async (data) => {
+            await new Promise(r => setTimeout(r, 2000));
+            const response = await fetch('https://formspree.io/f/xgedyllq', {
                 method: 'POST',
                 body: JSON.stringify(data),
                 headers: {
                     'Content-Type': 'application/json'
                 }
-            }).then((res) => {
-                if (res.status === 200) {
-                    showSuccess();
-                } else {
-                    showError();
-                }
-                formik.resetForm();
             });
+            if (response.status === 200) {
+                showSuccess();
+            } else {
+                showError();
+            }
+            setCaptchaVerified(false);
+            formik.resetForm();
         }
     });
 
@@ -116,13 +125,30 @@ function ContactForm() {
                     </div>
                     <div className="field col-12 mt-4">
                        <span className="p-float-label p-input-icon-right w-full">
-                                <InputTextarea rows={5} id="message" name="message" value={formik.values.message}
-                                               onChange={formik.handleChange}
-                                               className={classNames({'p-invalid': isFormFieldValid('message')}, 'w-full')}/>
-                                <label htmlFor="message"
-                                       className={classNames({'p-error': isFormFieldValid('message')}, 'w-full')}>Message*</label>
-                            </span>
+                           <InputTextarea rows={5} id="message" name="message" value={formik.values.message}
+                                          onChange={formik.handleChange}
+                                          className={classNames({'p-invalid': isFormFieldValid('message')}, 'w-full')}/>
+                           <label htmlFor="message"
+                                  className={classNames({'p-error': isFormFieldValid('message')}, 'w-full')}>Message*</label>
+                        </span>
                         {getFormErrorMessage('message')}
+                    </div>
+                    <div className="field col-12 mt-4">
+                        <span className="w-full flex justify-content-center">
+                            <Captcha
+                                siteKey="6Ldi1rUeAAAAACjUGiXhfgSrD_onK-ooXLWpPZHe"
+                                onExpire={() => {
+                                    setCaptchaVerified(false);
+                                    formik.setFieldValue('captchaVerified', false);
+                                }}
+                                onResponse={() => {
+                                    setCaptchaVerified(true)
+                                    formik.setFieldValue('captchaVerified', true);
+                                }}/>
+                        </span>
+                        <span className="w-full flex justify-content-center text-center">
+                            {getFormErrorMessage('captchaVerified')}
+                        </span>
                     </div>
                     <div className="field col-12 mt-4 flex justify-content-center">
                         <Button label="Submit" className="p-button lg:w-25rem w-full" type="submit"/>

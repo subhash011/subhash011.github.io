@@ -4,91 +4,15 @@
 }
 
 .social-buttons {
-  margin-top: 4rem;
+  margin-top: 2rem;
+}
+
+.social-buttons .p-button {
+  height: 2rem;
+  width: 2rem;
 }
 
 .social-buttons span {
   display: inline-block;
   text-align: center;
-}
-
-.social-buttons .p-button i {
-  line-height: 2.25rem;
-}
-
-.social-buttons .p-button.linkedin {
-  background: linear-gradient(to left, var(--blue-400) 50%, var(--blue-500) 50%);
-  background-size: 200% 100%;
-  background-position: right bottom;
-  transition: background-position 0.5s ease-out;
-  color: #fff;
-  border-color: var(--blue-500);
-}
-.social-buttons .p-button.linkedin:hover {
-  background-position: left bottom;
-}
-.social-buttons .p-button.linkedin i {
-  background-color: var(--blue-500);
-}
-.social-buttons .p-button.linkedin:focus {
-  box-shadow: 0 0 0 1px var(--blue-200);
-}
-
-.social-buttons .p-button.instagram {
-  background: linear-gradient(to left, var(--pink-500) 50%, var(--pink-600) 50%);
-  background-size: 200% 100%;
-  background-position: right bottom;
-  transition: background-position 0.5s ease-out;
-  color: #fff;
-  border-color: var(--pink-500);
-}
-.social-buttons .p-button.instagram:hover {
-  background-position: left bottom;
-}
-.social-buttons .p-button.instagram i {
-  background-color: var(--pink-600);
-}
-.social-buttons .p-button.instagram:focus {
-  box-shadow: 0 0 0 1px var(--purple-400);
-}
-
-.social-buttons .p-button.twitter {
-  background: linear-gradient(to left, var(--blue-400) 50%, var(--blue-500) 50%);
-  background-size: 200% 100%;
-  background-position: right bottom;
-  transition: background-position 0.5s ease-out;
-  color: #fff;
-  border-color: var(--blue-400);
-}
-.social-buttons .p-button.twitter:hover {
-  background-position: left bottom;
-}
-.social-buttons .p-button.twitter i {
-  background-color: var(--blue-500);
-}
-.social-buttons .p-button.twitter:focus {
-  box-shadow: 0 0 0 1px var(--blue-200);
-}
-
-.social-buttons .p-button.discord {
-  background: linear-gradient(to left, var(--bluegray-700) 50%, var(--bluegray-800) 50%);
-  background-size: 200% 100%;
-  background-position: right bottom;
-  transition: background-position 0.5s ease-out;
-  color: #fff;
-  border-color: var(--bluegray-800);
-}
-.social-buttons .p-button.discord:hover {
-  background-position: left bottom;
-}
-.social-buttons .p-button.discord i {
-  background-color: var(--bluegray-800);
-}
-.social-buttons .p-button.discord:focus {
-  box-shadow: 0 0 0 1px var(--bluegray-500);
-}
-@media screen and (max-width: 960px) {
-  .social-buttons .p-button {
-    margin-bottom: 0.5rem;
-  }
 }

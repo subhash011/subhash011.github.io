@@ -4,14 +4,15 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {Button} from "primereact/button";
 import '../styles/_topbar.scss';
 import {HashLink} from "react-router-hash-link";
-
+import {Link} from "react-router-dom";
 
 function TopBar(props) {
 
     const template = (item, options) => {
         return (
-            <HashLink smooth to={`${item.url}`} role="menuitem" className={options.className} target={item.target} onClick={options.onClick}>
-                <span className={options.iconClassName} />
+            <HashLink smooth to={`${item.url}`} role="menuitem" className={options.className} target={item.target}
+                      onClick={options.onClick}>
+                <span className={options.iconClassName}/>
                 <span className="p-menuitem-text">{item.label}</span>
             </HashLink>
         );
@@ -26,7 +27,7 @@ function TopBar(props) {
         },
         {
             label: 'Experience',
-            icon: 'pi pi-fw pi-history',
+            icon: 'pi pi-fw pi-briefcase',
             items: [
                 {
                     label: 'Projects',
@@ -62,12 +63,19 @@ function TopBar(props) {
     };
 
     return (
-        <div className="p-grid fixed">
+        <div className="p-grid">
             <div className="p-col-12">
                 <Menubar model={items} end={
-                    <Button icon={<ThemeSwitchButton theme={props.theme}/>}
-                            onClick={props.toggleTheme}
-                            className="p-button-rounded p-button-text"/>
+                    <div>
+                        <Link to={process.env.PUBLIC_URL + "assets/functional.pdf"} download target="_blank"
+                              style={{textDecoration: 'none'}}>
+                            <Button icon="pi pi-fw pi-download" label="Resume" className="p-button-primary"
+                                    style={{lineHeight: '1rem', bottom: '1px', marginRight: '1rem'}}/>
+                        </Link>
+                        <Button icon={<ThemeSwitchButton theme={props.theme}/>}
+                                onClick={props.toggleTheme}
+                                className="p-button-rounded p-button-text mr-2"/>
+                    </div>
                 }/>
             </div>
         </div>
