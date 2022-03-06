@@ -1,0 +1,39 @@
+[
+  {
+    "id": 1,
+    "title": "B.Tech in Computer Science and Engineering",
+    "subTitle": "Indian Institute of Technology (IIT), Palakkad",
+    "date": "August 2018 - Present",
+    "description": "CGPA: 8.69/10",
+    "extra": true,
+    "additionalHeight": 32,
+    "expanded": false,
+    "courses": [
+      "Software Engineering",
+      "Computer Networks",
+      "Deep Learning",
+      "Reinforcement Learning",
+      "Compiler Design",
+      "Database Management Systems",
+      "Operating Systems",
+      "Theory of Computation",
+      "Paradigms of Programming",
+      "Parallel Programming",
+      "Artificial Intelligence",
+      "Computer Organization",
+      "Design and Analysis of Algorithms",
+      "Discrete Mathematics for Computer Science",
+      "Data Structures and Algorithms",
+      "Logic for Computing"
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Higher Secondary Education",
+    "subTitle": "Sri Chaitanya PU College, JP Nagar, Bangalore",
+    "date": "July 2016 - May 2018",
+    "description": "Percentage: 95.60%",
+    "extra": false,
+    "courses": []
+  }
+]

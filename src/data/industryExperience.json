@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "title": "Research Intern",
+    "subTitle": "TCS Innovation Labs, Bangalore",
+    "date": "June 2021 - August 2021",
+    "extra": true,
+    "additionalHeight": 32,
+    "expanded": true,
+    "workDone": [
+      "Performed a comparative study on code summarization using Deep Learning techniques.",
+      "Implemented efficient input pipelines using TensorFlow.",
+      "Wrote scripts to efficiently fetch data from remote sources."
+    ],
+    "tags": ["Deep Learning", "Compilers", "Tensorflow"]
+  },
+  {
+    "id": 2,
+    "title": "Quality Assurance Automation Engineer",
+    "subTitle": "nVipani Technology Solutions",
+    "date": "May 2020 - July 2020",
+    "extra": true,
+    "additionalHeight": 32,
+    "expanded": true,
+    "workDone": [
+      "Initiated the migration to automated testing.",
+      "Implemented e2e test cases for numerous angular modules.",
+      "Setup auto-documentation for test reports."
+    ],
+    "tags": ["Web Development", "Automation Testing", "Protractor.js"]
+  },
+  {
+    "id": 3,
+    "title": "Application Engineer",
+    "subTitle": "TIMKEN India Ltd",
+    "date": "Dec 2019 - Dec 2019",
+    "extra": true,
+    "expanded": true,
+    "additionalHeight": 32,
+    "workDone": [
+      "Upgraded functionality of an internal web application",
+      "Improved internal communication by implementing various features in the application.",
+      "Influenced the database design for additional features."
+    ],
+    "tags": ["Web Development", "ASP.NET core", "jQuery", "SQL Server"]
+  }
+]

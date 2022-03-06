@@ -1,10 +1,18 @@
 .p-menubar {
   background-color: var(--surface-ground);
   border: none;
+  flex-direction: row-reverse;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 999;
+  .p-menuitem {
+    padding-top: 0;
+  }
+  .p-menubar-end {
+    margin-right: auto;
+    margin-left: 0;
+  }
 }
 
 .p-button {

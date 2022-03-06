@@ -1,11 +1,11 @@
 import * as React from 'react';
-import TopBar from "./topbar/topbar";
+import TopBar from "./topbar/Topbar";
 import {useCallback, useEffect, useState} from "react";
-import Education from "./Eduction/education";
-import Home from "./home/home";
-import Projects from "./experience/projects/projects";
-import Contact from "./Contact/contact";
-import IndustrialExperience from "./experience/industry/industry";
+import Education from "./Eduction/Education";
+import Home from "./home/Home";
+import Projects from "./experience/projects/Projects";
+import Contact from "./Contact/Contact";
+import IndustrialExperience from "./experience/industry/Industry";
 import {ScrollTop} from "primereact/scrolltop";
 import {Divider} from "primereact/divider";
 
@@ -49,9 +49,7 @@ function Main() {
             <Projects />
             <Divider />
             <IndustrialExperience />
-            <Divider />
             <Education />
-            <Divider />
             <Contact theme={theme} />
             <ScrollTop threshold={10} />
         </React.Fragment>

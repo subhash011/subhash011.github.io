@@ -1,10 +1,9 @@
 import {Menubar} from 'primereact/menubar';
 import {faMoon, faSun} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {Button} from "primereact/button";
 import '../styles/_topbar.scss';
 import {HashLink} from "react-router-hash-link";
-import {Link} from "react-router-dom";
+import {Button} from "primereact/button";
 
 function TopBar(props) {
 
@@ -52,30 +51,51 @@ function TopBar(props) {
             icon: 'pi pi-fw pi-phone',
             url: '#contact',
             template: template
+        },
+        {
+            label: 'Resume',
+            icon: 'pi pi-fw pi-download',
+            template: (item, options) => {
+                return (
+                    <div role="menuitem" className={options.className} onClick={downloadResume}>
+                        <span className={options.iconClassName}/>
+                        <span className="p-menuitem-text">{item.label}</span>
+                    </div>
+                );
+            }
         }
     ];
 
     const ThemeSwitchButton = (props) => {
         if (props.theme === 'light') {
-            return <FontAwesomeIcon icon={faMoon}/>
+            return <FontAwesomeIcon icon={faSun}/>
         }
-        return <FontAwesomeIcon icon={faSun}/>
+        return <FontAwesomeIcon icon={faMoon}/>
+
     };
+
+    const downloadResume = () => {
+        fetch(`${process.env.PUBLIC_URL}/assets/functional.pdf`)
+            .then(res => res.blob())
+            .then(blob => {
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = 'Subhash\'s resume.pdf';
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+            });
+    }
 
     return (
         <div className="p-grid">
             <div className="p-col-12">
                 <Menubar model={items} end={
-                    <div>
-                        <Link to={process.env.PUBLIC_URL + "assets/functional.pdf"} download target="_blank"
-                              style={{textDecoration: 'none'}}>
-                            <Button icon="pi pi-fw pi-download" label="Resume" className="p-button-primary"
-                                    style={{lineHeight: '1rem', bottom: '1px', marginRight: '1rem'}}/>
-                        </Link>
-                        <Button icon={<ThemeSwitchButton theme={props.theme}/>}
-                                onClick={props.toggleTheme}
-                                className="p-button-rounded p-button-text mr-2"/>
-                    </div>
+                    <Button icon={<ThemeSwitchButton theme={props.theme}/>}
+                            onClick={props.toggleTheme}
+                            className="p-button-rounded p-button-text"/>
                 }/>
             </div>
         </div>
