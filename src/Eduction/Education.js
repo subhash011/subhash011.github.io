@@ -1,11 +1,10 @@
 import '../styles/_education.scss';
-import React from "react";
+import React, {useEffect} from "react";
 import {CardTimeLine, SectionHeading} from "../common/CardTimeline";
 import educationData from "../data/education.json";
 import {Tag} from "primereact/tag";
 
 function Education() {
-
 
     const extraContent = (item) => {
         return (
@@ -24,6 +23,10 @@ function Education() {
     for (let i = 0; i < educationData.length; i++) {
         educationData[i].extraContent = extraContent(educationData[i]);
     }
+
+    useEffect(() => {
+        console.log("here");
+    }, []);
 
     return (
         <section id="education" className="pt-7 education-section">

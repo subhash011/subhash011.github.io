@@ -1,6 +1,4 @@
 import {Menubar} from 'primereact/menubar';
-import {faMoon, faSun} from "@fortawesome/free-solid-svg-icons";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import '../styles/_topbar.scss';
 import {HashLink} from "react-router-hash-link";
 import {Button} from "primereact/button";
@@ -68,9 +66,9 @@ function TopBar(props) {
 
     const ThemeSwitchButton = (props) => {
         if (props.theme === 'light') {
-            return <FontAwesomeIcon icon={faSun}/>
+            return <i className="pi pi-sun"/>
         }
-        return <FontAwesomeIcon icon={faMoon}/>
+        return <i className="pi pi-moon"/>
 
     };
 

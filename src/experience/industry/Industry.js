@@ -1,4 +1,3 @@
-import 'react-vertical-timeline-component/style.min.css';
 import React from "react";
 import {CardTimeLine, SectionHeading} from "../../common/CardTimeline";
 import industryExperience from "../../data/industryExperience.json";
