@@ -24,10 +24,6 @@ function Education() {
         educationData[i].extraContent = extraContent(educationData[i]);
     }
 
-    useEffect(() => {
-        console.log("here");
-    }, []);
-
     return (
         <section id="education" className="pt-7 education-section">
             <div className="flex flex-column w-full align-items-center">
