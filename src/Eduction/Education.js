@@ -1,7 +1,6 @@
 import '../styles/_education.scss';
 import React from "react";
-import {Divider} from "primereact/divider";
-import {CardTimeLine} from "../common/CardTimeline";
+import {CardTimeLine, SectionHeading} from "../common/CardTimeline";
 import educationData from "../data/education.json";
 import {Tag} from "primereact/tag";
 
@@ -27,11 +26,10 @@ function Education() {
     }
 
     return (
-        <section id="education" className="pt-6">
+        <section id="education" className="pt-7">
             <div className="flex flex-column w-full align-items-center">
-                <Divider />
-                <h2>Education</h2>
-                <div className="w-full mr-0 flex justify-content-center mt-7">
+                <SectionHeading heading="Education"/>
+                <div className="w-full mr-0 flex justify-content-center mt-4">
                     <CardTimeLine value={educationData} align="alternate"/>
                 </div>
             </div>

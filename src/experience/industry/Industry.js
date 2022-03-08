@@ -1,7 +1,6 @@
 import 'react-vertical-timeline-component/style.min.css';
 import React from "react";
-import {Divider} from "primereact/divider";
-import {CardTimeLine} from "../../common/CardTimeline";
+import {CardTimeLine, SectionHeading} from "../../common/CardTimeline";
 import industryExperience from "../../data/industryExperience.json";
 import {Tag} from "primereact/tag";
 
@@ -10,7 +9,7 @@ function IndustrialExperience() {
     const extraContent = (workDone, tags) => {
         return (
             <React.Fragment>
-                <ul style={{lineHeight: '1.2rem', paddingLeft: '20px'}}>
+                <ul className="work-done"  style={{lineHeight: '1.2rem', paddingLeft: '20px'}}>
                     {workDone.map((work, index) => {
                         return (
                             <li key={index}>
@@ -35,11 +34,10 @@ function IndustrialExperience() {
     }
 
     return (
-        <section id="industry">
+        <section id="industry" className="pt-7">
             <div className="flex flex-column w-full align-items-center">
-                <Divider />
-                <h2>Industrial Experience</h2>
-                <div className="w-full mr-0 flex justify-content-center mt-7">
+                <SectionHeading heading="Industrial Experience"/>
+                <div className="w-full mr-0 flex justify-content-center mt-4">
                     <CardTimeLine value={industryExperience} align="alternate"/>
                 </div>
             </div>

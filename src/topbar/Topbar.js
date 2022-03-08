@@ -92,7 +92,7 @@ function TopBar(props) {
     return (
         <div className="p-grid">
             <div className="p-col-12">
-                <Menubar model={items} end={
+                <Menubar className="app-menubar" model={items} end={
                     <Button icon={<ThemeSwitchButton theme={props.theme}/>}
                             onClick={props.toggleTheme}
                             className="p-button-rounded p-button-text"/>

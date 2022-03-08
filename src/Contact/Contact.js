@@ -2,7 +2,6 @@ import ContactForm from "./Form";
 import {Button} from "primereact/button";
 import '../styles/_contact.scss';
 import {classNames} from "primereact/utils";
-import {Divider} from "primereact/divider";
 import * as React from "react";
 
 function Contact(props) {
@@ -34,7 +33,6 @@ function Contact(props) {
 
     return (
         <section id="contact" className="pt-7">
-            <Divider />
             <div className="grid">
                 <div className="lg:col-6 col-12 flex flex-column justify-content-center align-items-center">
                     <h4>Contact Me</h4>

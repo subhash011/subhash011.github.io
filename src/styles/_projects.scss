@@ -1,0 +1,21 @@
+.projects-dataview .p-dataview-content {
+  background-color: transparent !important;
+}
+
+.item-dialog .p-dialog-header, .p-dialog-content {
+  background: var(--surface-ground) !important;
+}
+
+.projects-dataview .p-card-content {
+  padding-top: 0;
+
+}
+
+.projects-dataview .p-card-body {
+  padding-bottom: 0;
+  height: 100% !important;
+}
+
+.work-done li:not(:last-child) {
+  margin-bottom: 10px;
+}

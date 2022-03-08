@@ -1,0 +1,20 @@
+.home-extras .template .p-button i {
+  line-height: 3.25rem;
+}
+.home-extras .template .p-button.google {
+  background: linear-gradient(to left, var(--bluegray-700) 50%, var(--bluegray-800) 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: background-position 0.5s ease-out;
+  color: #fff;
+  border-color: var(--bluegray-800);
+}
+.home-extras .template .p-button.google:hover {
+  background-position: left bottom;
+}
+.home-extras .template .p-button.google i {
+  background-color: var(--bluegray-800);
+}
+.home-extras .template .p-button.google:focus {
+  box-shadow: 0 0 0 1px var(--bluegray-500);
+}

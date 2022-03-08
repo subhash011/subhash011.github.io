@@ -49,6 +49,13 @@
   }
 }
 
+.section-heading {
+  border-bottom: 5px solid var(--primary-color);
+  border-top: 5px solid var(--primary-color);
+  margin-bottom: 2rem;
+}
+
+
 @media screen and (max-width: 1200px) {
   .card-timeline .customized-timeline {
     max-width: 90%;

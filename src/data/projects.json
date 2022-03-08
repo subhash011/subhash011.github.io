@@ -1,5 +1,139 @@
 [
   {
     "id": "1",
+    "title": "Project Allocation Portal",
+    "description": "The official project allocation portal of IIT Palakkad.",
+    "image": "images/projects/project_allocation_portal.jpg",
+    "gitHub": "https://github.com/subhash011/Project-Allocation",
+    "site": "https://pal.iitpkd.ac.in:10443/",
+    "extra": true,
+    "additionalHeight": 36,
+    "workDone": [
+      "Manual allocation is tiresome and this solutions reduces human efforts by over 90%.",
+      "Collects preferences from students and faculty and allocates projects to them.",
+      "Gale-shapley algorithm is used to obtain a fair and stable allocation.",
+      "Currently, most of the streams at IIT Palakkad have switched to using this portal."
+    ],
+    "techStack": [
+      "NodeJS", "ExpressJS", "Angular", "Angular material", "MongoDB", "Nginx"
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Meet.me",
+    "description": "A collaborative discussion platform with whiteboard, screen-share, analytics and more.",
+    "image": "images/projects/meet_me.png",
+    "gitHub": "https://github.com/subhash011/meet.me",
+    "youtube": "https://www.youtube.com/watch?v=Sa7aRJC2wvc",
+    "extra": true,
+    "additionalHeight": 36,
+    "workDone": [
+      "Led a team of 4 to develop the networking module of the app.",
+      "I was responsible for the design specifications and the interfacing with other modules.",
+      "Used various design patterns for easy interfacing.",
+      "Implemented module testing using NUnit."
+    ],
+    "techStack": [
+      "C#", ".NET", "NUnit"
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Resource Management System",
+    "description": "Cross-platform application for tracking inventory activities.",
+    "image": "images/projects/resource_management_system.jpg",
+    "gitHub": "https://github.com/Holocoders/Resource-Management",
+    "extra": true,
+    "additionalHeight": 36,
+    "workDone": [
+      "Developed primarily for institute lab facilities and also generalizes to other resources.",
+      "Involved various modules like authentication and authorization, inventory management, booking etc."
+    ],
+    "techStack": [
+      "NestJS", "Flutter", "Angular", "PrimeNG", "MongoDB"
+    ]
+  },
+  {
+    "id": "4",
+    "title": "Driver Attention Analyzer",
+    "description": "A continuous driver attention analysis system for improved safety.",
+    "image": "images/projects/driver_attention_analyzer.jpg",
+    "extra": true,
+    "additionalHeight": 36,
+    "workDone": [
+      "This idea was among the top 100 out of 6000 ideas at a hackathon organized by MeitY.",
+      "Continuously analyses the driver’s facial expressions.",
+      "Low-cost solution optimized for low-power devices such as Raspberry Pi.",
+      "Beta version could monitor driver’s facial expressions at 8fps on Raspberry Pi."
+    ],
+    "techStack": [
+      "Python", "OpenCV"
+    ]
+  },
+  {
+    "id": "5",
+    "title": "Tiger Compiler",
+    "description": "A compiler for a subset of the tiger language.",
+    "image": "images/projects/tiger_compiler.jpg",
+    "gitHub": "https://github.com/subhash011/compilers-sem6",
+    "extra": true,
+    "additionalHeight": 36,
+    "workDone": [
+      "Compiles source code to Intermediate Representation (IR).",
+      "It also provides utility functions like indentation and syntax-highlighting."
+    ],
+    "techStack": [
+      "SML", "ML-YACC", "MLLex"
+    ]
+  },
+  {
+    "id": "6",
+    "title": "Driver Assistance System",
+    "description": "A system for detecting and alerting drivers of upcoming potholes and obstacles.",
+    "image": "images/projects/driver_assistance_system.jpg",
+    "gitHub": "https://github.com/subhash011/Driver-Assistance",
+    "extra": true,
+    "additionalHeight": 36,
+    "workDone": [
+      "Detects obstacles, stores their location and broadcasts this information to other drivers.",
+      "Designed to enhance the functionality of google maps by providing obstacle details"
+    ],
+    "techStack": [
+      "Django", "Flutter", "MySQL"
+    ]
+  },
+  {
+    "id": "7",
+    "title": "Time Sync",
+    "description": "An application to assist users regulate screen time with the help of their peers.",
+    "image": "images/projects/time_sync.png",
+    "gitHub": "https://github.com/subhash011/TimeSync",
+    "extra": true,
+    "additionalHeight": 36,
+    "workDone": [
+      "Developed for the final round of Hack-MIT 2020.",
+      "Incentives are give to users who spend lesser time on their screen.",
+      "Connects user with his/her peers who can help the user reduce screen time."
+    ],
+    "techStack": [
+      "Flutter", "Firebase"
+    ]
+  },
+  {
+    "id": "8",
+    "title": "Malware Detection",
+    "description": "Machine learning application to detect malwares in executables.",
+    "gitHub": "https://github.com/subhash011/Malware-Detector",
+    "image": "images/projects/malware_detector.jpg",
+    "extra": true,
+    "additionalHeight": 36,
+    "workDone": [
+      "Differentiates between bening and malignant executables.",
+      "Features were extracted from Portable Executable (PE) files and Cuckoo reports.",
+      "Built for the final round of IIT-K HCL Hackathon 2020."
+    ],
+    "techStack": [
+      "Python"
+    ]
   }
 ]

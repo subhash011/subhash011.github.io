@@ -44,7 +44,7 @@ const ExtraContent = ({item}) => {
 const cardContent = (item) => {
     return (
         <Card className="flex text-left max-w-full">
-            <h4 className="mb-2">{item.title}</h4>
+            <h4 className="mb-2 font-italic">{item.title}</h4>
             <span className="text-600">{item.subTitle}</span>
             <p>{item.date}</p>
             <p>{item.description}</p>
@@ -75,13 +75,24 @@ function CardTimeLine(props) {
         );
     };
 
-    return <div className="card-timeline">
-        <Timeline {...props} content={(item) => cardContent(item, props.extraContent)} value={value}
-                  marker={customizedMarker} className="customized-timeline"/>
-    </div>
+    return (
+        <div className="card-timeline">
+            <Timeline {...props} content={(item) => cardContent(item, props.extraContent)} value={value}
+                      marker={customizedMarker} className="customized-timeline"/>
+        </div>
+    );
+}
+
+function SectionHeading({ heading }) {
+    return (
+        <div className="section-heading">
+            <h1 className="m-2">{heading}</h1>
+        </div>
+    );
 }
 
 export {
     CardTimeLine,
-    ExtraContent
+    ExtraContent,
+    SectionHeading
 };
