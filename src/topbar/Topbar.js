@@ -66,9 +66,9 @@ function TopBar(props) {
 
     const ThemeSwitchButton = (props) => {
         if (props.theme === 'light') {
-            return <i className="pi pi-sun"/>
+            return <i className="pi pi-moon"/>
         }
-        return <i className="pi pi-moon"/>
+        return <i className="pi pi-sun"/>
 
     };
 
@@ -91,7 +91,9 @@ function TopBar(props) {
         <div className="p-grid">
             <div className="p-col-12">
                 <Menubar className="app-menubar" model={items} end={
-                    <Button icon={<ThemeSwitchButton theme={props.theme}/>}
+                    <Button name="theme-switcher"
+                            tooltip={props.theme === 'light' ? 'Switch to Dark Theme' : 'Switch to Light Theme'}
+                            icon={<ThemeSwitchButton theme={props.theme}/>}
                             onClick={props.toggleTheme}
                             className="p-button-rounded p-button-text"/>
                 }/>

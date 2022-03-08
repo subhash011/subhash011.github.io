@@ -4,7 +4,7 @@ import React, {useCallback, useEffect, useState} from "react";
 import TopBar from "./topbar/Topbar";
 
 function App() {
-    const [theme, setTheme] = useState('light');
+    const [theme, setTheme] = useState('dark');
 
     const toggleTheme = useCallback(() => {
         const newTheme = theme === 'light' ? 'dark' : 'light';
@@ -18,7 +18,6 @@ function App() {
             linkElement.remove();
             cloneLinkElement.setAttribute('id', elementId);
         });
-
         linkElement.parentNode.insertBefore(cloneLinkElement, linkElement.nextSibling);
         localStorage.setItem('theme', newTheme);
         setTheme(newTheme);
