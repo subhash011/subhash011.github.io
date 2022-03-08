@@ -26,7 +26,7 @@ function Education() {
     }
 
     return (
-        <section id="education" className="pt-7">
+        <section id="education" className="pt-7 education-section">
             <div className="flex flex-column w-full align-items-center">
                 <SectionHeading heading="Education"/>
                 <div className="w-full mr-0 flex justify-content-center mt-4">

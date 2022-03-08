@@ -10,8 +10,8 @@ function Main({ theme }) {
 
     return (
         <React.Fragment>
+            <Home />
             <div className="main-content">
-                <Home />
                 <Projects />
                 <IndustrialExperience />
                 <Education />

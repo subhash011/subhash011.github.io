@@ -2,7 +2,6 @@ import {Navigate, Route, Routes} from "react-router-dom";
 import Main from "./Main";
 import React, {useCallback, useEffect, useState} from "react";
 import TopBar from "./topbar/Topbar";
-import Home from "./home/Home";
 
 function App() {
     const [theme, setTheme] = useState('light');

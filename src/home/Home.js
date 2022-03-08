@@ -36,13 +36,7 @@ function Home() {
     }, []);
 
     return (
-        <section id="#" className="home-section pt-7 w-screen h-screen overflow-hidden" style={{
-            background: `linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,.4)), url(/images/home_background.jpg)`,
-            backgroundAttachment: 'fixed',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover'
-        }}>
+        <section id="#" className="home-section pt-7 w-screen h-screen overflow-hidden">
             <div className="grid h-full w-full ml-0">
                 <div className="col-12 lg:col-6 flex flex-column justify-content-center align-items-center mt-8 lg:mt-0 lg:ml-auto lg:w-25rem">
                     <div className="text-black-alpha-90 text-center lg:text-left">
@@ -74,5 +68,4 @@ function Home() {
         </section>
     );
 }
-
 export default Home;
