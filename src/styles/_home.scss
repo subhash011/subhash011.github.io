@@ -1,7 +1,7 @@
 .home-extras .template .p-button i {
   line-height: 3.25rem;
 }
-.home-extras .template .p-button.google {
+.home-extras .template .p-button.github {
   background: linear-gradient(to left, var(--bluegray-700) 50%, var(--bluegray-800) 50%);
   background-size: 200% 100%;
   background-position: right bottom;
@@ -9,37 +9,30 @@
   color: #fff;
   border-color: var(--bluegray-800);
 }
-.home-extras .template .p-button.google:hover {
+.home-extras .template .p-button.github:hover {
   background-position: left bottom;
 }
-.home-extras .template .p-button.google i {
+.home-extras .template .p-button.github i {
   background-color: var(--bluegray-800);
 }
-.home-extras .template .p-button.google:focus {
+.home-extras .template .p-button.github:focus {
   box-shadow: 0 0 0 1px var(--bluegray-500);
 }
 
 .home-section {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  min-height: 100%;
   position: relative;
   overflow: hidden; //added for pseudo-element
 
   //fixed-position background image
   &::before {
-    background-image: linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,.4)), url('../assets/home_background.webp');
-    background-repeat: no-repeat;
-    background-position: center top;
+    background-color: white;
+    background: linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,.4)), url('../assets/home_background.webp') no-repeat center center;
     background-size: cover;
-    content: '';
-    height: 100%;
-    left: 0;
+    z-index: -3;
+    content: " ";
     position: fixed;
-    top: 0;
-    width: 100%;
     will-change: transform;
-    z-index: -1;
+    width: 100%;
+    height: 100%;
   }
 }

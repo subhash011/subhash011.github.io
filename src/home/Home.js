@@ -23,7 +23,7 @@ function Home() {
             .callFunction(() => {
                 animateStyle.start({opacity: 0})
             })
-            .typeString('Hello, I am <span class="name">Subhash</span>')
+            .typeString('Hi, I am <span class="name">Subhash</span>')
             .start()
             .callFunction(() => {
                 typeWriter.stop();
@@ -52,15 +52,15 @@ function Home() {
                 </div>
                 <div className="col-12 lg:col-6 home-extras h-full">
                     <div className="template h-full flex-column mt-6 lg:mt-0 flex lg:justify-content-center align-items-center">
-                        <Button className="google p-0 w-10rem" onClick={() => window.open("https://github.com/subhash011", "_blank")} >
+                        <Button className="github p-0 w-10rem" onClick={() => window.open("https://github.com/subhash011", "_blank")} >
                             <i className="pi pi-github px-2" />
                             <span className="px-3">GitHub</span>
                         </Button>
+                        <HashLink smooth to="#contact" className="p-0 w-10rem mt-5 no-underline">
+                            <Button label="Contact me" icon="pi pi-phone" className="p-button-raised p-button-primary w-full" />
+                        </HashLink>
                         <HashLink smooth to="#projects" className="p-0 w-10rem mt-5 no-underline">
-                            <Button className="p-0 w-10rem">
-                                <i className="pi pi-chevron-circle-down px-2" />
-                                <span className="px-3">Know more</span>
-                            </Button>
+                            <Button label="Know more" icon="pi pi-chevron-circle-down" className="p-button-raised p-button-secondary w-full" />
                         </HashLink>
                     </div>
                 </div>

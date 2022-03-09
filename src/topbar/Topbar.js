@@ -2,8 +2,13 @@ import {Menubar} from 'primereact/menubar';
 import '../styles/_topbar.scss';
 import {HashLink} from "react-router-hash-link";
 import {Button} from "primereact/button";
+import {Tooltip} from "primereact/tooltip";
+import React, {useState} from "react";
+import {ConfirmPopup} from "primereact/confirmpopup";
 
-function TopBar(props) {
+function TopBar({theme, toggleTheme, isLoading}) {
+
+    const [visible, setVisible] = useState(false);
 
     const template = (item, options) => {
         return (
@@ -55,10 +60,23 @@ function TopBar(props) {
             icon: 'pi pi-fw pi-download',
             template: (item, options) => {
                 return (
-                    <div role="menuitem" className={options.className} onClick={downloadResume}>
-                        <span className={options.iconClassName}/>
-                        <span className="p-menuitem-text">{item.label}</span>
-                    </div>
+                    <React.Fragment>
+                        <div role="menuitem" id="resume-download" className={options.className} onClick={() => setVisible(true)}>
+                            <span className={options.iconClassName}/>
+                            <span className="p-menuitem-text">{item.label}</span>
+                        </div>
+                        <ConfirmPopup visible={visible}
+                                      icon="pi pi-question-circle"
+                                      style={{ left: 0 }}
+                                      onHide={() => setVisible(false)}
+                                      reject={() => setVisible(false)}
+                                      target={document.getElementById("resume-download")}
+                                      accept={() => {
+                                          setVisible(false);
+                                          downloadResume();
+                                      }}
+                                      message="Do you want to download my resume ?"/>
+                    </React.Fragment>
                 );
             }
         }
@@ -89,13 +107,15 @@ function TopBar(props) {
 
     return (
         <div className="p-grid">
+            <Tooltip target=".theme-switcher" position="right"/>
             <div className="p-col-12">
                 <Menubar className="app-menubar" model={items} end={
                     <Button name="theme-switcher"
-                            tooltip={props.theme === 'light' ? 'Switch to Dark Theme' : 'Switch to Light Theme'}
-                            icon={<ThemeSwitchButton theme={props.theme}/>}
-                            onClick={props.toggleTheme}
-                            className="p-button-rounded p-button-text"/>
+                            disabled={isLoading}
+                            data-pr-tooltip={theme === 'light' ? 'Switch to Dark Theme' : 'Switch to Light Theme'}
+                            icon={<ThemeSwitchButton theme={theme}/>}
+                            onClick={toggleTheme}
+                            className="theme-switcher p-button-rounded p-button-text"/>
                 }/>
             </div>
         </div>
