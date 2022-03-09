@@ -1,5 +1,5 @@
 import '../styles/_education.scss';
-import React, {useEffect} from "react";
+import React from "react";
 import {CardTimeLine, SectionHeading} from "../common/CardTimeline";
 import educationData from "../data/education.json";
 import {Tag} from "primereact/tag";
