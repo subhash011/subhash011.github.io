@@ -85,7 +85,7 @@ function CardTimeLine(props) {
 
 function SectionHeading({ heading }) {
     return (
-        <div className="section-heading">
+        <div className="section-heading w-full flex justify-content-center bg-primary">
             <h1 className="m-2">{heading}</h1>
         </div>
     );

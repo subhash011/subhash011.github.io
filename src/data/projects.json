@@ -10,8 +10,7 @@
     "additionalHeight": 36,
     "workDone": [
       "Manual project allocation is tiresome and this solution reduces human efforts by over 90%.",
-      "The app collects preferences from both students and faculty.",
-      "Gale-shapley algorithm is used to obtain a fair and stable allocation.",
+      "Gale-shapley algorithm is used to obtain a fair and stable allocation by considering preferences from both faculties and students.",
       "Currently, most of the streams at IIT Palakkad have switched to using this portal."
     ],
     "techStack": [
@@ -29,7 +28,7 @@
     "additionalHeight": 36,
     "workDone": [
       "Led a team of 4 to develop the networking module of the app.",
-      "I was responsible for the design specifications and the interfacing with other modules.",
+      "I was responsible for the design specifications and interfacing with other modules.",
       "Used various design patterns for easy interfacing.",
       "Implemented module testing using NUnit."
     ],
@@ -80,6 +79,7 @@
     "additionalHeight": 36,
     "workDone": [
       "Compiles source code to Intermediate Representation (IR).",
+      "Supports multiple data types, operators and recursive functions.",
       "It also provides utility functions like indentation and syntax-highlighting."
     ],
     "techStack": [

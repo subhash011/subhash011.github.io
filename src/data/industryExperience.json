@@ -9,10 +9,11 @@
     "expanded": true,
     "workDone": [
       "Performed a comparative study on code summarization using Deep Learning techniques.",
-      "Implemented efficient input pipelines using TensorFlow.",
-      "Wrote scripts to efficiently fetch data from remote sources."
+      "Developed a baseline model for further research.",
+      "Implemented efficient input pipelines to fetch training data from remote sources using TensorFlow.",
+      "Implementation involved converting code to LLVM IR, then building a contextual flow graph (XFG) that was used to train the model."
     ],
-    "tags": ["Deep Learning", "Compilers", "Tensorflow"]
+    "tags": ["Deep Learning", "Compilers", "LLVM IR", "Tensorflow"]
   },
   {
     "id": 2,
@@ -23,11 +24,12 @@
     "additionalHeight": 32,
     "expanded": true,
     "workDone": [
-      "Initiated the migration to automated testing.",
+      "Initiated the migration from manual to automated testing.",
       "Implemented e2e test cases for numerous angular modules.",
-      "Setup auto-documentation for test reports."
+      "Setup auto-documentation for test reports.",
+      "Worked on implementing a 3D virtual try-on feature on the website using Three.js."
     ],
-    "tags": ["Web Development", "Automation Testing", "Protractor.js"]
+    "tags": ["Web Development", "Angular", "Automation Testing", "Protractor.js"]
   },
   {
     "id": 3,
@@ -38,9 +40,9 @@
     "expanded": true,
     "additionalHeight": 32,
     "workDone": [
-      "Upgraded functionality of an internal web application",
-      "Improved internal communication by implementing various features in the application.",
-      "Influenced the database design for additional features."
+      "Added core feature updates to the job tracking software",
+      "Influenced the database design for additional features.",
+      "Added features that enhanced communication among the team."
     ],
     "tags": ["Web Development", "ASP.NET core", "jQuery", "SQL Server"]
   }
