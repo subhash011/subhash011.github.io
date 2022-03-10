@@ -18,7 +18,7 @@ function About({props}) {
 
     useEffect(() => {
         const typewriter = new Typewriter(ref.current, {
-            loop: true,
+            loop: false,
             delay: 40,
             deleteSpeed: 20,
             cursorClassName: props.theme === 'light' ? "text-blue-700" : "text-green-500",
@@ -36,13 +36,6 @@ function About({props}) {
                     setToAnimate(true);
                 }
             })
-            .pauseFor(2500)
-            .deleteAll()
-            .typeString('a computer science student')
-            .pauseFor(2500)
-            .deleteAll()
-            .typeString('a passionate learner')
-            .pauseFor(2500)
             .start();
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -53,13 +46,13 @@ function About({props}) {
             className="col-12 lg:col-6 lg:w-30rem mr-2">
             <div className="about-content text-center lg:text-left"
                  style={{color: props.theme === 'light' ? 'rgba(0, 0, 0, 1)' : 'rgba(255, 255, 255, 1)'}}>
-                <h1 className="uppercase">
+                <h2 className="uppercase">
                     Hi,
                     <span className="flex justify-content-center lg:justify-content-start">
                         I'm&nbsp;
                         <span ref={ref}/>
                     </span>
-                </h1>
+                </h2>
                 <animated.div style={style} className="font-semibold">
                     I'm a computer science student and an experiential learner with hands-on
                     experience in multiple domains like web development, mobile development, artificial
@@ -71,31 +64,5 @@ function About({props}) {
         </div>
     );
 }
-
-// <Typewriter
-//     options={{
-//         loop: true,
-//         delay: 20,
-//         deleteSpeed: 10,
-//         cursorClassName: props.theme === 'light' ? "text-blue-900" : "text-green-500",
-//         wrapperClassName: "text-blue-900"
-//     }}
-//     onInit={(typewriter) => {
-//         typewriter.typeString(' Subhash')
-//             .callFunction(() => {
-//                 if (!toAnimate) {
-//                     setToAnimate(true);
-//                 }
-//             })
-//             .pauseFor(2500)
-//             .deleteAll()
-//             .typeString(' a Software Engineer')
-//             .pauseFor(2500)
-//             .deleteAll()
-//             .typeString('a self learner')
-//             .pauseFor(2500)
-//             .start();
-//     }}
-// />
 
 export default About;
