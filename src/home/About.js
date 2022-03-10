@@ -22,10 +22,7 @@ function About({props}) {
             delay: 40,
             deleteSpeed: 20,
             cursorClassName: props.theme === 'light' ? "text-blue-700" : "text-green-500",
-            wrapperClassName: props.theme === 'light' ? "text-blue-700" : "text-green-500",
-            onComplete: () => {
-                setToAnimate(true);
-            }
+            wrapperClassName: props.theme === 'light' ? "text-blue-700" : "text-green-500"
         });
         typewriter
             .callFunction(() => {
@@ -33,7 +30,7 @@ function About({props}) {
                     setToAnimate(false);
                 }
             })
-            .typeString(' Subhash')
+            .typeString('subhash')
             .callFunction(() => {
                 if (!toAnimate) {
                     setToAnimate(true);
@@ -41,10 +38,10 @@ function About({props}) {
             })
             .pauseFor(2500)
             .deleteAll()
-            .typeString(' a Software Engineer')
+            .typeString('a computer science student')
             .pauseFor(2500)
             .deleteAll()
-            .typeString('a self learner')
+            .typeString('a passionate learner')
             .pauseFor(2500)
             .start();
 

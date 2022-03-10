@@ -1,4 +1,4 @@
-import {Navigate, Route, Routes} from "react-router-dom";
+import {Navigate, Route, Routes, useNavigate} from "react-router-dom";
 import Main from "./Main";
 import React, {useCallback, useEffect, useState} from "react";
 import TopBar from "./topbar/Topbar";
@@ -6,6 +6,7 @@ import TopBar from "./topbar/Topbar";
 function App() {
     const [theme, setTheme] = useState('light');
     const [isThemeSwitching, setIsThemeSwitching] = useState(false);
+    const history = useNavigate();
 
     const toggleTheme = useCallback(() => {
         setIsThemeSwitching(true);

@@ -1,8 +1,9 @@
 import '../styles/_education.scss';
 import React from "react";
-import {CardTimeLine, SectionHeading} from "../common/CardTimeline";
+import {CardTimeLine} from "../common/CardTimeline";
 import educationData from "../data/education.json";
 import {Tag} from "primereact/tag";
+import {SectionHeading} from "../common/SectionHeading";
 
 function Education() {
 
@@ -27,7 +28,7 @@ function Education() {
     return (
         <section id="education" className="pt-7 education-section">
             <div className="flex flex-column w-full align-items-center">
-                <SectionHeading heading="Education"/>
+                <SectionHeading name={"education"}  heading="Education"/>
                 <div className="w-full mr-0 flex justify-content-center mt-4">
                     <CardTimeLine value={educationData} align="alternate"/>
                 </div>

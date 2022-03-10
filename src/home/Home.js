@@ -12,7 +12,7 @@ function Home(props) {
                  style={{ background: props.theme === 'light' ? 'rgba(255, 255, 255, 0.4)' : 'rgba(0, 0, 0, 0.7)'  }}>
             <div className="grid h-full w-full ml-0">
                 <div className="col-12 lg:col-6 flex justify-content-center lg:justify-content-end align-items-center lg:pr-8">
-                    <Image src={require(`../assets/me_${props.theme}.png`)} width="250" imageClassName="border-circle" />
+                    <Image src={require(`../assets/me_${props.theme}.webp`)} width="250" imageClassName="border-circle" />
                 </div>
                 <div className="flex flex-column justify-content-center align-items-center mt-auto mb-auto">
                     <About props={props} />
