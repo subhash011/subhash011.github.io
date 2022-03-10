@@ -54,30 +54,42 @@ function MyProjects() {
         );
     }
 
-    const itemCard = (item, children) => {
+    const itemCard = (item) => {
         return (
             <Card id={item.id} title={title(item)} className="w-full h-full">
                 <div className="flex justify-content-center mb-4">
                     <Image src={item.image} alt="Image" className="flex justify-content-center"
-                           imageStyle={{width: !!dialogVisible ? '60%' : '100%', maxWidth: '400px', height: 'auto'}}/>
+                           imageStyle={{width: '100%', maxWidth: '400px', height: 'auto'}}/>
                 </div>
                 <div className="flex justify-content-center text-center font-italic">{item.description}</div>
-                {item.extra && !!!dialogVisible && <div className="flex justify-content-end mt-3">
+                {item.extra && <div className="flex justify-content-end mt-3">
                     <Button label="See more" className="p-button-text"
                             onClick={() => {
                                 setDialogVisible(item);
                             }}/>
                 </div>}
+            </Card>
+        );
+    }
+
+    const dialogItemCard = (item, children) => {
+        return (
+            <Card id={item.id} title={title(item)} className="w-full h-full">
+                <div className="flex justify-content-center mb-4">
+                    <Image src={item.image} alt="Image" className="flex justify-content-center"
+                           imageStyle={{width: '60%', maxWidth: '400px', height: 'auto'}}/>
+                </div>
+                <div className="flex justify-content-center text-center font-italic">{item.description}</div>
                 {children}
             </Card>
         );
     }
 
-    const renderGridItem = (item, children) => {
+    const renderGridItem = (item) => {
         if (!!!item) return null;
         return (
             <div className="flex justify-content-center p-4 col-12 md:col-6 lg:col-4 xl:col-3">
-                {itemCard(item, children)}
+                {itemCard(item)}
             </div>
         )
     }
@@ -86,7 +98,7 @@ function MyProjects() {
         if (!!!item) return null;
         return (
             <div className="flex justify-content-center">
-                {itemCard(item, extraContent(item))}
+                {dialogItemCard(item, extraContent(item))}
             </div>
         )
     }
@@ -100,7 +112,7 @@ function MyProjects() {
                     {renderDialogItem(dialogVisible, extraContent(dialogVisible))}
                 </Dialog>
                 <DataView className="projects-dataview" value={projectsData}
-                          itemTemplate={(item, layout) => renderGridItem(item, null)}
+                          itemTemplate={renderGridItem}
                           layout="grid"/>
             </div>
         </section>

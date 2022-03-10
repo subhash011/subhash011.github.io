@@ -3,13 +3,18 @@
   "name": "Subhash's Portfolio",
   "icons": [
     {
-      "src": "my_icon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "my_logo192.png",
+      "sizes": "192x192",
+      "type": "image/png"
     },
     {
-      "src": "my_icon.png",
+      "src": "my_logo256.png",
       "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "my_logo512.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ],

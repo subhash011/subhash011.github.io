@@ -36,16 +36,17 @@ function App() {
             toggleTheme();
         }
     }, [theme, toggleTheme]);
-  return (
-      <React.Fragment>
-          <TopBar theme={theme} isLoading={isThemeSwitching} toggleTheme={toggleTheme} />
-          <div className="h-6" />
-          <Routes>
-              <Route path="/" element={<Main theme={theme}/>}/>
-              <Route path="*" element={<Navigate to="/" />}/>
-          </Routes>
-      </React.Fragment>
-  );
+
+    return (
+        <React.Fragment>
+            <TopBar theme={theme} isLoading={isThemeSwitching} toggleTheme={toggleTheme}/>
+            <div className="h-6"/>
+            <Routes>
+                <Route path="/" element={<Main theme={theme}/>}/>
+                <Route path="*" element={<Navigate to="/"/>}/>
+            </Routes>
+        </React.Fragment>
+    );
 }
 
 export default App;

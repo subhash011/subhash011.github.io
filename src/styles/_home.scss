@@ -22,11 +22,18 @@
 .home-section {
   position: relative;
   overflow: hidden; //added for pseudo-element
+  background: rgba(0, 0, 0, 0.7);
+
+  .about-content {
+    color: rgba(255, 255, 255, 1);
+  }
 
   //fixed-position background image
   &::before {
     background-color: white;
-    background: linear-gradient(rgba(255,255,255,.3), rgba(255,255,255,.4)), url('../assets/home_background.webp') no-repeat center center;
+    background-image: url('../assets/home_background.webp');
+    background-repeat: no-repeat;
+    background-position: center center;
     background-size: cover;
     z-index: -3;
     content: " ";

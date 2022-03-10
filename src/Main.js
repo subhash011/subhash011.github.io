@@ -10,7 +10,7 @@ function Main({ theme }) {
 
     return (
         <React.Fragment>
-            <Home />
+            <Home theme={theme} />
             <div className="main-content">
                 <Projects />
                 <IndustrialExperience />

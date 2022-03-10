@@ -1,71 +1,63 @@
 import '../styles/_home.scss'
-import {useEffect, useRef} from "react";
-import Typewriter from 'typewriter-effect/dist/core';
-import {animated, useSpring} from 'react-spring'
 import {Button} from "primereact/button";
 import {HashLink} from "react-router-hash-link";
+import About from "./About";
+import {SocialButtons} from "../common/SocialButtons";
+import { Image } from 'primereact/image';
 
-function Home() {
-
-    const nameRef = useRef(null);
-    const [style, animateStyle] = useSpring(() => ({opacity: 0}));
-
-    useEffect(() => {
-        const typeWriter = new Typewriter(nameRef.current, {
-            typeSpeed: 200,
-            delay: 70,
-            cursor: '',
-            onComplete: () => {
-
-            }
-        });
-        typeWriter
-            .callFunction(() => {
-                animateStyle.start({opacity: 0})
-            })
-            .typeString('Hi, I am <span class="name">Subhash</span>')
-            .start()
-            .callFunction(() => {
-                typeWriter.stop();
-                animateStyle.start({
-                    opacity: 1,
-                    delay: 500
-                });
-            })
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+function Home(props) {
 
     return (
-        <section id="#" className="home-section pt-7 w-screen h-screen overflow-hidden">
+        <section id="#" className="home-section pt-7 w-screen h-screen overflow-hidden"
+                 style={{ background: props.theme === 'light' ? 'rgba(255, 255, 255, 0.4)' : 'rgba(0, 0, 0, 0.7)'  }}>
             <div className="grid h-full w-full ml-0">
-                <div className="col-12 lg:col-6 flex flex-column justify-content-center align-items-center mt-8 lg:mt-0 lg:ml-auto lg:w-25rem">
-                    <div className="text-black-alpha-90 text-center lg:text-left">
-                        {/* eslint-disable-next-line jsx-a11y/heading-has-content */}
-                        <h1 ref={nameRef}/>
-                        <animated.div style={style} className="font-semibold">
-                            I'm a computer science student and an experiential learner with hands-on
-                            experience in multiple domains like web development, mobile development, artificial intelligence and
-                            system programming.
-                        </animated.div>
-
-                    </div>
+                <div className="col-12 lg:col-6 flex justify-content-center lg:justify-content-end align-items-center lg:pr-8">
+                    <Image src={require(`../assets/me_${props.theme}.png`)} width="250" imageClassName="border-circle" />
                 </div>
-                <div className="col-12 lg:col-6 home-extras h-full">
-                    <div className="template h-full flex-column mt-6 lg:mt-0 flex lg:justify-content-center align-items-center">
-                        <Button className="github p-0 w-10rem" onClick={() => window.open("https://github.com/subhash011", "_blank")} >
-                            <i className="pi pi-github px-2" />
-                            <span className="px-3">GitHub</span>
-                        </Button>
-                        <HashLink smooth to="#contact" className="p-0 w-10rem mt-5 no-underline">
-                            <Button label="Contact me" icon="pi pi-phone" className="p-button-raised p-button-primary w-full" />
+                <div className="flex flex-column justify-content-center align-items-center mt-auto mb-auto">
+                    <About props={props} />
+                    <div className="flex grid justify-content-center align-items-center">
+                        <span className="p-0 mt-5 no-underline">
+                            <Button label="GitHub" icon="pi pi-github"
+                                    className="p-button-raised p-button-secondary w-full"
+                                    onClick={() => window.open("https://github.com/subhash011", "_blank")}
+                            />
+                        </span>
+                        <HashLink smooth to="#contact" className="p-0 ml-2 mt-5 no-underline">
+                            <Button label="Contact me" icon="pi pi-phone"
+                                className="p-button-raised p-button-primary w-full"/>
                         </HashLink>
-                        <HashLink smooth to="#projects" className="p-0 w-10rem mt-5 no-underline">
-                            <Button label="Know more" icon="pi pi-chevron-circle-down" className="p-button-raised p-button-secondary w-full" />
+                        <HashLink smooth to="#projects" className="p-0 ml-2 mt-5 no-underline">
+                            <Button label="More about me" icon="pi pi-user"
+                                className="p-button-raised p-button-info w-full"/>
                         </HashLink>
+                    </div>
+                    <div className="flex justify-content-center">
+                        <SocialButtons props={props} />
                     </div>
                 </div>
             </div>
         </section>
     );
 }
+
+// <div className="col-12 lg:col-6 home-extras h-full">
+//     <div
+//         className="template h-full flex-column mt-6 lg:mt-0 flex lg:justify-content-center align-items-center">
+//         <Button className="github p-0 w-12rem"
+//                 onClick={() => window.open("https://github.com/subhash011", "_blank")}>
+//             <i className="pi pi-github px-2"/>
+//             <span className="px-3">GitHub</span>
+//         </Button>
+//         <HashLink smooth to="#contact" className="p-0 w-12rem mt-5 no-underline">
+//             <Button label="Contact me" icon="pi pi-phone"
+//                     className="p-button-raised p-button-primary w-full"/>
+//         </HashLink>
+//         <HashLink smooth to="#projects" className="p-0 w-12rem mt-5 no-underline">
+//             <Button label="More about me" icon="pi pi-user"
+//                     className="p-button-raised p-button-secondary w-full"/>
+//         </HashLink>
+//     </div>
+// </div>
+
 export default Home;
