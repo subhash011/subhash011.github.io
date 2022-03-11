@@ -110,6 +110,8 @@ function MyProjects() {
             <div className="flex flex-column justify-content-center align-items-center">
                 <SectionHeading name={"projects"} heading="My Projects"/>
                 <Dialog className="item-dialog max-h-screen" visible={!!dialogVisible} onHide={() => setDialogVisible(null)}
+                        blockScroll={true}
+                        dismissableMask={true}
                         breakpoints={{'960px': '75vw', '640px': '100vw'}} contentClassName="h-full ">
                     {renderDialogItem(dialogVisible, extraContent(dialogVisible))}
                 </Dialog>
