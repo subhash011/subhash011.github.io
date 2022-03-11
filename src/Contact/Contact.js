@@ -1,8 +1,8 @@
 import ContactForm from "./Form";
 import '../styles/_contact.scss';
 import * as React from "react";
-import {SocialButtons} from "../common/SocialButtons";
-import {SectionHeading} from "../common/SectionHeading";
+import {SocialButtons} from "../Common/SocialButtons";
+import {SectionHeading} from "../Common/SectionHeading";
 import {Chip} from "primereact/chip";
 
 function Contact(props) {

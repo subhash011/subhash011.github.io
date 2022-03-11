@@ -1,5 +1,5 @@
 import {DataView} from "primereact/dataview";
-import projectsData from "../../data/projects.json";
+import projectsData from "../../Data/projects.json";
 import {Card} from "primereact/card";
 import {Image} from "primereact/image";
 import "../../styles/_projects.scss"
@@ -8,7 +8,7 @@ import {Tag} from "primereact/tag";
 import React from "react";
 import {Dialog} from "primereact/dialog";
 import {Button} from "primereact/button";
-import {SectionHeading} from "../../common/SectionHeading";
+import {SectionHeading} from "../../Common/SectionHeading";
 
 function MyProjects() {
 
@@ -58,7 +58,7 @@ function MyProjects() {
         return (
             <Card id={item.id} title={title(item)} className="w-full h-full">
                 <div className="flex justify-content-center mb-4">
-                    <Image src={item.image} alt="Image" className="flex justify-content-center"
+                    <Image src={require(`../../assets/${item.image}`)} alt="Image" className="flex justify-content-center"
                            imageStyle={{width: '100%', maxWidth: '400px', height: 'auto'}}/>
                 </div>
                 <div className="flex justify-content-center text-center font-italic">{item.description}</div>
@@ -76,7 +76,7 @@ function MyProjects() {
         return (
             <Card id={item.id} title={title(item)} className="w-full h-full">
                 <div className="flex justify-content-center mb-4">
-                    <Image src={item.image} alt="Image" className="flex justify-content-center"
+                    <Image src={require(`../../assets/${item.image}`)} alt="Image" className="flex justify-content-center"
                            imageStyle={{width: '60%', maxWidth: '400px', height: 'auto'}}/>
                 </div>
                 <div className="flex justify-content-center text-center font-italic">{item.description}</div>

@@ -1,10 +1,11 @@
 import * as React from 'react';
 import Education from "./Eduction/Education";
-import Projects from "./experience/projects/Projects";
+import Projects from "./Experience/Projects/Projects";
 import Contact from "./Contact/Contact";
-import IndustrialExperience from "./experience/industry/Industry";
+import IndustrialExperience from "./Experience/Industry/Industry";
 import {ScrollTop} from "primereact/scrolltop";
-import Home from "./home/Home";
+import Home from "./Home/Home";
+import Skills from "./Skills/Skills";
 
 function Main({ theme }) {
 
@@ -14,6 +15,7 @@ function Main({ theme }) {
             <div className="main-content">
                 <Projects />
                 <IndustrialExperience />
+                {/*<Skills />*/}
                 <Education />
                 <Contact theme={theme} />
                 <ScrollTop threshold={10} />

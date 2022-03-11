@@ -2,17 +2,24 @@ import '../styles/_home.scss'
 import {Button} from "primereact/button";
 import {HashLink} from "react-router-hash-link";
 import About from "./About";
-import {SocialButtons} from "../common/SocialButtons";
+import {SocialButtons} from "../Common/SocialButtons";
 import { Image } from 'primereact/image';
+import {useEffect} from "react";
 
 function Home(props) {
+
+    useEffect(() => {
+        document.getElementById("my-image").oncontextmenu = function() {
+            return false;
+        };
+    }, [])
 
     return (
         <section id="#" className="home-section pt-7 w-screen h-screen overflow-hidden"
                  style={{ background: props.theme === 'light' ? 'rgba(255, 255, 255, 0.4)' : 'rgba(0, 0, 0, 0.7)'  }}>
             <div className="grid h-full w-full ml-0">
-                <div className="col-12 lg:col-6 flex justify-content-center lg:justify-content-end align-items-center lg:pr-8">
-                    <Image src={require(`../assets/me_${props.theme}.webp`)} width="250" imageClassName="border-circle" />
+                <div id="my-image" className="col-12 lg:col-6 flex justify-content-center lg:justify-content-end align-items-center lg:pr-8">
+                    <Image src={require(`../assets/home/me_${props.theme}.webp`)} width="250" imageClassName="border-circle" />
                 </div>
                 <div className="flex flex-column justify-content-center align-items-center mt-auto mb-auto">
                     <About props={props} />

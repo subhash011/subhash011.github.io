@@ -1,8 +1,8 @@
 import React from "react";
-import {CardTimeLine} from "../../common/CardTimeline";
-import industryExperience from "../../data/industryExperience.json";
+import {CardTimeLine} from "../../Common/CardTimeline";
+import industryExperience from "../../Data/industryExperience.json";
 import {Tag} from "primereact/tag";
-import {SectionHeading} from "../../common/SectionHeading";
+import {SectionHeading} from "../../Common/SectionHeading";
 
 function IndustrialExperience() {
 
@@ -34,9 +34,9 @@ function IndustrialExperience() {
     }
 
     return (
-        <section id="industry" className="pt-7">
+        <section id="experience" className="pt-7">
             <div className="flex flex-column w-full align-items-center">
-                <SectionHeading name={"industry"} heading="Industrial Experience"/>
+                <SectionHeading name={"experience"} heading="Work Experience"/>
                 <div className="w-full mr-0 flex justify-content-center mt-4">
                     <CardTimeLine value={industryExperience} align="alternate"/>
                 </div>

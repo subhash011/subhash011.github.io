@@ -28,7 +28,7 @@ function TopBar({theme, toggleTheme, isLoading}) {
             template: template
         },
         {
-            label: 'Experience',
+            label: 'Work',
             icon: 'pi pi-fw pi-briefcase',
             items: [
                 {
@@ -37,12 +37,18 @@ function TopBar({theme, toggleTheme, isLoading}) {
                     template: template
                 },
                 {
-                    label: 'Industry',
-                    url: '#industry',
+                    label: 'Experience',
+                    url: '#experience',
                     template: template
                 }
             ]
         },
+        // {
+        //     label: 'Skills',
+        //     icon: 'pi pi-fw pi-bolt',
+        //     url: '#skills',
+        //     template: template
+        // },
         {
             label: 'Education',
             icon: 'pi pi-fw pi-book',
@@ -91,7 +97,7 @@ function TopBar({theme, toggleTheme, isLoading}) {
     };
 
     const downloadResume = () => {
-        fetch(`${process.env.PUBLIC_URL}/assets/functional.pdf`)
+        fetch(`../assets/functional.pdf`)
             .then(res => res.blob())
             .then(blob => {
                 const url = window.URL.createObjectURL(blob);
