@@ -16,16 +16,10 @@ function MyProjects() {
 
     const title = (item) => {
         return (
-            <span className="flex">
+            <span className="flex justify-content-center text-3xl">
                 <Tooltip target=".item-title" position="top"/>
                 <h6 data-pr-tooltip={item.title}
                     className="mt-0 item-title white-space-nowrap overflow-hidden text-overflow-ellipsis">{item.title}</h6>
-                {item.gitHub && <i onClick={() => window.open(item.gitHub, "_blank")}
-                                   className="pi pi-github ml-auto cursor-pointer"/>}
-                {item.site && <i onClick={() => window.open(item.site, "_blank")}
-                                 className="pi pi-external-link ml-3 cursor-pointer"/>}
-                {item.youtube && <i onClick={() => window.open(item.youtube, "_blank")}
-                                    className="pi pi-youtube ml-3 cursor-pointer"/>}
             </span>
         );
     }
@@ -57,11 +51,19 @@ function MyProjects() {
     const itemCard = (item) => {
         return (
             <Card id={item.id} title={title(item)} className="w-full h-full">
-                <div className="flex justify-content-center mb-4">
+                <div className="flex h-15rem justify-content-center mb-4">
                     <Image src={require(`../../assets/${item.image}`)} alt="Image" className="flex justify-content-center"
                            imageStyle={{width: '100%', maxWidth: '400px', height: 'auto'}}/>
                 </div>
-                <div className="flex justify-content-center text-center font-italic">{item.description}</div>
+                <div className="flex h-5rem justify-content-center text-center font-italic font-bold">{item.description}</div>
+                <div className="flex justify-content-center mt-4 mr-4">
+                    {item.gitHub && <i onClick={() => window.open(item.gitHub, "_blank")}
+                                       className="pi pi-github ml-auto cursor-pointer"/>}
+                    {item.site && <i onClick={() => window.open(item.site, "_blank")}
+                                     className="pi pi-external-link ml-3 cursor-pointer"/>}
+                    {item.youtube && <i onClick={() => window.open(item.youtube, "_blank")}
+                                        className="pi pi-youtube ml-3 cursor-pointer"/>}
+                </div>
                 {item.extra && <div className="flex justify-content-end mt-3">
                     <Button label="See more" className="p-button-text"
                             onClick={() => {
@@ -79,7 +81,7 @@ function MyProjects() {
                     <Image src={require(`../../assets/${item.image}`)} alt="Image" className="flex justify-content-center"
                            imageStyle={{width: '60%', maxWidth: '400px', height: 'auto'}}/>
                 </div>
-                <div className="flex justify-content-center text-center font-italic">{item.description}</div>
+                <div className="flex justify-content-center text-center font-italic font-bold">{item.description}</div>
                 {children}
             </Card>
         );

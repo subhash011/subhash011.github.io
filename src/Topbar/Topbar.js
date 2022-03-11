@@ -43,12 +43,12 @@ function TopBar({theme, toggleTheme, isLoading}) {
                 }
             ]
         },
-        // {
-        //     label: 'Skills',
-        //     icon: 'pi pi-fw pi-bolt',
-        //     url: '#skills',
-        //     template: template
-        // },
+        {
+            label: 'Skills',
+            icon: 'pi pi-fw pi-bolt',
+            url: '#skills',
+            template: template
+        },
         {
             label: 'Education',
             icon: 'pi pi-fw pi-book',

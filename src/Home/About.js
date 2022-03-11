@@ -21,8 +21,8 @@ function About({props}) {
             loop: false,
             delay: 40,
             deleteSpeed: 20,
-            cursorClassName: props.theme === 'light' ? "text-blue-700" : "text-green-500",
-            wrapperClassName: props.theme === 'light' ? "text-blue-700" : "text-green-500"
+            cursorClassName: props.theme === 'light' ? "text-orange-800" : "text-green-500",
+            wrapperClassName: props.theme === 'light' ? "text-orange-800" : "text-green-500"
         });
         typewriter
             .callFunction(() => {

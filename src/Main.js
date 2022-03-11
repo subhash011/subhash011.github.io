@@ -15,7 +15,7 @@ function Main({ theme }) {
             <div className="main-content">
                 <Projects />
                 <IndustrialExperience />
-                {/*<Skills />*/}
+                <Skills />
                 <Education />
                 <Contact theme={theme} />
                 <ScrollTop threshold={10} />

@@ -39,7 +39,7 @@
   {
     "id": "3",
     "title": "Resource Management System",
-    "description": "Cross-platform application for tracking inventory activities.",
+    "description": "A cross-platform application for tracking inventory activities at lab facilities.",
     "image": "projects/resource_management_system.webp",
     "gitHub": "https://github.com/Holocoders/Resource-Management",
     "extra": true,
@@ -54,6 +54,23 @@
   },
   {
     "id": "4",
+    "title": "Tiger Compiler",
+    "description": "A compiler and pretty-printer for a subset of the tiger language.",
+    "image": "projects/tiger_compiler.webp",
+    "gitHub": "https://github.com/subhash011/compilers-sem6",
+    "extra": true,
+    "additionalHeight": 36,
+    "workDone": [
+      "Compiles source code to Intermediate Representation (IR).",
+      "Supports multiple data types, operators and recursive functions.",
+      "It also provides utility functions like indentation and syntax-highlighting."
+    ],
+    "techStack": [
+      "SML", "ML-YACC", "MLLex"
+    ]
+  },
+  {
+    "id": "5",
     "title": "Driver Attention Analyzer",
     "description": "A continuous driver attention analysis system for improved safety.",
     "image": "projects/driver_attention_analyzer.webp",
@@ -67,23 +84,6 @@
     ],
     "techStack": [
       "Python", "OpenCV"
-    ]
-  },
-  {
-    "id": "5",
-    "title": "Tiger Compiler",
-    "description": "A compiler for a subset of the tiger language.",
-    "image": "projects/tiger_compiler.webp",
-    "gitHub": "https://github.com/subhash011/compilers-sem6",
-    "extra": true,
-    "additionalHeight": 36,
-    "workDone": [
-      "Compiles source code to Intermediate Representation (IR).",
-      "Supports multiple data types, operators and recursive functions.",
-      "It also provides utility functions like indentation and syntax-highlighting."
-    ],
-    "techStack": [
-      "SML", "ML-YACC", "MLLex"
     ]
   },
   {

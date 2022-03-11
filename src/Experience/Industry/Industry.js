@@ -37,7 +37,7 @@ function IndustrialExperience() {
         <section id="experience" className="pt-7">
             <div className="flex flex-column w-full align-items-center">
                 <SectionHeading name={"experience"} heading="Work Experience"/>
-                <div className="w-full mr-0 flex justify-content-center mt-4">
+                <div className="w-full mr-0 flex justify-content-center">
                     <CardTimeLine value={industryExperience} align="alternate"/>
                 </div>
             </div>

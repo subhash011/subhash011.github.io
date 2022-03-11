@@ -1,0 +1,74 @@
+[
+  {
+    "id": "1",
+    "name": "Programming Languages",
+    "categories": [
+      {
+        "name": "C++",
+        "image": "c++.png"
+      },
+      {
+        "name": "Python",
+        "image": "python.png"
+      },
+      {
+        "name": "TypeScript",
+        "image": "typescript.png"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Web Development",
+    "categories": [
+      {
+        "name": "ExpressJS",
+        "image": "expressjs.png"
+      },
+      {
+        "name": "Angular",
+        "image": "angular.png"
+      },
+      {
+        "name": "React",
+        "image": "reactjs.png"
+      },
+      {
+        "name": "GraphQL",
+        "image": "graphql.png"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Databases",
+    "categories": [
+      {
+        "name": "MongoDB",
+        "image": "mongodb.png"
+      },
+      {
+        "name": "MariaDB",
+        "image": "mariadb.png"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "name": "Others",
+    "categories": [
+      {
+        "name": "TensorFlow",
+        "image": "tensorflow.png"
+      },
+      {
+        "name": "Docker",
+        "image": "docker.png"
+      },
+      {
+        "name": "Flutter",
+        "image": "flutter.png"
+      }
+    ]
+  }
+]
