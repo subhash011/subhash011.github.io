@@ -16,10 +16,10 @@ function MyProjects() {
 
     const title = (item) => {
         return (
-            <span className="flex justify-content-center text-3xl">
+            <span className="flex justify-content-center">
                 <Tooltip target=".item-title" position="top"/>
-                <h6 data-pr-tooltip={item.title}
-                    className="mt-0 item-title white-space-nowrap overflow-hidden text-overflow-ellipsis">{item.title}</h6>
+                <h5 data-pr-tooltip={item.title}
+                    className="mt-0 item-title white-space-nowrap overflow-hidden text-overflow-ellipsis">{item.title}</h5>
             </span>
         );
     }
@@ -50,10 +50,10 @@ function MyProjects() {
 
     const itemCard = (item) => {
         return (
-            <Card id={item.id} title={title(item)} className="w-full h-full">
-                <div className="flex h-15rem justify-content-center mb-4">
+            <Card id={item.id} title={title(item)} className="w-full h-full" style={{maxWidth: '30rem'}}>
+                <div className="flex justify-content-center mb-4">
                     <Image src={require(`../../assets/${item.image}`)} alt="Image" className="flex justify-content-center"
-                           imageStyle={{width: '100%', maxWidth: '400px', height: 'auto'}}/>
+                           imageStyle={{ width: '100%', height: '200px', objectFit: 'cover', objectPosition: '50% 50%' }}/>
                 </div>
                 <div className="flex h-5rem justify-content-center text-center font-italic font-bold">{item.description}</div>
                 <div className="flex justify-content-center mt-4 mr-4">
@@ -79,7 +79,7 @@ function MyProjects() {
             <Card id={item.id} title={title(item)} className="w-full h-full">
                 <div className="flex justify-content-center mb-4">
                     <Image src={require(`../../assets/${item.image}`)} alt="Image" className="flex justify-content-center"
-                           imageStyle={{width: '60%', maxWidth: '400px', height: 'auto'}}/>
+                           imageStyle={{ width: '100%', height: '200px', objectFit: 'cover', objectPosition: '50% 50%' }}/>
                 </div>
                 <div className="flex justify-content-center text-center font-italic font-bold">{item.description}</div>
                 {children}
@@ -90,7 +90,7 @@ function MyProjects() {
     const renderGridItem = (item) => {
         if (!!!item) return null;
         return (
-            <div className="flex justify-content-center p-4 col-12 md:col-6 lg:col-4 xl:col-3">
+            <div className="flex justify-content-center p-4 col-12 md:col-6 xl:col-4">
                 {itemCard(item)}
             </div>
         )

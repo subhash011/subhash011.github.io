@@ -27,7 +27,6 @@ h1 em {
   text-align: center;
   margin: auto;
   white-space: nowrap;
-  padding-bottom: 11px;
 }
 
 .section-heading h1:before {
@@ -43,10 +42,8 @@ h1 em {
   background-color: #c50000;
   content: '';
   display: block;
-  position: absolute;
-  left: auto;
-  right: 0;
-  bottom: 0;
+  margin-left: auto;
+  margin-right: 0;
   height: 3px;
   width: 40%;
   margin-top: 5px;

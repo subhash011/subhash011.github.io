@@ -55,7 +55,7 @@
   {
     "id": "4",
     "title": "Tiger Compiler",
-    "description": "A compiler and pretty-printer for a subset of the tiger language.",
+    "description": "A compiler for a subset of the tiger language.",
     "image": "projects/tiger_compiler.webp",
     "gitHub": "https://github.com/subhash011/compilers-sem6",
     "extra": true,
