@@ -9,20 +9,22 @@ function Skills() {
         <section id="skills" className="pt-7">
             <SectionHeading name="skills" heading={"My Skills"}/>
             <div className="flex justify-content-center pt-6">
-                <div className="skills-grid grid w-full justify-content-center">
+                <div className="skills-grid grid col-12 justify-content-center">
                     {skills.map((skill, index) => {
                         return (
-                            <div className="col-12 surface-card xl:col-4 border-round lg:col-6 flex flex-column align-items-center" key={index}>
-                                <h3>{skill.name}</h3>
-                                <div className="grid w-full mt-auto mb-auto justify-content-center">
-                                    {skill.categories.map((category, index) => {
-                                        return (
-                                            <div key={index} className="flex flex-column align-items-center justify-content-center col-4">
-                                                <Image height="64px" src={require(`../assets/skills/${category.image}`)} alt={category.name}/>
-                                                <h3>{category.name}</h3>
-                                            </div>
-                                        )
-                                    })}
+                            <div className="col-12 sm:col-6 lg:col-4 xl:col-3" key={index}>
+                                <div className="w-full h-full flex flex-column justify-content-center align-items-center surface-card border-round">
+                                    <h3>{skill.name}</h3>
+                                    <div className="grid pt-4 w-full my-auto justify-content-center">
+                                        {skill.categories.map((category, index) => {
+                                            return (
+                                                <div key={index} className="flex flex-column align-items-center justify-content-center col-6">
+                                                    <Image height="64px" src={require(`../assets/skills/${category.image}`)} alt={category.name}/>
+                                                    <h3>{category.name}</h3>
+                                                </div>
+                                            )
+                                        })}
+                                    </div>
                                 </div>
                             </div>
                         )
