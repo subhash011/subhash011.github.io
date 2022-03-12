@@ -8,13 +8,33 @@ import React, {useEffect} from "react";
 import {SectionHeading} from "../../Common/SectionHeading";
 import {Dialog} from "primereact/dialog";
 import {Button} from "primereact/button";
+import {useSpring, animated} from 'react-spring';
+
+function RotateArrow({flip, ...rest}) {
+
+    const iconStyles = useSpring({
+        from: {rotateZ: flip ? 0 : 0},
+        to: {rotateZ: flip ? 180 : 0}
+    })
+
+
+    return (
+        <React.Fragment>
+            <animated.div {...rest} style={iconStyles}>
+                <i className="pi pi-chevron-down mt-1"/>
+            </animated.div>
+        </React.Fragment>
+    )
+}
 
 function MyProjects() {
 
     const [dialogVisible, setDialogVisible] = React.useState(null);
     const [allVisible, setAllVisible] = React.useState(false);
     const [projects, setProjects] = React.useState(projectsData.filter(project => project.isFeatured));
+
     useEffect(() => {
+        setProjects([]);
         if (allVisible) {
             setProjects(projectsData);
         } else {
@@ -57,35 +77,10 @@ function MyProjects() {
         );
     }
 
-    const itemCard = (item) => {
-        return (
-            <Card className="h-full item-card surface-card" style={{maxWidth: '400px'}}>
-                <div className="text-right h-1rem">
-                    {item.gitHub && <i onClick={() => window.open(item.gitHub, "_blank")}
-                                       className="pi pi-github ml-auto cursor-pointer"/>}
-                    {item.site && <i onClick={() => window.open(item.site, "_blank")}
-                                     className="pi pi-external-link ml-3 cursor-pointer"/>}
-                    {item.youtube && <i onClick={() => window.open(item.youtube, "_blank")}
-                                        className="pi pi-youtube ml-3 cursor-pointer"/>}
-                </div>
-                <div className="h-2rem"/>
-                {title(item)}
-                <div
-                    className="flex h-5rem justify-content-center text-center font-italic font-bold">{item.description}</div>
-                {item.extra && <div className="flex justify-content-end mt-3">
-                    <Button label="See more" className="p-button-text"
-                            onClick={() => {
-                                setDialogVisible(item);
-                            }}/>
-                </div>}
-            </Card>
-        );
-    }
-
     const dialogItemCard = (item, children) => {
         return (
             <Card id={item.id} title={title(item)} className="w-full h-full">
-                <div className="flex justify-content-center text-center font-italic font-bold">{item.description}</div>
+                <div className="flex justify-content-center text-center font-italic font-semibold">{item.description}</div>
                 {children}
             </Card>
         );
@@ -100,11 +95,36 @@ function MyProjects() {
         )
     }
 
+    const gridItemCard = (item) => {
+        return (
+            <Card className="h-full item-card surface-card" style={{maxWidth: '400px'}}>
+                <div className="text-right h-1rem">
+                    {item.gitHub && <i onClick={() => window.open(item.gitHub, "_blank")}
+                                       className="pi pi-github ml-auto cursor-pointer"/>}
+                    {item.site && <i onClick={() => window.open(item.site, "_blank")}
+                                     className="pi pi-external-link ml-3 cursor-pointer"/>}
+                    {item.youtube && <i onClick={() => window.open(item.youtube, "_blank")}
+                                        className="pi pi-youtube ml-3 cursor-pointer"/>}
+                </div>
+                <div className="h-2rem"/>
+                {title(item)}
+                <div
+                    className="flex h-5rem justify-content-center text-center font-italic font-semibold">{item.description}</div>
+                {item.extra && <div className="flex justify-content-end mt-3">
+                    <Button label="See more" className="p-button-text"
+                            onClick={() => {
+                                setDialogVisible(item);
+                            }}/>
+                </div>}
+            </Card>
+        );
+    }
+
     const renderGridItem = (item) => {
         if (!!!item) return null;
         return (
             <div className="flex projects-grid justify-content-center p-4">
-                {itemCard(item)}
+                {gridItemCard(item)}
             </div>
         )
     }
@@ -124,18 +144,10 @@ function MyProjects() {
                 <div className="flex flex-column align-items-center mb-4">
                     {!allVisible ? <h3>Featured projects ({projects.length})</h3> :
                         <h3>All projects ({projects.length})</h3>}
-                    {!allVisible ? (
-                        <span onClick={() => setAllVisible(true)}
-                              className="flex align-items-center cursor-pointer text-primary hover:text-orange-600">
-                            See all projects
-                            <i className="pi pi-chevron-down ml-2"/>
-                        </span>
-                    ) : (
-                        <span onClick={() => setAllVisible(false)}
-                              className="flex align-items-center cursor-pointer text-primary hover:text-orange-600">
-                            See less<i className="pi pi-chevron-up ml-2"/>
-                        </span>
-                    )}
+                    <span className="flex text-primary cursor-pointer" onClick={() => setAllVisible(!allVisible)}>
+                        See {allVisible ? 'less' : 'more'}
+                        <RotateArrow className="ml-2" flip={allVisible}/>
+                    </span>
                 </div>
                 <DataView className="projects-dataview" value={projects}
                           itemTemplate={renderGridItem}
