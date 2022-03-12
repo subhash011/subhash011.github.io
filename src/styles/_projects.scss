@@ -26,6 +26,9 @@
     &:hover,
     &:focus-within {
       transform: scale(1.05);
+      .p-card-body {
+        background-color: var(--surface-d);
+      }
     }
   }
 }

@@ -16,7 +16,7 @@ function Contact(props) {
                         Please feel free to contact me for any queries or suggestions. I am always open to discussing new
                         projects or ideas.
                     </p>
-                    <div className="mt-2 grid flex justify-content-center">
+                    <div className="mt-4 grid flex justify-content-center">
                         <span onClick={() => window.open("mailto:subhashs0620@gmail.com", "_self")} className="cursor-pointer">
                             <Chip label="subhashs0620@gmail.com" icon="pi pi-envelope" className="mr-2 mb-2 surface-card" />
                         </span>

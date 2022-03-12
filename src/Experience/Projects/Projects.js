@@ -2,13 +2,21 @@ import {DataView} from "primereact/dataview";
 import projectsData from "../../Data/projects.json";
 import {Card} from "primereact/card";
 import "../../styles/_projects.scss"
-import {Tooltip} from "primereact/tooltip";
 import {Tag} from "primereact/tag";
 import React, {useEffect} from "react";
 import {SectionHeading} from "../../Common/SectionHeading";
 import {Dialog} from "primereact/dialog";
 import {Button} from "primereact/button";
 import {useSpring, animated} from 'react-spring';
+import {Chip} from "primereact/chip";
+
+
+const projectFilters = [
+    "OWN",
+    "HACKATHON",
+    "COURSE",
+    "FEATURED",
+]
 
 function RotateArrow({flip, ...rest}) {
 
@@ -27,28 +35,68 @@ function RotateArrow({flip, ...rest}) {
     )
 }
 
+const AnimatedProjectHeading = ({heading, allVisible, setAllVisible}) => {
+    const text = allVisible ? "See featured" : "See all";
+
+    const [styles, api] = useSpring(() => ({ opacity: 1 }))
+
+
+    return (
+        <span onClick={() => {
+            api({
+                opacity: 0,
+                immediate: true,
+                onRest() {
+                    setAllVisible(!allVisible)
+                    api({
+                        opacity: 1,
+                        delay: 40,
+                    })
+                }
+            })
+        }} className="flex flex-column justify-content-center align-items-center">
+            <animated.div style={styles} className="flex flex-column justify-content-center align-items-center">
+                <span>{heading}</span>
+                <span className="flex cursor-pointer text-primary">
+                    {text}
+                    <RotateArrow className="ml-2" flip={allVisible}/>
+                </span>
+            </animated.div>
+        </span>
+    )
+}
+
 function MyProjects() {
 
     const [dialogVisible, setDialogVisible] = React.useState(null);
     const [allVisible, setAllVisible] = React.useState(false);
-    const [projects, setProjects] = React.useState(projectsData.filter(project => project.isFeatured));
+    const [projects, setProjects] = React.useState(projectsData.filter(project => project.filters.includes("FEATURED")));
+    const [styles, api] = useSpring(() => ({ opacity: 1 }))
+    const [filters, setFilters] = React.useState([ "FEATURED" ]);
 
     useEffect(() => {
+        const filteredProjects = projectsData.filter(project => {
+            return filters.some(filter => project.filters.includes(filter))
+        });
         setProjects([]);
-        if (allVisible) {
-            setProjects(projectsData);
-        } else {
-            setProjects(projectsData.filter(project => project.isFeatured));
-        }
+        api.start({
+            opacity: 0,
+            immediate: true,
+            onRest() {
+                setProjects(filteredProjects);
+                api({
+                    opacity: 1,
+                    delay: 40,
+                })
+            }
+        })
         // eslint-disable-next-line
-    }, [allVisible]);
+    }, [filters]);
 
     const title = (item) => {
         return (
             <span className="flex justify-content-center">
-                <Tooltip target=".item-title" position="top"/>
-                <h5 data-pr-tooltip={item.title}
-                    className="mt-0 text-xl h-2rem item-title white-space-nowrap overflow-hidden text-overflow-ellipsis">{item.title}</h5>
+                <h5 className="mt-0 text-xl h-2rem item-title white-space-nowrap overflow-hidden text-overflow-ellipsis">{item.title}</h5>
             </span>
         );
     }
@@ -129,6 +177,14 @@ function MyProjects() {
         )
     }
 
+    const toggleFilter = (filter) => {
+        if (filters.includes(filter)) {
+            setFilters(filters.filter(f => f !== filter));
+        } else {
+            setFilters([...filters, filter]);
+        }
+    }
+
     return (
         <section id="projects" className="pt-7">
             <Dialog className="item-dialog max-h-screen" visible={!!dialogVisible} onHide={() => setDialogVisible(null)}
@@ -142,16 +198,32 @@ function MyProjects() {
             <div className="flex flex-column justify-content-center align-items-center">
                 <SectionHeading name={"projects"} heading="My Projects"/>
                 <div className="flex flex-column align-items-center mb-4">
-                    {!allVisible ? <h3>Featured projects ({projects.length})</h3> :
-                        <h3>All projects ({projects.length})</h3>}
-                    <span className="flex text-primary cursor-pointer" onClick={() => setAllVisible(!allVisible)}>
-                        See {allVisible ? 'less' : 'more'}
-                        <RotateArrow className="ml-2" flip={allVisible}/>
-                    </span>
+                    <AnimatedProjectHeading heading={!allVisible ? <h3>Featured projects ({projects.length})</h3> :
+                        <h3>All projects ({projects.length})</h3>} allVisible={allVisible} setAllVisible={() => {
+                            if (!allVisible) {
+                                setFilters(projectFilters);
+                            } else {
+                                setFilters(['FEATURED']);
+                            }
+                            setAllVisible(!allVisible);
+                    }}/>
                 </div>
-                <DataView className="projects-dataview" value={projects}
-                          itemTemplate={renderGridItem}
-                          layout="grid"/>
+                {allVisible && (
+                    <div className="grid my-4 flex justify-content-center" style={{ gridGap: '10px' }}>
+                        {projectFilters.map((filter, idx) => (
+                            <span key={idx} onClick={() => toggleFilter(filter)}
+                                  className="cursor-pointer">
+                                <Chip icon={`pi ${filters.includes(filter) ? "pi-check" : "pi-times"}`}
+                                      label={filter.toUpperCase()} className={filters.includes(filter) ? "bg-primary" : ""} />
+                            </span>
+                        ))}
+                    </div>
+                )}
+                <animated.div style={styles}>
+                    <DataView className="projects-dataview" value={projects}
+                              itemTemplate={renderGridItem}
+                              layout="grid"/>
+                </animated.div>
             </div>
         </section>
     );

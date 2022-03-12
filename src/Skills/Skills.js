@@ -3,6 +3,7 @@ import skills from "../Data/skills.json";
 import {SectionHeading} from "../Common/SectionHeading";
 import {Image} from "primereact/image";
 import '../styles/_skills.scss';
+import {Card} from "primereact/card";
 
 function Skills() {
     return (
@@ -12,7 +13,7 @@ function Skills() {
                 <div className="skills-grid grid justify-content-center">
                     {skills.map((skill, index) => {
                         return (
-                            <div className="skills-grid-card w-full" style={{maxWidth: '400px'}} key={index}>
+                            <Card className="skills-grid-card w-full" style={{maxWidth: '400px'}} key={index}>
                                 <div className="flex flex-column justify-content-center align-items-center border-round">
                                     <h3>{skill.name}</h3>
                                     <div className="grid pt-4 w-full my-auto justify-content-center">
@@ -26,7 +27,7 @@ function Skills() {
                                         })}
                                     </div>
                                 </div>
-                            </div>
+                            </Card>
                         )
                     })}
                 </div>

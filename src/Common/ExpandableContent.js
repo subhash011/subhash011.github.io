@@ -4,7 +4,7 @@ import {animated, useSpring} from "react-spring";
 import {Button} from "primereact/button";
 
 const ExpandableContent = ({item}) => {
-    const [openItem, setOpenItem] = useState(item.expanded ? item : null);
+    const [openItem, setOpenItem] = useState(null);
     const windowSize = useWindowSize();
     const ref = useRef(null);
     const [style, animateStyle] = useSpring(() => ({
@@ -16,6 +16,12 @@ const ExpandableContent = ({item}) => {
             height: (openItem ? ref.current.offsetHeight + openItem.additionalHeight : 0) + 'px',
         });
     }, [ref, openItem, animateStyle, windowSize]);
+
+    useEffect(() => {
+        if (item.expanded) {
+            setOpenItem(item);
+        }
+    }, [item]);
 
     return (
         <React.Fragment>

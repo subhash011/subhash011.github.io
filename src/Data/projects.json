@@ -15,6 +15,9 @@
     ],
     "techStack": [
       "NodeJS", "ExpressJS", "Angular", "Angular material", "MongoDB", "Nginx"
+    ],
+    "filters": [
+      "OWN", "FEATURED"
     ]
   },
   {
@@ -34,6 +37,9 @@
     ],
     "techStack": [
       "C#", ".NET", "NUnit"
+    ],
+    "filters": [
+      "COURSE", "FEATURED"
     ]
   },
   {
@@ -46,10 +52,14 @@
     "additionalHeight": 36,
     "workDone": [
       "Developed primarily for institute lab facilities, it also generalizes to other resources.",
-      "Involves various modules like authentication and authorization, inventory management, booking etc."
+      "Involves various modules like authentication and authorization, inventory management, booking etc.",
+      "Provides a fine-grained control over user authorization with a tree structure capturing admin information."
     ],
     "techStack": [
       "NestJS", "Flutter", "Angular", "PrimeNG", "MongoDB"
+    ],
+    "filters": [
+      "OWN", "COURSE", "FEATURED"
     ]
   },
   {
@@ -68,12 +78,15 @@
     ],
     "techStack": [
       "Flutter", "Firebase"
+    ],
+    "filters": [
+      "HACKATHON"
     ]
   },
   {
     "id": "5",
     "title": "Tiger Compiler",
-    "description": "A compiler for a subset of the tiger language.",
+    "description": "A compiler written in SML for a subset of the tiger language.",
     "isFeatured": false,
     "gitHub": "https://github.com/subhash011/compilers-sem6",
     "extra": true,
@@ -85,6 +98,9 @@
     ],
     "techStack": [
       "SML", "ML-YACC", "MLLex"
+    ],
+    "filters": [
+      "COURSE"
     ]
   },
   {
@@ -102,6 +118,9 @@
     ],
     "techStack": [
       "Python", "OpenCV"
+    ],
+    "filters": [
+      "HACKATHON"
     ]
   },
   {
@@ -118,6 +137,9 @@
     ],
     "techStack": [
       "Django", "Flutter", "MySQL"
+    ],
+    "filters": [
+      "OWN", "COURSE"
     ]
   },
   {
@@ -136,6 +158,9 @@
     ],
     "techStack": [
       "Python", "Scikit-Learn", "Pandas"
+    ],
+    "filters": [
+      "HACKATHON"
     ]
   },
   {
@@ -154,6 +179,9 @@
     ],
     "techStack": [
       "Python", "Scikit-Learn", "Pandas"
+    ],
+    "filters": [
+      "HACKATHON"
     ]
   }
 ]
