@@ -209,7 +209,7 @@ function MyProjects() {
                     }}/>
                 </div>
                 {allVisible && (
-                    <div className="grid my-4 flex justify-content-center" style={{ gridGap: '10px' }}>
+                    <div className="grid col-8 my-4 flex justify-content-center" style={{ gridGap: '10px' }}>
                         {projectFilters.map((filter, idx) => (
                             <span key={idx} onClick={() => toggleFilter(filter)}
                                   className="cursor-pointer">
