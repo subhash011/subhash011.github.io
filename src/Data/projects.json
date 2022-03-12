@@ -3,7 +3,7 @@
     "id": "1",
     "title": "Project Allocation Portal",
     "description": "The official project allocation portal of IIT Palakkad.",
-    "image": "projects/project_allocation_portal.webp",
+    "isFeatured": true,
     "gitHub": "https://github.com/subhash011/Project-Allocation",
     "site": "https://pal.iitpkd.ac.in:10443/",
     "extra": true,
@@ -21,7 +21,7 @@
     "id": "2",
     "title": "Meet.me",
     "description": "A collaborative discussion platform with whiteboard, screen-share, analytics and more.",
-    "image": "projects/meet_me.webp",
+    "isFeatured": true,
     "gitHub": "https://github.com/subhash011/meet.me",
     "youtube": "https://www.youtube.com/watch?v=Sa7aRJC2wvc",
     "extra": true,
@@ -40,7 +40,7 @@
     "id": "3",
     "title": "Resource Management System",
     "description": "A cross-platform application for tracking inventory activities at lab facilities.",
-    "image": "projects/resource_management_system.webp",
+    "isFeatured": true,
     "gitHub": "https://github.com/Holocoders/Resource-Management",
     "extra": true,
     "additionalHeight": 36,
@@ -54,9 +54,27 @@
   },
   {
     "id": "4",
+    "title": "Time Sync",
+    "description": "An application to assist users regulate screen time with the help of their peers.",
+    "isFeatured": false,
+    "gitHub": "https://github.com/subhash011/TimeSync",
+    "site": "https://devpost.com/software/time-sync",
+    "extra": true,
+    "additionalHeight": 36,
+    "workDone": [
+      "Developed for the final round of Hack-MIT 2020.",
+      "Incentives are given to users who spend lesser time on their screen.",
+      "Connects user with their peers who can help the user reduce screen time."
+    ],
+    "techStack": [
+      "Flutter", "Firebase"
+    ]
+  },
+  {
+    "id": "5",
     "title": "Tiger Compiler",
     "description": "A compiler for a subset of the tiger language.",
-    "image": "projects/tiger_compiler.webp",
+    "isFeatured": false,
     "gitHub": "https://github.com/subhash011/compilers-sem6",
     "extra": true,
     "additionalHeight": 36,
@@ -70,10 +88,10 @@
     ]
   },
   {
-    "id": "5",
+    "id": "6",
     "title": "Driver Attention Analyzer",
     "description": "A continuous driver attention analysis system for improved safety.",
-    "image": "projects/driver_attention_analyzer.webp",
+    "isFeatured": false,
     "extra": true,
     "additionalHeight": 36,
     "workDone": [
@@ -87,10 +105,10 @@
     ]
   },
   {
-    "id": "6",
+    "id": "7",
     "title": "Driver Assistance System",
     "description": "A system for detecting and alerting drivers of upcoming potholes and obstacles.",
-    "image": "projects/driver_assistance_system.webp",
+    "isFeatured": false,
     "gitHub": "https://github.com/subhash011/Driver-Assistance",
     "extra": true,
     "additionalHeight": 36,
@@ -103,37 +121,39 @@
     ]
   },
   {
-    "id": "7",
-    "title": "Time Sync",
-    "description": "An application to assist users regulate screen time with the help of their peers.",
-    "image": "projects/time_sync.webp",
-    "gitHub": "https://github.com/subhash011/TimeSync",
-    "extra": true,
-    "additionalHeight": 36,
-    "workDone": [
-      "Developed for the final round of Hack-MIT 2020.",
-      "Incentives are given to users who spend lesser time on their screen.",
-      "Connects user with their peers who can help the user reduce screen time."
-    ],
-    "techStack": [
-      "Flutter", "Firebase"
-    ]
-  },
-  {
     "id": "8",
     "title": "Malware Detection",
     "description": "Machine learning application to detect malware in executables.",
+    "isFeatured": false,
     "gitHub": "https://github.com/subhash011/Malware-Detector",
-    "image": "projects/malware_detector.webp",
     "extra": true,
     "additionalHeight": 36,
     "workDone": [
       "Differentiates between benign and malicious executables.",
       "Features were extracted from Portable Executable (PE) files and Cuckoo reports.",
+      "A random forest classifier was used to classify executables.",
       "Built for the final round of IIT-K HCL Hackathon 2020."
     ],
     "techStack": [
-      "Python"
+      "Python", "Scikit-Learn", "Pandas"
+    ]
+  },
+  {
+    "id": "9",
+    "title": "DDoS Detection",
+    "description": "Machine learning application to detect DDoS attacks from pcap files.",
+    "isFeatured": false,
+    "gitHub": "https://github.com/Holocoders/DDOS-Detection",
+    "extra": true,
+    "additionalHeight": 36,
+    "workDone": [
+      "Differentiates between benign and malicious executables.",
+      "Features were extracted from the logs of pcap files.",
+      "K-Nearest Neighbours classifier was detect the attacks.",
+      "Built for the final round of IIT-K HCL Hackathon 2020."
+    ],
+    "techStack": [
+      "Python", "Scikit-Learn", "Pandas"
     ]
   }
 ]

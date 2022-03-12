@@ -1,5 +1,15 @@
-//.skills-grid {
-//  grid-gap: 5px;
-//  margin-left: 10px;
-//  margin-right: 10px;
-//}
+.skills-grid {
+  grid-gap: 10px;
+}
+
+.skills-grid-card {
+  background-color: var(--surface-card);
+  transition: transform 0.3s ease-in-out;
+  @media (prefers-reduced-motion: no-preference) {
+    &:hover,
+    &:focus-within {
+      transform: scale(1.05);
+      background-color: var(--surface-d);
+    }
+  }
+}

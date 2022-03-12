@@ -1,25 +1,34 @@
 import {DataView} from "primereact/dataview";
 import projectsData from "../../Data/projects.json";
 import {Card} from "primereact/card";
-import {Image} from "primereact/image";
 import "../../styles/_projects.scss"
 import {Tooltip} from "primereact/tooltip";
 import {Tag} from "primereact/tag";
-import React from "react";
+import React, {useEffect} from "react";
+import {SectionHeading} from "../../Common/SectionHeading";
 import {Dialog} from "primereact/dialog";
 import {Button} from "primereact/button";
-import {SectionHeading} from "../../Common/SectionHeading";
 
 function MyProjects() {
 
     const [dialogVisible, setDialogVisible] = React.useState(null);
+    const [allVisible, setAllVisible] = React.useState(false);
+    const [projects, setProjects] = React.useState(projectsData.filter(project => project.isFeatured));
+    useEffect(() => {
+        if (allVisible) {
+            setProjects(projectsData);
+        } else {
+            setProjects(projectsData.filter(project => project.isFeatured));
+        }
+        // eslint-disable-next-line
+    }, [allVisible]);
 
     const title = (item) => {
         return (
             <span className="flex justify-content-center">
                 <Tooltip target=".item-title" position="top"/>
                 <h5 data-pr-tooltip={item.title}
-                    className="mt-0 item-title white-space-nowrap overflow-hidden text-overflow-ellipsis">{item.title}</h5>
+                    className="mt-0 text-xl h-2rem item-title white-space-nowrap overflow-hidden text-overflow-ellipsis">{item.title}</h5>
             </span>
         );
     }
@@ -27,8 +36,8 @@ function MyProjects() {
     const extraContent = (item) => {
         if (!!!item) return null;
         return (
-            <React.Fragment>
-                <ul className="work-done" style={{paddingLeft: '20px'}}>
+            <div className="flex flex-column">
+                <ul className="flex-1" style={{paddingLeft: '20px'}}>
                     {item.workDone.map((work, index) => {
                         return (
                             <li key={index}>
@@ -44,19 +53,14 @@ function MyProjects() {
                         )
                     })}
                 </div>
-            </React.Fragment>
+            </div>
         );
     }
 
     const itemCard = (item) => {
         return (
-            <Card id={item.id} title={title(item)} className="w-full h-full" style={{maxWidth: '30rem'}}>
-                <div className="flex justify-content-center mb-4">
-                    <Image src={require(`../../assets/${item.image}`)} alt="Image" className="flex justify-content-center"
-                           imageStyle={{ width: '100%', height: '200px', objectFit: 'cover', objectPosition: '50% 50%' }}/>
-                </div>
-                <div className="flex h-5rem justify-content-center text-center font-italic font-bold">{item.description}</div>
-                <div className="flex justify-content-center mt-4 mr-4">
+            <Card className="h-full item-card surface-card" style={{maxWidth: '400px'}}>
+                <div className="text-right h-1rem">
                     {item.gitHub && <i onClick={() => window.open(item.gitHub, "_blank")}
                                        className="pi pi-github ml-auto cursor-pointer"/>}
                     {item.site && <i onClick={() => window.open(item.site, "_blank")}
@@ -64,6 +68,10 @@ function MyProjects() {
                     {item.youtube && <i onClick={() => window.open(item.youtube, "_blank")}
                                         className="pi pi-youtube ml-3 cursor-pointer"/>}
                 </div>
+                <div className="h-2rem"/>
+                {title(item)}
+                <div
+                    className="flex h-5rem justify-content-center text-center font-italic font-bold">{item.description}</div>
                 {item.extra && <div className="flex justify-content-end mt-3">
                     <Button label="See more" className="p-button-text"
                             onClick={() => {
@@ -77,23 +85,10 @@ function MyProjects() {
     const dialogItemCard = (item, children) => {
         return (
             <Card id={item.id} title={title(item)} className="w-full h-full">
-                <div className="flex justify-content-center mb-4">
-                    <Image src={require(`../../assets/${item.image}`)} alt="Image" className="flex justify-content-center"
-                           imageStyle={{ width: '100%', height: '200px', objectFit: 'cover', objectPosition: '50% 50%' }}/>
-                </div>
                 <div className="flex justify-content-center text-center font-italic font-bold">{item.description}</div>
                 {children}
             </Card>
         );
-    }
-
-    const renderGridItem = (item) => {
-        if (!!!item) return null;
-        return (
-            <div className="flex justify-content-center p-4 col-12 md:col-6 xl:col-4">
-                {itemCard(item)}
-            </div>
-        )
     }
 
     const renderDialogItem = (item) => {
@@ -105,17 +100,44 @@ function MyProjects() {
         )
     }
 
+    const renderGridItem = (item) => {
+        if (!!!item) return null;
+        return (
+            <div className="flex projects-grid justify-content-center p-4">
+                {itemCard(item)}
+            </div>
+        )
+    }
+
     return (
         <section id="projects" className="pt-7">
+            <Dialog className="item-dialog max-h-screen" visible={!!dialogVisible} onHide={() => setDialogVisible(null)}
+                    blockScroll
+                    dismissableMask
+                    style={{width: '50vw'}}
+                    breakpoints={{'960px': '75vw', '640px': '100vw'}}
+                    contentClassName="h-full">
+                {renderDialogItem(dialogVisible, extraContent(dialogVisible))}
+            </Dialog>
             <div className="flex flex-column justify-content-center align-items-center">
                 <SectionHeading name={"projects"} heading="My Projects"/>
-                <Dialog className="item-dialog max-h-screen" visible={!!dialogVisible} onHide={() => setDialogVisible(null)}
-                        blockScroll={true}
-                        dismissableMask={true}
-                        breakpoints={{'960px': '75vw', '640px': '100vw'}} contentClassName="h-full ">
-                    {renderDialogItem(dialogVisible, extraContent(dialogVisible))}
-                </Dialog>
-                <DataView className="projects-dataview" value={projectsData}
+                <div className="flex flex-column align-items-center mb-4">
+                    {!allVisible ? <h3>Featured projects ({projects.length})</h3> :
+                        <h3>All projects ({projects.length})</h3>}
+                    {!allVisible ? (
+                        <span onClick={() => setAllVisible(true)}
+                              className="flex align-items-center cursor-pointer text-primary hover:text-orange-600">
+                            See all projects
+                            <i className="pi pi-chevron-down ml-2"/>
+                        </span>
+                    ) : (
+                        <span onClick={() => setAllVisible(false)}
+                              className="flex align-items-center cursor-pointer text-primary hover:text-orange-600">
+                            See less<i className="pi pi-chevron-up ml-2"/>
+                        </span>
+                    )}
+                </div>
+                <DataView className="projects-dataview" value={projects}
                           itemTemplate={renderGridItem}
                           layout="grid"/>
             </div>

@@ -1,24 +1,31 @@
-.projects-dataview .p-dataview-content {
+.projects-dataview .p-dataview-content,
+.item-dialog {
   background-color: transparent !important;
+  line-height: 1.5;
+}
+
+.projects-dataview,
+.item-dialog li:not(:last-child) {
+  margin-bottom: 0.5rem;
 }
 
 .item-dialog .p-dialog-header, .p-dialog-content {
   background: var(--surface-ground) !important;
 }
 
-.projects-dataview .p-card-content {
-  padding-top: 0;
-}
-
 .projects-dataview .p-grid {
   justify-content: center;
 }
 
-.projects-dataview .p-card-body {
-  padding-bottom: 0;
-  height: 100% !important;
-}
-
-.work-done li:not(:last-child) {
-  margin-bottom: 10px;
+.projects-dataview .item-card {
+  .p-card-content {
+    padding: 0;
+  }
+  transition: transform 0.2s ease-in-out;
+  @media (prefers-reduced-motion: no-preference) {
+    &:hover,
+    &:focus-within {
+      transform: translate3d(0, -10px, 0);
+    }
+  }
 }
