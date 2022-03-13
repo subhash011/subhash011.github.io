@@ -17,7 +17,7 @@
       "NodeJS", "ExpressJS", "Angular", "Angular material", "MongoDB", "Nginx"
     ],
     "filters": [
-      "OWN", "FEATURED"
+      "OTHERS", "FEATURED"
     ]
   },
   {
@@ -59,7 +59,7 @@
       "NestJS", "Flutter", "Angular", "PrimeNG", "MongoDB"
     ],
     "filters": [
-      "OWN", "COURSE", "FEATURED"
+      "OTHERS", "COURSE", "FEATURED"
     ]
   },
   {
@@ -139,7 +139,7 @@
       "Django", "Flutter", "MySQL"
     ],
     "filters": [
-      "OWN", "COURSE"
+      "OTHERS", "COURSE"
     ]
   },
   {

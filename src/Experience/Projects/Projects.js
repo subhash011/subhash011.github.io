@@ -12,10 +12,10 @@ import {Chip} from "primereact/chip";
 
 
 const projectFilters = [
-    "OWN",
+    "FEATURED",
     "HACKATHON",
     "COURSE",
-    "FEATURED",
+    "OTHERS"
 ]
 
 function RotateArrow({flip, ...rest}) {
