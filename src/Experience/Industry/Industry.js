@@ -3,6 +3,7 @@ import {CardTimeLine} from "../../Common/CardTimeline";
 import industryExperience from "../../Data/industryExperience.json";
 import {Tag} from "primereact/tag";
 import {SectionHeading} from "../../Common/SectionHeading";
+import '../../styles/_industry.scss';
 
 function IndustrialExperience() {
 

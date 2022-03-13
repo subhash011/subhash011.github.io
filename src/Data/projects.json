@@ -2,7 +2,7 @@
   {
     "id": "1",
     "title": "Project Allocation Portal",
-    "description": "The official project allocation portal of IIT Palakkad.",
+    "description": "The official project allocation portal of IIT Palakkad. It provides a fair allocation of projects to students by considering various parameters.",
     "isFeatured": true,
     "gitHub": "https://github.com/subhash011/Project-Allocation",
     "site": "https://pal.iitpkd.ac.in:10443/",
@@ -23,7 +23,7 @@
   {
     "id": "2",
     "title": "Meet.me",
-    "description": "A collaborative discussion platform with whiteboard, screen-share, analytics and more.",
+    "description": "A desktop based collaborative discussion platform with whiteboard, screen-share, analytics and more.",
     "isFeatured": true,
     "gitHub": "https://github.com/subhash011/meet.me",
     "youtube": "https://www.youtube.com/watch?v=Sa7aRJC2wvc",
@@ -45,14 +45,14 @@
   {
     "id": "3",
     "title": "Resource Management System",
-    "description": "A cross-platform application for tracking inventory activities at lab facilities.",
+    "description": "A web and mobile application, mainly developed for managing resources at lab facilities.",
     "isFeatured": true,
     "gitHub": "https://github.com/Holocoders/Resource-Management",
     "extra": true,
     "additionalHeight": 36,
     "workDone": [
       "Developed primarily for institute lab facilities, it also generalizes to other resources.",
-      "Involves various modules like authentication and authorization, inventory management, booking etc.",
+      "Involves various modules like authentication and authorization, inventory management, advanced booking etc.",
       "Provides a fine-grained control over user authorization with a tree structure capturing admin information."
     ],
     "techStack": [
@@ -154,7 +154,7 @@
       "Differentiates between benign and malicious executables.",
       "Features were extracted from Portable Executable (PE) files and Cuckoo reports.",
       "A random forest classifier was used to classify executables.",
-      "Built for the final round of IIT-K HCL Hackathon 2020."
+      "Built for the final round of IIT-K HCL Hackathon 2020. Ranked top 100 out of 12,000 teams."
     ],
     "techStack": [
       "Python", "Scikit-Learn", "Pandas"
@@ -175,13 +175,33 @@
       "Differentiates between benign and malicious executables.",
       "Features were extracted from the logs of pcap files.",
       "K-Nearest Neighbours classifier was detect the attacks.",
-      "Built for the final round of IIT-K HCL Hackathon 2020."
+      "Built for the final round of IIT-K HCL Hackathon 2020. Ranked top 100 out of 12,000 teams."
     ],
     "techStack": [
       "Python", "Scikit-Learn", "Pandas"
     ],
     "filters": [
       "HACKATHON"
+    ]
+  },
+  {
+    "id": "10",
+    "title": "RISC-V Simulator",
+    "description": "A pipelined RISC-V processor simulator with support for a large subset of the RISC-V instructions.",
+    "isFeatured": false,
+    "gitHub": "https://github.com/subhash011/riscv-sem4",
+    "extra": true,
+    "additionalHeight": 36,
+    "workDone": [
+      "All arithmetic and logical operations are supported.",
+      "Supports load-store and partially supports branch operations.",
+      "Tested with RISC-V instructions from C programs and assembly."
+    ],
+    "techStack": [
+      "Verilog", "RISC-V", "Computer Architecture"
+    ],
+    "filters": [
+      "COURSE"
     ]
   }
 ]

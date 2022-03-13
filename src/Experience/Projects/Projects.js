@@ -145,19 +145,24 @@ function MyProjects() {
 
     const gridItemCard = (item) => {
         return (
-            <Card className="h-full item-card surface-card" style={{maxWidth: '400px'}}>
-                <div className="text-right h-1rem">
-                    {item.gitHub && <i onClick={() => window.open(item.gitHub, "_blank")}
-                                       className="pi pi-github ml-auto cursor-pointer"/>}
-                    {item.site && <i onClick={() => window.open(item.site, "_blank")}
-                                     className="pi pi-external-link ml-3 cursor-pointer"/>}
-                    {item.youtube && <i onClick={() => window.open(item.youtube, "_blank")}
-                                        className="pi pi-youtube ml-3 cursor-pointer"/>}
+            <Card className="h-full item-card" style={{maxWidth: '400px'}}>
+                <div className="flex justify-content-between">
+                    <div>
+                        <i style={{'fontSize': '2rem'}} className="pi pi-folder" />
+                    </div>
+                    <div className="h-2rem flex align-items-center">
+                        {item.gitHub && <i style={{'fontSize': '1.2rem'}} onClick={() => window.open(item.gitHub, "_blank")}
+                                           className="pi pi-github ml-auto cursor-pointer"/>}
+                        {item.site && <i style={{'fontSize': '1.2rem'}} onClick={() => window.open(item.site, "_blank")}
+                                         className="pi pi-external-link ml-3 cursor-pointer"/>}
+                        {item.youtube && <i style={{'fontSize': '1.2rem'}} onClick={() => window.open(item.youtube, "_blank")}
+                                            className="pi pi-youtube ml-3 cursor-pointer"/>}
+                    </div>
                 </div>
                 <div className="h-2rem"/>
                 {title(item)}
                 <div
-                    className="flex h-5rem justify-content-center text-center font-italic font-semibold">{item.description}</div>
+                    className="flex justify-content-center text-center font-italic font-semibold">{item.description}</div>
                 {item.extra && <div className="flex justify-content-end mt-3">
                     <Button label="See more" className="p-button-text"
                             onClick={() => {
@@ -219,7 +224,7 @@ function MyProjects() {
                         ))}
                     </div>
                 )}
-                <animated.div style={styles}>
+                <animated.div style={styles} className="flex justify-content-center">
                     <DataView className="projects-dataview" value={projects}
                               itemTemplate={renderGridItem}
                               layout="grid"/>
