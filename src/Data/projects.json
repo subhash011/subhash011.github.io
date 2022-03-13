@@ -39,7 +39,7 @@
       "C#", ".NET", "NUnit"
     ],
     "filters": [
-      "COURSE", "FEATURED"
+      "COURSEWORK", "FEATURED"
     ]
   },
   {
@@ -59,7 +59,7 @@
       "NestJS", "Flutter", "Angular", "PrimeNG", "MongoDB"
     ],
     "filters": [
-      "OTHERS", "COURSE", "FEATURED"
+      "OTHERS", "COURSEWORK", "FEATURED"
     ]
   },
   {
@@ -100,7 +100,7 @@
       "SML", "ML-YACC", "MLLex"
     ],
     "filters": [
-      "COURSE"
+      "COURSEWORK"
     ]
   },
   {
@@ -139,7 +139,7 @@
       "Django", "Flutter", "MySQL"
     ],
     "filters": [
-      "OTHERS", "COURSE"
+      "OTHERS", "COURSEWORK"
     ]
   },
   {
@@ -201,7 +201,7 @@
       "Verilog", "RISC-V", "Computer Architecture"
     ],
     "filters": [
-      "COURSE"
+      "COURSEWORK"
     ]
   }
 ]

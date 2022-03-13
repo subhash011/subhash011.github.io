@@ -14,7 +14,7 @@ import {Chip} from "primereact/chip";
 const projectFilters = [
     "FEATURED",
     "HACKATHON",
-    "COURSE",
+    "COURSEWORK",
     "OTHERS"
 ]
 
@@ -84,7 +84,7 @@ function MyProjects() {
             immediate: true,
             onRest() {
                 setProjects(filteredProjects);
-                api({
+                api.start({
                     opacity: 1,
                     delay: 40,
                 })
@@ -92,6 +92,14 @@ function MyProjects() {
         })
         // eslint-disable-next-line
     }, [filters]);
+
+    const toTitleCase = (phrase) => {
+        return phrase
+            .toLowerCase()
+            .split(' ')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ');
+    };
 
     const title = (item) => {
         return (
@@ -219,7 +227,7 @@ function MyProjects() {
                             <span key={idx} onClick={() => toggleFilter(filter)}
                                   className="cursor-pointer">
                                 <Chip icon={`pi ${filters.includes(filter) ? "pi-check" : "pi-times"}`}
-                                      label={filter.toUpperCase()} className={filters.includes(filter) ? "bg-primary" : ""} />
+                                      label={toTitleCase(filter)} className={filters.includes(filter) ? "bg-primary" : ""} />
                             </span>
                         ))}
                     </div>

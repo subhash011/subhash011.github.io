@@ -65,6 +65,31 @@ function TopBar({theme, toggleTheme, isLoading}) {
             label: 'Resume',
             icon: 'pi pi-fw pi-download',
             template: (item, options) => {
+
+                const downloadResume = () => {
+                    fetch(`../assets/functional.pdf`)
+                        .then(res => res.blob())
+                        .then(blob => {
+                            const url = window.URL.createObjectURL(blob);
+                            const a = document.createElement('a');
+                            a.style.display = 'none';
+                            a.href = url;
+                            a.download = 'Subhash\'s resume.pdf';
+                            document.body.appendChild(a);
+                            a.click();
+                            window.URL.revokeObjectURL(url);
+                        });
+                };
+
+                const onAcceptDownload = () => {
+                    setVisible(false);
+                    downloadResume();
+                }
+
+                const onRejectDownload = () => {
+                    setVisible(false)
+                }
+
                 return (
                     <React.Fragment>
                         <div role="menuitem" id="resume-download" className={options.className} onClick={() => setVisible(true)}>
@@ -75,12 +100,9 @@ function TopBar({theme, toggleTheme, isLoading}) {
                                       icon="pi pi-question-circle"
                                       style={{ left: 0 }}
                                       onHide={() => setVisible(false)}
-                                      reject={() => setVisible(false)}
+                                      reject={onRejectDownload}
                                       target={document.getElementById("resume-download")}
-                                      accept={() => {
-                                          setVisible(false);
-                                          downloadResume();
-                                      }}
+                                      accept={onAcceptDownload}
                                       message="Do you want to download my resume ?"/>
                     </React.Fragment>
                 );
@@ -95,21 +117,6 @@ function TopBar({theme, toggleTheme, isLoading}) {
         return <i className="pi pi-sun"/>
 
     };
-
-    const downloadResume = () => {
-        fetch(`../assets/functional.pdf`)
-            .then(res => res.blob())
-            .then(blob => {
-                const url = window.URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.style.display = 'none';
-                a.href = url;
-                a.download = 'Subhash\'s resume.pdf';
-                document.body.appendChild(a);
-                a.click();
-                window.URL.revokeObjectURL(url);
-            });
-    }
 
     return (
         <div className="p-grid">
