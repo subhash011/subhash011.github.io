@@ -2,7 +2,6 @@ import '../styles/_home.scss'
 import {Button} from "primereact/button";
 import {HashLink} from "react-router-hash-link";
 import About from "./About";
-import {SocialButtons} from "../Common/SocialButtons";
 import { Image } from 'primereact/image';
 import {useEffect} from "react";
 
@@ -15,13 +14,13 @@ function Home(props) {
     }, [])
 
     return (
-        <section id="#" className="home-section pt-7 w-screen h-screen overflow-hidden"
+        <section id="#" className="home-section pt-7 w-screen h-screen overflow-hidden mb-0"
                  style={{ background: props.theme === 'light' ? 'rgba(255, 255, 255, 0.4)' : 'rgba(0, 0, 0, 0.7)'  }}>
             <div style={{ background: props.theme === 'light' ? 'rgba(255, 255, 255, 0.4)' : 'transparent'  }} className="grid h-full w-full ml-0 mt-0">
                 <div id="my-image" className="col-12 lg:col-6 flex justify-content-center lg:justify-content-end align-items-center lg:pr-8">
                     <Image src={require(`../assets/home/me_${props.theme}.webp`)} width="250" imageClassName="border-circle" />
                 </div>
-                <div className="flex flex-column justify-content-center align-items-center my-0">
+                <div className="flex flex-column justify-content-center align-items-center mb-8">
                     <About props={props} />
                     <div className="flex grid justify-content-center align-items-center">
                         <span className="p-0 mt-5 no-underline">
@@ -35,12 +34,9 @@ function Home(props) {
                                 className="p-button-raised p-button-primary w-full"/>
                         </HashLink>
                         <HashLink smooth to="#projects" className="p-0 ml-2 mt-5 no-underline">
-                            <Button label="More about me" icon="pi pi-user"
+                            <Button label="Know more" icon="pi pi-user"
                                 className="p-button-raised p-button-info w-full"/>
                         </HashLink>
-                    </div>
-                    <div className="flex justify-content-center">
-                        <SocialButtons props={props} />
                     </div>
                 </div>
             </div>
