@@ -3,12 +3,9 @@ import '../styles/_topbar.scss';
 import {HashLink} from "react-router-hash-link";
 import {Button} from "primereact/button";
 import {Tooltip} from "primereact/tooltip";
-import React, {useState} from "react";
-import {ConfirmPopup} from "primereact/confirmpopup";
+import React from "react";
 
 function TopBar({theme, toggleTheme, isLoading}) {
-
-    const [visible, setVisible] = useState(false);
 
     const template = (item, options) => {
         return (
@@ -66,44 +63,14 @@ function TopBar({theme, toggleTheme, isLoading}) {
             icon: 'pi pi-fw pi-download',
             template: (item, options) => {
 
-                const downloadResume = () => {
-                    fetch(`../assets/functional.pdf`)
-                        .then(res => res.blob())
-                        .then(blob => {
-                            const url = window.URL.createObjectURL(blob);
-                            const a = document.createElement('a');
-                            a.style.display = 'none';
-                            a.href = url;
-                            a.download = 'Subhash\'s resume.pdf';
-                            document.body.appendChild(a);
-                            a.click();
-                            window.URL.revokeObjectURL(url);
-                        });
-                };
-
-                const onAcceptDownload = () => {
-                    setVisible(false);
-                    downloadResume();
-                }
-
-                const onRejectDownload = () => {
-                    setVisible(false)
-                }
-
                 return (
                     <React.Fragment>
-                        <div role="menuitem" id="resume-download" className={options.className} onClick={() => setVisible(true)}>
+                        <div role="menuitem" id="resume-download" className={options.className} onClick={() => {
+                            window.open(`/Subhash's Resume.pdf`, "_blank");
+                        }}>
                             <span className={options.iconClassName}/>
                             <span className="p-menuitem-text">{item.label}</span>
                         </div>
-                        <ConfirmPopup visible={visible}
-                                      icon="pi pi-question-circle"
-                                      style={{ left: 0 }}
-                                      onHide={() => setVisible(false)}
-                                      reject={onRejectDownload}
-                                      target={document.getElementById("resume-download")}
-                                      accept={onAcceptDownload}
-                                      message="Do you want to download my resume ?"/>
                     </React.Fragment>
                 );
             }
