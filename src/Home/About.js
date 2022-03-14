@@ -38,7 +38,7 @@ function About({props}) {
 
     return (
         <div
-            className="col-12 lg:col-6 lg:w-30rem mr-2">
+            className="col-12 lg:col-6 lg:w-30rem lg:p-0" style={{ maxWidth: '600px' }}>
             <div className="about-content text-center lg:text-left"
                  style={{color: props.theme === 'light' ? 'rgba(0, 0, 0, 1)' : 'rgba(255, 255, 255, 1)'}}>
                 <h2 className="uppercase mb-0">
