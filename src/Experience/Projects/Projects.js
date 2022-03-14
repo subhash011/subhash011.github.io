@@ -42,22 +42,22 @@ const AnimatedProjectHeading = ({heading, allVisible, setAllVisible}) => {
 
 
     return (
-        <span onClick={() => {
-            api({
-                opacity: 0,
-                immediate: true,
-                onRest() {
-                    setAllVisible(!allVisible)
-                    api({
-                        opacity: 1,
-                        delay: 40,
-                    })
-                }
-            })
-        }} className="flex flex-column justify-content-center align-items-center">
+        <span className="flex flex-column justify-content-center align-items-center">
             <animated.div style={styles} className="flex flex-column justify-content-center align-items-center">
                 <span>{heading}</span>
-                <span className="flex cursor-pointer text-primary">
+                <span onClick={() => {
+                    api({
+                        opacity: 0,
+                        immediate: true,
+                        onRest() {
+                            setAllVisible(!allVisible)
+                            api({
+                                opacity: 1,
+                                delay: 40,
+                            })
+                        }
+                    })
+                }} className="flex cursor-pointer text-primary">
                     {text}
                     <RotateArrow className="ml-2" flip={allVisible}/>
                 </span>
@@ -212,7 +212,7 @@ function MyProjects() {
                 <SectionHeading name={"projects"} heading="My Projects"/>
                 <div className="flex flex-column align-items-center mb-4">
                     <AnimatedProjectHeading heading={!allVisible ? <h3>Featured projects ({projects.length})</h3> :
-                        <h3>All projects ({projects.length})</h3>} allVisible={allVisible} setAllVisible={() => {
+                        <h3>Noteworthy projects ({projects.length})</h3>} allVisible={allVisible} setAllVisible={() => {
                             if (!allVisible) {
                                 setFilters(projectFilters);
                             } else {

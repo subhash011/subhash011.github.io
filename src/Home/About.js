@@ -11,7 +11,7 @@ function About({props}) {
         if (toAnimate) {
             animateStyle.start({
                 opacity: 1,
-                delay: 1000
+                delay: 200
             });
         }
     }, [animateStyle, toAnimate]);
@@ -25,11 +25,6 @@ function About({props}) {
             wrapperClassName: props.theme === 'light' ? "text-orange-800" : "text-green-500"
         });
         typewriter
-            .callFunction(() => {
-                if (!toAnimate) {
-                    setToAnimate(false);
-                }
-            })
             .typeString('subhash')
             .callFunction(() => {
                 if (!toAnimate) {
@@ -46,7 +41,7 @@ function About({props}) {
             className="col-12 lg:col-6 lg:w-30rem mr-2">
             <div className="about-content text-center lg:text-left"
                  style={{color: props.theme === 'light' ? 'rgba(0, 0, 0, 1)' : 'rgba(255, 255, 255, 1)'}}>
-                <h2 className="uppercase">
+                <h2 className="uppercase mb-0">
                     Hi,
                     <span className="flex justify-content-center lg:justify-content-start">
                         I'm&nbsp;
@@ -54,10 +49,10 @@ function About({props}) {
                     </span>
                 </h2>
                 <animated.div style={style} className="font-semibold">
-                    I'm a computer science student and an experiential learner with hands-on
-                    experience in multiple domains like web development, mobile development, artificial
-                    intelligence and
-                    system programming.
+                    <h4 className="mt-2 mb-4">CSE | IIT Palakkad'22</h4>
+                    I'm a computer science student with a strong foundation in problem solving and an ever-growing zeal to explore
+                    new domains and technologies. I've led and worked with teams in multiple projects, enhancing my communication
+                    skills, team-work, and leadership.
                 </animated.div>
 
             </div>
