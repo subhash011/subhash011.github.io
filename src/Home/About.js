@@ -50,9 +50,9 @@ function About({props}) {
                 </h2>
                 <animated.div style={style} className="font-semibold">
                     <h4 className="mt-2 mb-4">CSE | IIT Palakkad'22</h4>
-                    I'm a computer science student with a strong foundation in problem solving and an ever-growing zeal to explore
-                    new domains and technologies. I've led and worked with teams in multiple projects, enhancing my communication
-                    skills, team-work, and leadership.
+                    I'm a computer science student with a strong foundation in problem-solving and an ever-growing zeal to explore
+                    new domains and technologies. I've led and worked with teams on multiple projects, thus enhancing my communication
+                    skills, teamwork, and leadership qualities.
                 </animated.div>
 
             </div>
