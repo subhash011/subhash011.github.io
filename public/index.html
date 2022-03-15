@@ -31,12 +31,11 @@
       .loader {
         width: 40px;
         height: 40px;
-        color:#f03355;
-        background:
-                conic-gradient(from  -45deg at top    20px left 50% ,#0000 ,currentColor 1deg 90deg,#0000 91deg),
-                conic-gradient(from   45deg at right  20px top  50% ,#0000 ,currentColor 1deg 90deg,#0000 91deg),
-                conic-gradient(from  135deg at bottom 20px left 50% ,#0000 ,currentColor 1deg 90deg,#0000 91deg),
-                conic-gradient(from -135deg at left 20px top 50%, #0000, currentColor 1deg 90deg, #0000 91deg);
+        color: var(--primary-color);
+        background: conic-gradient(from -45deg at top 20px left 50%, #0000, currentColor 1deg 90deg, #0000 91deg),
+        conic-gradient(from 45deg at right 20px top 50%, #0000, currentColor 1deg 90deg, #0000 91deg),
+        conic-gradient(from 135deg at bottom 20px left 50%, #0000, currentColor 1deg 90deg, #0000 91deg),
+        conic-gradient(from -135deg at left 20px top 50%, #0000, currentColor 1deg 90deg, #0000 91deg);
         animation: spin 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
       }
 
@@ -62,7 +61,7 @@
         const themeLink = document.createElement("link");
         themeLink.setAttribute("id", "theme-link");
         themeLink.setAttribute("rel", "stylesheet");
-        themeLink.setAttribute("href", `/themes/bootstrap4-${theme}-purple/theme.css`);
+        themeLink.setAttribute("href", `/themes/bootstrap4-${theme}-blue/theme.css`);
         document.head.appendChild(themeLink);
       }
 
