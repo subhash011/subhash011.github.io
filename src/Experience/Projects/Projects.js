@@ -7,7 +7,7 @@ import React, {useEffect} from "react";
 import {SectionHeading} from "../../Common/SectionHeading";
 import {Dialog} from "primereact/dialog";
 import {Button} from "primereact/button";
-import {useSpring, animated} from 'react-spring';
+import {animated, useSpring} from 'react-spring';
 import {Chip} from "primereact/chip";
 
 
@@ -135,17 +135,18 @@ function MyProjects() {
 
     const dialogItemCard = (item, children) => {
         return (
-            <Card id={item.id} title={title(item)} className="w-full h-full">
-                <div className="flex justify-content-center text-center font-italic font-semibold">{item.description}</div>
+            <div id={item.id} title={title(item)} className="w-full h-full">
+                <div
+                    className="flex justify-content-center text-center font-italic font-semibold my-2">{item.description}</div>
                 {children}
-            </Card>
+            </div>
         );
     }
 
     const renderDialogItem = (item) => {
         if (!!!item) return null;
         return (
-            <div className="flex justify-content-center">
+            <div className="flex justify-content-center mx-4 mb-4">
                 {dialogItemCard(item, extraContent(item))}
             </div>
         )
@@ -200,10 +201,12 @@ function MyProjects() {
 
     return (
         <section id="projects" className="pt-7">
-            <Dialog className="item-dialog max-h-screen" visible={!!dialogVisible} onHide={() => setDialogVisible(null)}
+            <Dialog className="item-dialog max-h-screen mx-2 lg:mx-0" visible={!!dialogVisible}
+                    onHide={() => setDialogVisible(null)}
                     blockScroll
                     dismissableMask
-                    style={{width: '50vw'}}
+                    draggable={false}
+                    style={{maxWidth: '600px'}}
                     breakpoints={{'960px': '75vw', '640px': '100vw'}}
                     contentClassName="h-full">
                 {renderDialogItem(dialogVisible, extraContent(dialogVisible))}
@@ -213,7 +216,7 @@ function MyProjects() {
                 <div className="flex flex-column align-items-center mb-4">
                     <AnimatedProjectHeading heading={!allVisible ? <h3>Featured projects ({projects.length})</h3> :
                         <h3>Noteworthy projects ({projects.length})</h3>} allVisible={allVisible} setAllVisible={() => {
-                            if (!allVisible) {
+                        if (!allVisible) {
                                 setFilters(projectFilters);
                             } else {
                                 setFilters(['FEATURED']);
