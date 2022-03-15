@@ -55,12 +55,22 @@
   },
   {
     "id": "4",
-    "name": "Others",
+    "name": "Artificial Intelligence",
     "categories": [
       {
         "name": "TensorFlow",
         "image": "tensorflow.png"
       },
+      {
+        "name": "OpenCV",
+        "image": "opencv.png"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "name": "Others",
+    "categories": [
       {
         "name": "Docker",
         "image": "docker.png"

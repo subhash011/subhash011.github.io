@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Education from "./Eduction/Education";
 import Projects from "./Experience/Projects/Projects";
 import Contact from "./Contact/Contact";
 import IndustrialExperience from "./Experience/Industry/Industry";
@@ -16,7 +15,6 @@ function Main({ theme }) {
                 <Projects />
                 <IndustrialExperience />
                 <Skills />
-                <Education />
                 <Contact theme={theme} />
                 <ScrollTop threshold={10} />
             </div>

@@ -2,7 +2,7 @@ import Typewriter from 'typewriter-effect/dist/core';
 import {animated, useSpring} from "react-spring";
 import {useEffect, useRef, useState} from "react";
 
-function About({props}) {
+function Intro({props}) {
     const [toAnimate, setToAnimate] = useState(false);
     const [style, animateStyle] = useSpring(() => ({opacity: 0}));
     const ref = useRef(null);
@@ -48,7 +48,7 @@ function About({props}) {
                         <span ref={ref}/>
                     </span>
                 </h2>
-                <animated.div style={style} className="font-semibold">
+                <animated.div style={style}>
                     <h4 className="mt-2 mb-4">CSE | IIT Palakkad'22</h4>
                     I'm a computer science student with a strong foundation in problem-solving and an ever-growing zeal to explore
                     new domains and technologies. I've led and worked with teams on multiple projects, thus enhancing my communication
@@ -60,4 +60,4 @@ function About({props}) {
     );
 }
 
-export default About;
+export default Intro;

@@ -1,24 +1,24 @@
-.home-section {
-  position: relative;
-  overflow: hidden; //added for pseudo-element
+@import "./_variables.scss";
 
-  //fixed-position background image
-  &::before {
-    background-color: white;
-    background-image: url('../assets/home/home_background.webp');
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    opacity: 0.7;
-    z-index: -3;
-    content: " ";
-    position: fixed;
-    will-change: transform;
-    width: 100%;
-    height: 100%;
+.element {
+  background-color: var(--surface-card);
+  z-index: -1;
+  -webkit-clip-path: polygon(0 100%, 0 0, 100% 0, 80% 100%);
+  clip-path: polygon(0 100%, 0 0, 100% 0, 80% 100%);
+  -webkit-clip-path: url("#clip-shape");
+  clip-path: url("#clip-shape");
+}
+
+.home-section .home-card {
+  background-color: var(--surface-card);
+  @media screen and (max-width: $lg) {
+    background-color: var(--surface-ground);
   }
 }
 
-.home-card {
-  box-shadow: none;
+.home-card #my-image img {
+  background-color: var(--surface-ground);
+  @media screen and (max-width: $lg) {
+    background-color: var(--surface-card);
+  }
 }

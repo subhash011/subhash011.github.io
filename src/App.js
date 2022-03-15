@@ -4,7 +4,7 @@ import React, {useCallback, useEffect, useState} from "react";
 import TopBar from "./Topbar/Topbar";
 
 function App() {
-    const [theme, setTheme] = useState('light');
+    const [theme, setTheme] = useState('dark');
     const [isThemeSwitching, setIsThemeSwitching] = useState(false);
 
     const toggleTheme = useCallback(() => {
