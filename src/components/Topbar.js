@@ -3,9 +3,12 @@ import '../styles/_topbar.scss';
 import {HashLink} from "react-router-hash-link";
 import {Button} from "primereact/button";
 import {Tooltip} from "primereact/tooltip";
-import React from "react";
+import React, {useCallback, useState} from "react";
 
-function TopBar({theme, toggleTheme, isLoading}) {
+function TopBar({onThemeChange}) {
+
+    const [theme, setTheme] = useState(localStorage.getItem("theme"));
+    const [isThemeSwitching, setIsThemeSwitching] = useState(false);
 
     const template = (item, options) => {
         return (
@@ -16,6 +19,26 @@ function TopBar({theme, toggleTheme, isLoading}) {
             </HashLink>
         );
     }
+
+    const toggleTheme = useCallback(() => {
+        setIsThemeSwitching(true);
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+        const elementId = 'theme-link';
+        const linkElement = document.getElementById('theme-link');
+        const cloneLinkElement = linkElement.cloneNode(true);
+        const newThemeUrl = linkElement.getAttribute('href').replace(theme, newTheme);
+        cloneLinkElement.setAttribute('id', elementId + '-clone');
+        cloneLinkElement.setAttribute('href', newThemeUrl);
+        cloneLinkElement.addEventListener('load', () => {
+            linkElement.remove();
+            cloneLinkElement.setAttribute('id', elementId);
+            localStorage.setItem('theme', newTheme);
+            setIsThemeSwitching(false);
+            setTheme(newTheme);
+            onThemeChange(newTheme);
+        });
+        linkElement.parentNode.insertBefore(cloneLinkElement, linkElement.nextSibling);
+    }, [onThemeChange, theme]);
 
     const items = [
         {
@@ -85,7 +108,7 @@ function TopBar({theme, toggleTheme, isLoading}) {
             <div className="p-col-12">
                 <Menubar className="app-menubar" model={items} end={
                     <Button name="theme-switcher"
-                            disabled={isLoading}
+                            disabled={isThemeSwitching}
                             data-pr-tooltip={theme === 'light' ? 'Switch to Dark Theme' : 'Switch to Light Theme'}
                             icon={<ThemeSwitchButton theme={theme}/>}
                             onClick={toggleTheme}

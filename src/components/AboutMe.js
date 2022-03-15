@@ -2,7 +2,7 @@ import Typewriter from 'typewriter-effect/dist/core';
 import {animated, useSpring} from "react-spring";
 import {useEffect, useRef, useState} from "react";
 
-function Intro({props}) {
+function AboutMe({props}) {
     const [toAnimate, setToAnimate] = useState(false);
     const [style, animateStyle] = useSpring(() => ({opacity: 0}));
     const ref = useRef(null);
@@ -60,4 +60,4 @@ function Intro({props}) {
     );
 }
 
-export default Intro;
+export default AboutMe;

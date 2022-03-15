@@ -1,16 +1,16 @@
 import React from "react";
-import {CardTimeLine} from "../../Common/CardTimeline";
-import industryExperience from "../../Data/industryExperience.json";
+import {CardTimeLine} from "../components/CardTimeline";
+import industryExperience from "../data/industryExperience.json";
 import {Tag} from "primereact/tag";
-import {SectionHeading} from "../../Common/SectionHeading";
-import '../../styles/_industry.scss';
+import {SectionHeading} from "../components/SectionHeading";
+import '../styles/_industry.scss';
 
 function IndustrialExperience() {
 
     const extraContent = (workDone, tags) => {
         return (
             <React.Fragment>
-                <ul className="work-done"  style={{lineHeight: '1.2rem', paddingLeft: '20px'}}>
+                <ul className="work-done" style={{lineHeight: '1.2rem', paddingLeft: '20px'}}>
                     {workDone.map((work, index) => {
                         return (
                             <li key={index}>

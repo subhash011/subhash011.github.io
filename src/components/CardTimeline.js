@@ -2,7 +2,7 @@ import React from "react";
 import {Timeline} from "primereact/timeline";
 import '../styles/_common.scss';
 import {Card} from "primereact/card";
-import { ExpandableContent } from "./ExpandableContent";
+import {ExpandableContent} from "./ExpandableContent";
 
 const cardContent = (item) => {
     return (

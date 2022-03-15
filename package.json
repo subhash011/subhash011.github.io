@@ -2,7 +2,7 @@
   "name": "portfolio",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://subhash011.github.io/",
+  "homepage": "https://subhash011.github.io/portfolio",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.3",

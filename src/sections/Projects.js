@@ -1,10 +1,10 @@
 import {DataView} from "primereact/dataview";
-import projectsData from "../../Data/projects.json";
+import projectsData from "../data/projects.json";
 import {Card} from "primereact/card";
-import "../../styles/_projects.scss"
+import "../styles/_projects.scss"
 import {Tag} from "primereact/tag";
 import React, {useEffect} from "react";
-import {SectionHeading} from "../../Common/SectionHeading";
+import {SectionHeading} from "../components/SectionHeading";
 import {Dialog} from "primereact/dialog";
 import {Button} from "primereact/button";
 import {animated, useSpring} from 'react-spring';

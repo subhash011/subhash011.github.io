@@ -1,6 +1,6 @@
 import React from "react";
-import skills from "../Data/skills.json";
-import {SectionHeading} from "../Common/SectionHeading";
+import skills from "../data/skills.json";
+import {SectionHeading} from "../components/SectionHeading";
 import {Image} from "primereact/image";
 import '../styles/_skills.scss';
 import {Card} from "primereact/card";

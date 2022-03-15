@@ -1,7 +1,7 @@
 import '../styles/_home.scss'
 import {Button} from "primereact/button";
 import {HashLink} from "react-router-hash-link";
-import Intro from "./Intro";
+import AboutMe from "../components/AboutMe";
 import {Image} from 'primereact/image';
 import React, {useEffect} from "react";
 import {Card} from "primereact/card";
@@ -33,8 +33,9 @@ function Home(props) {
                                    imageClassName="border-circle"/>
                         </div>
                         <div className="flex flex-column lg:pl-6">
-                            <Intro props={props}/>
-                            <div className="flex w-full grid justify-content-center lg:justify-content-start align-items-center">
+                            <AboutMe props={props}/>
+                            <div
+                                className="flex w-full grid justify-content-center lg:justify-content-start align-items-center">
                         <span className="p-0 mt-5 no-underline">
                             <Button label="GitHub" icon="pi pi-github"
                                     className="p-button-raised p-button-secondary w-full"
