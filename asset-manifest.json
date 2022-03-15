@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.675ab4f5.css",
-    "main.js": "/portfolio/static/js/main.b90b4da7.js",
-    "static/js/787.1ed0c42c.chunk.js": "/portfolio/static/js/787.1ed0c42c.chunk.js",
-    "static/media/primeicons.svg": "/portfolio/static/media/primeicons.c6e2053303524e39530c.svg",
-    "static/media/me_transparent.webp": "/portfolio/static/media/me_transparent.99ea489086abc454f559.webp",
-    "static/media/primeicons.eot": "/portfolio/static/media/primeicons.7fc4d8e224d1ff1b9c62.eot",
-    "static/media/primeicons.woff": "/portfolio/static/media/primeicons.449aa8c65cdc5c2a8686.woff",
-    "static/media/primeicons.ttf": "/portfolio/static/media/primeicons.91bacab1f083f2795272.ttf",
-    "index.html": "/portfolio/index.html",
-    "main.675ab4f5.css.map": "/portfolio/static/css/main.675ab4f5.css.map",
-    "main.b90b4da7.js.map": "/portfolio/static/js/main.b90b4da7.js.map",
-    "787.1ed0c42c.chunk.js.map": "/portfolio/static/js/787.1ed0c42c.chunk.js.map"
+    "main.css": "/static/css/main.65430aca.css",
+    "main.js": "/static/js/main.0cd68b4f.js",
+    "static/js/787.1ed0c42c.chunk.js": "/static/js/787.1ed0c42c.chunk.js",
+    "static/media/primeicons.svg": "/static/media/primeicons.c6e2053303524e39530c.svg",
+    "static/media/me_transparent.webp": "/static/media/me_transparent.99ea489086abc454f559.webp",
+    "static/media/primeicons.eot": "/static/media/primeicons.7fc4d8e224d1ff1b9c62.eot",
+    "static/media/primeicons.woff": "/static/media/primeicons.449aa8c65cdc5c2a8686.woff",
+    "static/media/primeicons.ttf": "/static/media/primeicons.91bacab1f083f2795272.ttf",
+    "index.html": "/index.html",
+    "main.65430aca.css.map": "/static/css/main.65430aca.css.map",
+    "main.0cd68b4f.js.map": "/static/js/main.0cd68b4f.js.map",
+    "787.1ed0c42c.chunk.js.map": "/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.675ab4f5.css",
-    "static/js/main.b90b4da7.js"
+    "static/css/main.65430aca.css",
+    "static/js/main.0cd68b4f.js"
   ]
 }
