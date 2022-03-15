@@ -5,8 +5,10 @@ import {Button} from 'primereact/button';
 import {classNames} from 'primereact/utils';
 import {Toast} from 'primereact/toast';
 import {InputTextarea} from "primereact/inputtextarea";
+import {ProgressSpinner} from "primereact/progressspinner";
 
 function ContactForm() {
+    const [loading, setLoading] = React.useState(false);
     const toast = useRef(null);
 
 
@@ -55,7 +57,7 @@ function ContactForm() {
             return errors;
         },
         onSubmit: async (data) => {
-            await new Promise(r => setTimeout(r, 2000));
+            setLoading(true);
             const response = await fetch('https://formspree.io/f/xgedyllq', {
                 method: 'POST',
                 body: JSON.stringify(data),
@@ -63,6 +65,7 @@ function ContactForm() {
                     'Content-Type': 'application/json'
                 }
             });
+            setLoading(false);
             if (response.status === 200) {
                 showSuccess();
             } else {
@@ -76,7 +79,13 @@ function ContactForm() {
     const getFormErrorMessage = (name) => {
         return isFormFieldValid(name) && <small className="p-error">{formik.errors[name]}</small>;
     };
-
+    if (loading) {
+        return (
+            <div className="flex justify-content-center align-items-center">
+                <ProgressSpinner style={{width: '50px', height: '50px'}} strokeWidth="8" fill="var(--surface-ground)"/>
+            </div>
+        );
+    }
     return (
         <React.Fragment>
             <Toast ref={toast} position="top-right"/>
