@@ -1,10 +1,10 @@
 import {Navigate, Route, Routes} from "react-router-dom";
 import Main from "./Main";
-import React, {useCallback, useEffect, useState} from "react";
+import React, {useCallback, useState} from "react";
 import TopBar from "./Topbar/Topbar";
 
 function App() {
-    const [theme, setTheme] = useState('dark');
+    const [theme, setTheme] = useState(localStorage.getItem("theme"));
     const [isThemeSwitching, setIsThemeSwitching] = useState(false);
 
     const toggleTheme = useCallback(() => {
@@ -24,18 +24,7 @@ function App() {
             setTheme(newTheme);
         });
         linkElement.parentNode.insertBefore(cloneLinkElement, linkElement.nextSibling);
-    }, [theme])
-
-    useEffect(() => {
-        const localTheme = localStorage.getItem('theme');
-        if (!localTheme) {
-            localStorage.setItem('theme', theme);
-            return;
-        }
-        if (localTheme !== theme) {
-            toggleTheme();
-        }
-    }, [theme, toggleTheme]);
+    }, [theme]);
 
     return (
         <React.Fragment>
