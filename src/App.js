@@ -1,16 +1,20 @@
 import {Navigate, Route, Routes} from "react-router-dom";
 import Main from "./Main";
 import React from "react";
+import {ThemeContext} from "./Context";
+
 
 function App() {
 
+    const [theme, setTheme] = React.useState(localStorage.getItem('theme'));
+
     return (
-        <React.Fragment>
+        <ThemeContext.Provider value={[theme, setTheme]}>
             <Routes>
-                <Route path="/portfolio" element={<Main/>}/>
-                <Route path="*" element={<Navigate to="/portfolio"/>}/>
+                <Route path="/" element={<Main/>}/>
+                <Route path="*" element={<Navigate to="/"/>}/>
             </Routes>
-        </React.Fragment>
+        </ThemeContext.Provider>
     );
 }
 

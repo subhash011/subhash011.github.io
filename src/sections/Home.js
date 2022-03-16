@@ -6,7 +6,7 @@ import {Image} from 'primereact/image';
 import React, {useEffect} from "react";
 import {Card} from "primereact/card";
 
-function Home(props) {
+function Home() {
 
     useEffect(() => {
         document.getElementById("my-image").oncontextmenu = function () {
@@ -33,7 +33,7 @@ function Home(props) {
                                    imageClassName="border-circle"/>
                         </div>
                         <div className="flex flex-column lg:pl-6">
-                            <AboutMe props={props}/>
+                            <AboutMe/>
                             <div
                                 className="flex w-full grid justify-content-center lg:justify-content-start align-items-center">
                         <span className="p-0 mt-5 no-underline">

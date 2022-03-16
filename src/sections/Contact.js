@@ -5,7 +5,7 @@ import {SocialButtons} from "../components/SocialButtons";
 import {SectionHeading} from "../components/SectionHeading";
 import {Chip} from "primereact/chip";
 
-function Contact(props) {
+function Contact() {
 
     return (
         <section id="contact" className="pt-7">
@@ -26,14 +26,14 @@ function Contact(props) {
                         <Chip label="(+91) 9188230955" icon="pi pi-phone" className="mr-2 mb-2 surface-card" />
                     </div>
                     <div className="hidden lg:block">
-                        <SocialButtons props={props}/>
+                        <SocialButtons/>
                     </div>
                 </div>
                 <div className="lg:col-6 col-12">
                     <ContactForm/>
                 </div>
                 <div className="block lg:hidden col-12 flex justify-content-center mb-4">
-                    <SocialButtons props={props}/>
+                    <SocialButtons/>
                 </div>
             </div>
         </section>

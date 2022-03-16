@@ -3,22 +3,78 @@ import '../styles/_topbar.scss';
 import {HashLink} from "react-router-hash-link";
 import {Button} from "primereact/button";
 import {Tooltip} from "primereact/tooltip";
-import React, {useCallback, useState} from "react";
+import React, {useCallback, useContext, useState} from "react";
+import {ThemeContext} from "../Context";
+import {classNames} from "primereact/utils";
 
-function TopBar({onThemeChange}) {
+const template = (item, options) => {
+    return (
+        <HashLink smooth to={`${item.url}`} role="menuitem" className={options.className} target={item.target}
+                  onClick={options.onClick}>
+            <span className={options.iconClassName}/>
+            <span className="p-menuitem-text">{item.label}</span>
+        </HashLink>
+    );
+}
 
-    const [theme, setTheme] = useState(localStorage.getItem("theme"));
-    const [isThemeSwitching, setIsThemeSwitching] = useState(false);
+const items = [
+    {
+        label: 'Home',
+        icon: 'pi pi-fw pi-home',
+        url: '#',
+        template: template
+    },
+    {
+        label: 'Work',
+        icon: 'pi pi-fw pi-briefcase',
+        items: [
+            {
+                label: 'Projects',
+                url: '#projects',
+                template: template
+            },
+            {
+                label: 'Experience',
+                url: '#experience',
+                template: template
+            }
+        ]
+    },
+    {
+        label: 'Skills',
+        icon: 'pi pi-fw pi-bolt',
+        url: '#skills',
+        template: template
+    },
+    {
+        label: 'Contact',
+        icon: 'pi pi-fw pi-phone',
+        url: '#contact',
+        template: template
+    },
+    {
+        label: 'Resume',
+        icon: 'pi pi-fw pi-download',
+        template: (item, options) => {
 
-    const template = (item, options) => {
-        return (
-            <HashLink smooth to={`${item.url}`} role="menuitem" className={options.className} target={item.target}
-                      onClick={options.onClick}>
-                <span className={options.iconClassName}/>
-                <span className="p-menuitem-text">{item.label}</span>
-            </HashLink>
-        );
+            return (
+                <React.Fragment>
+                    <div role="menuitem" id="resume-download" className={options.className} onClick={() => {
+                        window.open(`/Subhash's Resume.pdf`, "_blank");
+                    }}>
+                        <span className={options.iconClassName}/>
+                        <span className="p-menuitem-text">{item.label}</span>
+                    </div>
+                </React.Fragment>
+            );
+        }
     }
+];
+
+function TopBar() {
+
+    const [theme, setTheme] = useContext(ThemeContext);
+    const [isThemeSwitching, setIsThemeSwitching] = useState(false);
 
     const toggleTheme = useCallback(() => {
         setIsThemeSwitching(true);
@@ -35,72 +91,9 @@ function TopBar({onThemeChange}) {
             localStorage.setItem('theme', newTheme);
             setIsThemeSwitching(false);
             setTheme(newTheme);
-            onThemeChange(newTheme);
         });
         linkElement.parentNode.insertBefore(cloneLinkElement, linkElement.nextSibling);
-    }, [onThemeChange, theme]);
-
-    const items = [
-        {
-            label: 'Home',
-            icon: 'pi pi-fw pi-home',
-            url: '#',
-            template: template
-        },
-        {
-            label: 'Work',
-            icon: 'pi pi-fw pi-briefcase',
-            items: [
-                {
-                    label: 'Projects',
-                    url: '#projects',
-                    template: template
-                },
-                {
-                    label: 'Experience',
-                    url: '#experience',
-                    template: template
-                }
-            ]
-        },
-        {
-            label: 'Skills',
-            icon: 'pi pi-fw pi-bolt',
-            url: '#skills',
-            template: template
-        },
-        {
-            label: 'Contact',
-            icon: 'pi pi-fw pi-phone',
-            url: '#contact',
-            template: template
-        },
-        {
-            label: 'Resume',
-            icon: 'pi pi-fw pi-download',
-            template: (item, options) => {
-
-                return (
-                    <React.Fragment>
-                        <div role="menuitem" id="resume-download" className={options.className} onClick={() => {
-                            window.open(`/Subhash's Resume.pdf`, "_blank");
-                        }}>
-                            <span className={options.iconClassName}/>
-                            <span className="p-menuitem-text">{item.label}</span>
-                        </div>
-                    </React.Fragment>
-                );
-            }
-        }
-    ];
-
-    const ThemeSwitchButton = (props) => {
-        if (props.theme === 'light') {
-            return <i className="pi pi-moon"/>
-        }
-        return <i className="pi pi-sun"/>
-
-    };
+    }, [setTheme, theme]);
 
     return (
         <div className="p-grid">
@@ -110,7 +103,7 @@ function TopBar({onThemeChange}) {
                     <Button name="theme-switcher"
                             disabled={isThemeSwitching}
                             data-pr-tooltip={theme === 'light' ? 'Switch to Dark Theme' : 'Switch to Light Theme'}
-                            icon={<ThemeSwitchButton theme={theme}/>}
+                            icon={<i className={classNames('pi', theme === 'dark' ? 'pi-sun' : 'pi-moon')}/>}
                             onClick={toggleTheme}
                             className="theme-switcher p-button-rounded p-button-text"/>
                 }/>

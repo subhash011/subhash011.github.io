@@ -1,5 +1,4 @@
 import * as React from 'react';
-import {useState} from 'react';
 import Projects from "./sections/Projects";
 import Contact from "./sections/Contact";
 import IndustrialExperience from "./sections/Industry";
@@ -10,18 +9,16 @@ import TopBar from "./components/Topbar";
 
 function Main() {
 
-    const [theme, setTheme] = useState(localStorage.getItem("theme"));
-
     return (
         <React.Fragment>
-            <TopBar onThemeChange={setTheme}/>
+            <TopBar/>
             <div className="h-6"/>
-            <Home theme={theme}/>
+            <Home/>
             <div className="main-content">
                 <Projects/>
                 <IndustrialExperience/>
                 <Skills/>
-                <Contact theme={theme}/>
+                <Contact/>
                 <ScrollTop threshold={10}/>
             </div>
         </React.Fragment>
