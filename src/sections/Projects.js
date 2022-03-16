@@ -154,17 +154,19 @@ function MyProjects() {
 
     const gridItemCard = (item) => {
         return (
-            <Card className="h-full item-card" style={{maxWidth: '400px'}}>
+            <Card className="h-full item-card">
                 <div className="flex justify-content-between">
                     <div>
-                        <i style={{'fontSize': '2rem'}} className="pi pi-folder" />
+                        <i style={{'fontSize': '2rem'}} className="pi pi-folder"/>
                     </div>
                     <div className="h-2rem flex align-items-center">
-                        {item.gitHub && <i style={{'fontSize': '1.2rem'}} onClick={() => window.open(item.gitHub, "_blank")}
-                                           className="pi pi-github ml-auto cursor-pointer"/>}
+                        {item.gitHub &&
+                            <i style={{'fontSize': '1.2rem'}} onClick={() => window.open(item.gitHub, "_blank")}
+                               className="pi pi-github ml-auto cursor-pointer"/>}
                         {item.site && <i style={{'fontSize': '1.2rem'}} onClick={() => window.open(item.site, "_blank")}
                                          className="pi pi-external-link ml-3 cursor-pointer"/>}
-                        {item.youtube && <i style={{'fontSize': '1.2rem'}} onClick={() => window.open(item.youtube, "_blank")}
+                        {item.youtube &&
+                            <i style={{'fontSize': '1.2rem'}} onClick={() => window.open(item.youtube, "_blank")}
                                             className="pi pi-youtube ml-3 cursor-pointer"/>}
                     </div>
                 </div>
@@ -185,7 +187,7 @@ function MyProjects() {
     const renderGridItem = (item) => {
         if (!!!item) return null;
         return (
-            <div className="flex projects-grid justify-content-center p-4">
+            <div className="flex projects-grid justify-content-center md:col-6 lg:col p-4" style={{maxWidth: '400px'}}>
                 {gridItemCard(item)}
             </div>
         )
