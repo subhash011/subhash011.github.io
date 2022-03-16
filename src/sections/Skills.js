@@ -13,7 +13,7 @@ function Skills() {
                 <div className="skills-grid grid justify-content-center">
                     {skills.map((skill, index) => {
                         return (
-                            <div className="md:col-6 lg:col" style={{maxWidth: '400px'}} key={index}>
+                            <div className="col-12 md:col-6 lg:col" style={{maxWidth: '400px'}} key={index}>
                                 <Card className="skills-grid-card w-full h-full">
                                     <div
                                         className="flex flex-column justify-content-center align-items-center border-round">

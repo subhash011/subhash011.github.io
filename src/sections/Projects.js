@@ -187,7 +187,8 @@ function MyProjects() {
     const renderGridItem = (item) => {
         if (!!!item) return null;
         return (
-            <div className="flex projects-grid justify-content-center md:col-6 lg:col p-4" style={{maxWidth: '400px'}}>
+            <div className="flex projects-grid justify-content-center col-12 md:col-6 lg:col p-4"
+                 style={{maxWidth: '400px'}}>
                 {gridItemCard(item)}
             </div>
         )
