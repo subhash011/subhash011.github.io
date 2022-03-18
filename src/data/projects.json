@@ -7,7 +7,6 @@
     "gitHub": "https://github.com/subhash011/Project-Allocation",
     "site": "https://pal.iitpkd.ac.in:10443/",
     "extra": true,
-    "additionalHeight": 36,
     "workDone": [
       "Manual project allocation is tiresome and this solution reduces human efforts by over 90%.",
       "Gale-shapley algorithm is used to obtain a fair and stable allocation by considering preferences from both faculties and students.",
@@ -28,7 +27,6 @@
     "gitHub": "https://github.com/subhash011/meet.me",
     "youtube": "https://www.youtube.com/watch?v=Sa7aRJC2wvc",
     "extra": true,
-    "additionalHeight": 36,
     "workDone": [
       "Led a team of 4 to develop the networking module of the app.",
       "I was responsible for the design specifications and interfacing with other modules.",
@@ -49,7 +47,6 @@
     "isFeatured": true,
     "gitHub": "https://github.com/Holocoders/Resource-Management",
     "extra": true,
-    "additionalHeight": 36,
     "workDone": [
       "Developed primarily for institute lab facilities, it also generalizes to other resources.",
       "Involves various modules like authentication and authorization, inventory management, advanced booking etc.",
@@ -70,7 +67,6 @@
     "gitHub": "https://github.com/subhash011/TimeSync",
     "site": "https://devpost.com/software/time-sync",
     "extra": true,
-    "additionalHeight": 36,
     "workDone": [
       "Developed for the final round of Hack-MIT 2020.",
       "Incentives are given to users who spend lesser time on their screen.",
@@ -90,7 +86,6 @@
     "isFeatured": false,
     "gitHub": "https://github.com/subhash011/compilers-sem6",
     "extra": true,
-    "additionalHeight": 36,
     "workDone": [
       "Compiles source code to Intermediate Representation (IR).",
       "Supports multiple data types, operators and recursive functions.",
@@ -109,7 +104,6 @@
     "description": "A continuous driver attention analysis system for improved safety.",
     "isFeatured": false,
     "extra": true,
-    "additionalHeight": 36,
     "workDone": [
       "This idea was among the top 100 out of 6000 ideas at a hackathon organized by MeitY.",
       "Continuously analyses the driver’s facial expressions.",
@@ -130,7 +124,6 @@
     "isFeatured": false,
     "gitHub": "https://github.com/subhash011/Driver-Assistance",
     "extra": true,
-    "additionalHeight": 36,
     "workDone": [
       "Detects obstacles, stores their location and broadcasts this information to other drivers.",
       "Designed to enhance the functionality of google maps by providing obstacle details"
@@ -149,7 +142,6 @@
     "isFeatured": false,
     "gitHub": "https://github.com/subhash011/Malware-Detector",
     "extra": true,
-    "additionalHeight": 36,
     "workDone": [
       "Differentiates between benign and malicious executables.",
       "Features were extracted from Portable Executable (PE) files and Cuckoo reports.",
@@ -170,7 +162,6 @@
     "isFeatured": false,
     "gitHub": "https://github.com/Holocoders/DDOS-Detection",
     "extra": true,
-    "additionalHeight": 36,
     "workDone": [
       "Differentiates between benign and malicious executables.",
       "Features were extracted from the logs of pcap files.",
@@ -191,7 +182,6 @@
     "isFeatured": false,
     "gitHub": "https://github.com/subhash011/riscv-sem4",
     "extra": true,
-    "additionalHeight": 36,
     "workDone": [
       "All arithmetic and logical operations are supported.",
       "Supports load-store and partially supports branch operations.",
