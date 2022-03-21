@@ -54,13 +54,6 @@ const CustomizedTimelineWrapper = styled(Timeline)`
     max-width: 90%;
   }
   @media screen and (max-width: 960px) {
-    .p-timeline-event:nth-child(even) {
-      flex-direction: row !important;
-    }
-
-    .p-timeline-event:nth-child(even) .p-timeline-event-content {
-      text-align: left !important;
-    }
 
     .p-timeline-event-opposite,
     .p-timeline-event-separator {
