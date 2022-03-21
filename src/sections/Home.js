@@ -1,10 +1,47 @@
-import '../styles/_home.scss'
 import {Button} from "primereact/button";
-import {HashLink} from "react-router-hash-link";
-import AboutMe from "../components/AboutMe";
+import {Card} from "primereact/card";
 import {Image} from 'primereact/image';
 import React, {useEffect} from "react";
-import {Card} from "primereact/card";
+import {HashLink} from "react-router-hash-link";
+import styled from "styled-components";
+import AboutMe from "../components/AboutMe";
+
+const breakpoints = {
+    'sm': '576px',
+    'md': '768px',
+    'lg': '992px',
+    'xl': '1200px',
+}
+
+const InfoCard = styled(Card)`
+  background-color: var(--surface-card);
+  @media screen and (max-width: ${breakpoints['lg']}) {
+    background-color: var(--surface-ground);
+  }
+
+  img {
+    background-color: var(--surface-ground);
+    @media screen and (max-width: ${breakpoints['lg']}) {
+      background-color: var(--surface-card);
+    }
+  }
+`;
+
+const ClipElement = styled.div`
+  background-color: var(--surface-card);
+  z-index: -1;
+  -webkit-clip-path: polygon(0 100%, 0 0, 100% 0, 80% 100%);
+  clip-path: polygon(0 100%, 0 0, 100% 0, 80% 100%);
+  -webkit-clip-path: url("#clip-shape");
+  clip-path: url("#clip-shape");
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  @media screen and (min-width: ${breakpoints['lg']}) {
+    display: inline-block;
+  }
+`;
 
 function Home() {
 
@@ -16,17 +53,17 @@ function Home() {
 
     return (
         <section id="#" className="home-section w-screen h-screen overflow-hidden mb-0">
-            <svg className="clip-svg" width="0" height="0">
+            <svg width="0" height="0">
                 <defs>
                     <clipPath id="clip-shape" clipPathUnits="objectBoundingBox">
                         <polygon points="0 0.6, 0 1, 1 1, 1 0.4"/>
                     </clipPath>
                 </defs>
             </svg>
-            <div className="element absolute w-screen h-screen hidden lg:inline-block"/>
-            <div className="flex w-full h-full justify-content-center align-items-center" >
-                <Card
-                    className="home-card w-max mx-2 shadow-none border-primary lg:shadow-8">
+            <ClipElement/>
+            <div className="flex w-full h-full justify-content-center align-items-center">
+                <InfoCard
+                    className="w-max mx-2 shadow-none border-primary lg:shadow-8">
                     <div className="flex justify-content-center align-items-center grid">
                         <div id="my-image" className="md:col-4">
                             <Image src={require(`../assets/home/me_transparent.webp`)} width="250"
@@ -53,7 +90,7 @@ function Home() {
                             </div>
                         </div>
                     </div>
-                </Card>
+                </InfoCard>
             </div>
         </section>
     );

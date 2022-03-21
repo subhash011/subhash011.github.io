@@ -1,11 +1,25 @@
-import {Menubar} from 'primereact/menubar';
-import '../styles/_topbar.scss';
-import {HashLink} from "react-router-hash-link";
 import {Button} from "primereact/button";
-import {Tooltip} from "primereact/tooltip";
-import React, {useCallback, useContext, useState} from "react";
-import {ThemeContext} from "../Context";
+import {Menubar} from 'primereact/menubar';
 import {classNames} from "primereact/utils";
+import React, {useCallback, useContext, useState} from "react";
+import {HashLink} from "react-router-hash-link";
+import styled from "styled-components";
+import {ThemeContext} from "../Context";
+
+const FixedMenubar = styled(Menubar)`
+  background-color: var(--surface-ground);
+  border: none;
+  border-radius: 0 0 6px 6px;
+  flex-direction: row-reverse;
+  position: fixed;
+  padding-right: 8px;
+  width: 100%;
+  z-index: 999;
+  .p-menubar-end {
+    margin-right: auto;
+    margin-left: 0;
+  }
+`;
 
 const template = (item, options) => {
     return (
@@ -97,15 +111,13 @@ function TopBar() {
 
     return (
         <div className="p-grid">
-            <Tooltip target=".theme-switcher" position="right"/>
             <div className="p-col-12">
-                <Menubar className="app-menubar" model={items} end={
+                <FixedMenubar model={items} end={
                     <Button name="theme-switcher"
                             disabled={isThemeSwitching}
-                            data-pr-tooltip={theme === 'light' ? 'Switch to Dark Theme' : 'Switch to Light Theme'}
                             icon={<i className={classNames('pi', theme === 'dark' ? 'pi-sun' : 'pi-moon')}/>}
                             onClick={toggleTheme}
-                            className="theme-switcher p-button-rounded p-button-text"/>
+                            className="p-button-rounded p-button-text"/>
                 }/>
             </div>
         </div>

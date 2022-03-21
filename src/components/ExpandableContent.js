@@ -11,13 +11,15 @@ const ExpandableContent = ({item}) => {
 
     return (
         <React.Fragment>
-            {item.extra && <div className="pt-2" {...getCollapseProps()}>
-                {item.extraContent}
+            {item.extra && <div {...getCollapseProps()}>
+                <div className="pt-2">
+                    {item.extraContent}
+                </div>
             </div>}
             {item.extra && <div className="pt-2">
                     <span className="w-full flex justify-content-end">
                         <Button {...getToggleProps()} label={`See ${openItem ? 'less' : 'more'}`}
-                                className="p-button-text"
+                                className="p-button-text mt-4"
                                 onClick={() => {
                                     setOpenItem(!!!openItem ? item : null);
                                 }}/>

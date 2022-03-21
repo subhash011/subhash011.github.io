@@ -1,9 +1,8 @@
-import '../styles/_education.scss';
+import {Tag} from "primereact/tag";
 import React from "react";
 import {CardTimeLine} from "../components/CardTimeline";
-import educationData from "../data/education.json";
-import {Tag} from "primereact/tag";
 import {SectionHeading} from "../components/SectionHeading";
+import educationData from "../data/education.json";
 
 function Education() {
 

@@ -1,9 +1,21 @@
-import React from "react";
-import skills from "../data/skills.json";
-import {SectionHeading} from "../components/SectionHeading";
-import {Image} from "primereact/image";
-import '../styles/_skills.scss';
 import {Card} from "primereact/card";
+import {Image} from "primereact/image";
+import React from "react";
+import styled from "styled-components";
+import {SectionHeading} from "../components/SectionHeading";
+import skills from "../data/skills.json";
+
+const ScaleOnHoverCard = styled(Card)`
+  background-color: var(--surface-card);
+  transition: transform 0.3s ease-in-out;
+  @media (prefers-reduced-motion: no-preference) {
+    &:hover,
+    &:focus-within {
+      transform: scale(1.05);
+      background-color: var(--surface-d);
+    }
+  }
+`;
 
 function Skills() {
     return (
@@ -14,7 +26,7 @@ function Skills() {
                     {skills.map((skill, index) => {
                         return (
                             <div className="col-12 md:col-6 lg:col" style={{maxWidth: '400px'}} key={index}>
-                                <Card className="skills-grid-card w-full h-full">
+                                <ScaleOnHoverCard className="skills-grid-card w-full h-full">
                                     <div
                                         className="flex flex-column justify-content-center align-items-center border-round">
                                         <h3>{skill.name}</h3>
@@ -32,7 +44,7 @@ function Skills() {
                                             })}
                                         </div>
                                     </div>
-                                </Card>
+                                </ScaleOnHoverCard>
                             </div>
                         )
                     })}

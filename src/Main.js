@@ -1,11 +1,11 @@
-import * as React from 'react';
-import Projects from "./sections/Projects";
-import Contact from "./sections/Contact";
-import IndustrialExperience from "./sections/Industry";
 import {ScrollTop} from "primereact/scrolltop";
-import Home from "./sections/Home";
-import Skills from "./sections/Skills";
+import * as React from 'react';
 import TopBar from "./components/Topbar";
+import Contact from "./sections/Contact";
+import Home from "./sections/Home";
+import IndustrialExperience from "./sections/Industry";
+import Projects from "./sections/Projects";
+import Skills from "./sections/Skills";
 
 function Main() {
 
@@ -14,13 +14,11 @@ function Main() {
             <TopBar/>
             <div className="h-6"/>
             <Home/>
-            <div className="main-content">
-                <Projects/>
-                <IndustrialExperience/>
-                <Skills/>
-                <Contact/>
-                <ScrollTop threshold={10}/>
-            </div>
+            <Projects/>
+            <IndustrialExperience/>
+            <Skills/>
+            <Contact/>
+            <ScrollTop threshold={10}/>
         </React.Fragment>
     );
 }

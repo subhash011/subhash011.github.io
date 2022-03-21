@@ -1,15 +1,65 @@
-import {DataView} from "primereact/dataview";
-import projectsData from "../data/projects.json";
+import {Button} from "primereact/button";
 import {Card} from "primereact/card";
-import "../styles/_projects.scss"
+import {Chip} from "primereact/chip";
+import {DataView} from "primereact/dataview";
+import {Dialog} from "primereact/dialog";
 import {Tag} from "primereact/tag";
 import React, {useEffect} from "react";
-import {SectionHeading} from "../components/SectionHeading";
-import {Dialog} from "primereact/dialog";
-import {Button} from "primereact/button";
 import {animated, useSpring} from 'react-spring';
-import {Chip} from "primereact/chip";
+import styled from "styled-components";
+import {SectionHeading} from "../components/SectionHeading";
+import projectsData from "../data/projects.json";
 
+const ScaleOnHoverCard = styled(Card)`
+  background-color: var(--surface-card);
+  transition: transform 0.3s ease-in-out;
+  @media (prefers-reduced-motion: no-preference) {
+    &:hover,
+    &:focus-within {
+      transform: scale(1.05);
+      background-color: var(--surface-d);
+    }
+  }
+`;
+
+const TransparentDataview = styled(DataView)`
+  .p-dataview-content {
+    background-color: transparent !important;
+    line-height: 1.5;
+  }
+
+  .p-grid {
+    justify-content: center;
+  }
+`;
+
+const ItemDialog = styled(Dialog)`
+  li:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+
+  .p-dialog-header, .p-dialog-content {
+    background: var(--surface-ground) !important;
+  }
+`;
+
+const Ul = styled.ul`
+  position: relative;
+  list-style: none;
+  padding-left: 20px;
+
+  li {
+    margin-bottom: 0.5rem;
+    padding-left: 2px;
+    line-height: 1.2;
+
+    :before {
+      content: "\\2713";
+      position: absolute;
+      left: 0;
+    }
+  }
+`;
 
 const projectFilters = [
     "FEATURED",
@@ -46,12 +96,12 @@ const AnimatedProjectHeading = ({heading, allVisible, setAllVisible}) => {
             <animated.div style={styles} className="flex flex-column justify-content-center align-items-center">
                 <span>{heading}</span>
                 <span onClick={() => {
-                    api({
+                    api.start({
                         opacity: 0,
                         immediate: true,
                         onRest() {
                             setAllVisible(!allVisible)
-                            api({
+                            api.start({
                                 opacity: 1,
                                 delay: 40,
                             })
@@ -113,7 +163,7 @@ function MyProjects() {
         if (!!!item) return null;
         return (
             <div className="flex flex-column">
-                <ul className="flex-1" style={{paddingLeft: '20px'}}>
+                <Ul className="flex-1" style={{paddingLeft: '20px'}}>
                     {item.workDone.map((work, index) => {
                         return (
                             <li key={index}>
@@ -121,7 +171,7 @@ function MyProjects() {
                             </li>
                         )
                     })}
-                </ul>
+                </Ul>
                 <div className="flex align-items-center justify-content-center flex-wrap mt-4">
                     {item.techStack.map((tag, index) => {
                         return (
@@ -154,7 +204,7 @@ function MyProjects() {
 
     const gridItemCard = (item) => {
         return (
-            <Card className="h-full item-card">
+            <ScaleOnHoverCard className="h-full item-card">
                 <div className="flex justify-content-between">
                     <div>
                         <i style={{'fontSize': '2rem'}} className="pi pi-folder"/>
@@ -167,7 +217,7 @@ function MyProjects() {
                                          className="pi pi-external-link ml-3 cursor-pointer"/>}
                         {item.youtube &&
                             <i style={{'fontSize': '1.2rem'}} onClick={() => window.open(item.youtube, "_blank")}
-                                            className="pi pi-youtube ml-3 cursor-pointer"/>}
+                               className="pi pi-youtube ml-3 cursor-pointer"/>}
                     </div>
                 </div>
                 <div className="h-2rem"/>
@@ -180,7 +230,7 @@ function MyProjects() {
                                 setDialogVisible(item);
                             }}/>
                 </div>}
-            </Card>
+            </ScaleOnHoverCard>
         );
     }
 
@@ -204,27 +254,28 @@ function MyProjects() {
 
     return (
         <section id="projects" className="pt-7">
-            <Dialog className="item-dialog max-h-screen mx-2 lg:mx-0" visible={!!dialogVisible}
-                    onHide={() => setDialogVisible(null)}
-                    blockScroll
-                    dismissableMask
-                    draggable={false}
-                    style={{maxWidth: '600px'}}
-                    breakpoints={{'960px': '75vw', '640px': '100vw'}}
-                    contentClassName="h-full">
+            <ItemDialog className="max-h-screen mx-2 lg:mx-0" visible={!!dialogVisible}
+                        header={dialogVisible?.title || ''}
+                        onHide={() => setDialogVisible(null)}
+                        blockScroll
+                        dismissableMask
+                        draggable={false}
+                        style={{maxWidth: '600px'}}
+                        breakpoints={{'960px': '75vw', '640px': '100vw'}}
+                        contentClassName="h-full">
                 {renderDialogItem(dialogVisible, extraContent(dialogVisible))}
-            </Dialog>
+            </ItemDialog>
             <div className="flex flex-column justify-content-center align-items-center">
                 <SectionHeading name={"projects"} heading="My Projects"/>
                 <div className="flex flex-column align-items-center mb-4">
                     <AnimatedProjectHeading heading={!allVisible ? <h3>Featured projects ({projects.length})</h3> :
                         <h3>Noteworthy projects ({projects.length})</h3>} allVisible={allVisible} setAllVisible={() => {
                         if (!allVisible) {
-                                setFilters(projectFilters);
-                            } else {
-                                setFilters(['FEATURED']);
-                            }
-                            setAllVisible(!allVisible);
+                            setFilters(projectFilters);
+                        } else {
+                            setFilters(['FEATURED']);
+                        }
+                        setAllVisible(!allVisible);
                     }}/>
                 </div>
                 {allVisible && (
@@ -239,9 +290,9 @@ function MyProjects() {
                     </div>
                 )}
                 <animated.div style={styles} className="flex justify-content-center">
-                    <DataView className="projects-dataview" value={projects}
-                              itemTemplate={renderGridItem}
-                              layout="grid"/>
+                    <TransparentDataview value={projects}
+                                         itemTemplate={renderGridItem}
+                                         layout="grid"/>
                 </animated.div>
             </div>
         </section>
