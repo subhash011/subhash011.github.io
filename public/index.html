@@ -53,16 +53,16 @@
 
     <script>
       function setTheme() {
-        let theme = localStorage.getItem("theme");
-        if (!theme) {
-          localStorage.setItem("theme", "dark");
-          theme = "dark";
-        }
-        const themeLink = document.createElement("link");
-        themeLink.setAttribute("id", "theme-link");
-        themeLink.setAttribute("rel", "stylesheet");
-        themeLink.setAttribute("href", `%PUBLIC_URL%/themes/bootstrap4-${theme}-purple/theme.css`);
-        document.head.appendChild(themeLink);
+          let theme = localStorage.getItem("theme");
+          if (!theme) {
+              localStorage.setItem("theme", "dark");
+              theme = "dark";
+          }
+          const themeLink = document.createElement("link");
+          themeLink.setAttribute("id", "theme-link");
+          themeLink.setAttribute("rel", "stylesheet");
+          themeLink.setAttribute("href", `%PUBLIC_URL%/themes/bootstrap4-${theme}-purple.css`);
+          document.head.appendChild(themeLink);
       }
 
       setTheme();
