@@ -1,6 +1,6 @@
-import Typewriter from 'typewriter-effect/dist/core';
-import {animated, useSpring} from "react-spring";
 import React, {useEffect, useRef, useState} from "react";
+import {animated, useSpring} from "react-spring";
+import Typewriter from 'typewriter-effect/dist/core';
 import {ThemeContext} from "../Context";
 
 function AboutMe() {
@@ -53,9 +53,8 @@ function AboutMe() {
                 <animated.div style={style}>
                     <h4 className="mt-2 mb-4">CSE | IIT Palakkad'22</h4>
                     I'm a computer science student with a strong foundation in problem-solving and an ever-growing zeal
-                    to explore
-                    new domains and technologies. I've led and worked with teams on multiple projects, thus enhancing my communication
-                    skills, teamwork, and leadership qualities.
+                    to explore new domains and technologies. I'm an effective collaborator with firsthand experience in
+                    leading and working in teams.
                 </animated.div>
 
             </div>

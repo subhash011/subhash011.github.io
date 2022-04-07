@@ -138,18 +138,19 @@
   {
     "id": "8",
     "title": "Malware Detection",
-    "description": "Machine learning application to detect malware in executables.",
+    "description": "An application to differentiate between benign and malicious executables.",
     "isFeatured": false,
     "gitHub": "https://github.com/subhash011/Malware-Detector",
     "extra": true,
     "workDone": [
-      "Differentiates between benign and malicious executables.",
       "Features were extracted from Portable Executable (PE) files and Cuckoo reports.",
       "A random forest classifier was used to classify executables.",
       "Built for the final round of IIT-K HCL Hackathon 2020. Ranked top 100 out of 12,000 teams."
     ],
     "techStack": [
-      "Python", "Scikit-Learn", "Pandas"
+      "Python",
+      "Scikit-Learn",
+      "Pandas"
     ],
     "filters": [
       "HACKATHON"
@@ -163,7 +164,7 @@
     "gitHub": "https://github.com/Holocoders/DDOS-Detection",
     "extra": true,
     "workDone": [
-      "Differentiates between benign and malicious executables.",
+      "Detects networks involved in DDoS attacks by analyzing packets.",
       "Features were extracted from the logs of pcap files.",
       "K-Nearest Neighbours classifier was detect the attacks.",
       "Built for the final round of IIT-K HCL Hackathon 2020. Ranked top 100 out of 12,000 teams."

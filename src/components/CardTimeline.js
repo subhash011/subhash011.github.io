@@ -80,9 +80,9 @@ const CustomMarker = styled.div`
 const cardContent = (item) => {
     return (
         <Card className="flex text-left max-w-full">
-            <h4 className="mb-2 font-italic">{item.title}</h4>
-            <span className="text-600">{item.subTitle}</span>
-            <p>{item.date}</p>
+            <h3 className="mb-2 font-semibold font-italic">{item.title}</h3>
+            <h4 className="my-0 font-semibold">{item.subTitle}</h4>
+            <p className="mt-2">{item.date}</p>
             <p>{item.description}</p>
             <ExpandableContent item={item}/>
         </Card>
