@@ -1,6 +1,16 @@
 [
   {
-    "id": 1,
+    "title": "Software Engineer",
+    "subTitle": "Arista Networks, Bangalore",
+    "date": "July 2022 - Present",
+    "extra": true,
+    "expanded": true,
+    "workDone": [
+      "Enhanced and upgrade functionality of test infrastructre"
+    ],
+    "tags": ["Computer Networks", "AWS", "Python", "C++", "Linux"]
+  },
+  {
     "title": "Research Intern",
     "subTitle": "TCS Innovation Labs, Bangalore",
     "date": "June 2021 - August 2021",
@@ -15,12 +25,11 @@
     "tags": ["Deep Learning", "Compilers", "LLVM IR", "Tensorflow"]
   },
   {
-    "id": 2,
-    "title": "Quality Assurance Automation Engineer",
+    "title": "Quality Assurance Intern",
     "subTitle": "nVipani Technology Solutions",
     "date": "May 2020 - July 2020",
     "extra": true,
-    "expanded": true,
+    "expanded": false,
     "workDone": [
       "Initiated the migration from manual to automated testing.",
       "Implemented e2e test cases for numerous angular modules.",
@@ -30,12 +39,11 @@
     "tags": ["Web Development", "Angular", "Automation Testing", "Protractor.js"]
   },
   {
-    "id": 3,
-    "title": "Application Engineer",
+    "title": "Application Engineer - Internship",
     "subTitle": "TIMKEN India Ltd",
     "date": "Dec 2019 - Dec 2019",
     "extra": true,
-    "expanded": true,
+    "expanded": false,
     "workDone": [
       "Added core feature updates to the job tracking software",
       "Influenced the database design for additional features.",

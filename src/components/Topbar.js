@@ -61,6 +61,12 @@ const items = [
         template: template
     },
     {
+        label: 'Education',
+        icon: 'pi pi-fw pi-book',
+        url: '#education',
+        template: template
+    },
+    {
         label: 'Contact',
         icon: 'pi pi-fw pi-phone',
         url: '#contact',

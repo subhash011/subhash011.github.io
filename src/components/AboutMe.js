@@ -51,8 +51,8 @@ function AboutMe() {
                     </span>
                 </h2>
                 <animated.div style={style}>
-                    <h4 className="mt-2 mb-4">CSE | IIT Palakkad'22</h4>
-                    I'm a computer science student with a strong foundation in problem-solving and an ever-growing zeal
+                    <h5 className="mt-2 mb-4">SWE @ Arista Networks | CSE @ IIT Palakkad'22</h5>
+                    I'm a Software Engineer with a strong foundation in problem-solving and an ever-growing zeal
                     to explore new domains and technologies. I'm an effective collaborator with firsthand experience in
                     leading and working in teams.
                 </animated.div>

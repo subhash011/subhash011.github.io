@@ -19,7 +19,7 @@ const ScaleOnHoverCard = styled(Card)`
 
 function Skills() {
     return (
-        <section id="skills" className="pt-7 flex flex-column align-items-center">
+        <section id="skills" className="pt-7">
             <SectionHeading name="skills" heading={"My Skills"}/>
             <div className="flex justify-content-center pt-6" style={{width: '80%'}}>
                 <div className="skills-grid grid justify-content-center">

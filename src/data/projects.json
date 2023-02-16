@@ -1,6 +1,5 @@
 [
   {
-    "id": "1",
     "title": "Project Allocation Portal",
     "description": "The official project allocation portal of IIT Palakkad. It provides a fair allocation of projects to students by considering various parameters.",
     "isFeatured": true,
@@ -20,7 +19,6 @@
     ]
   },
   {
-    "id": "2",
     "title": "Meet.me",
     "description": "A desktop based collaborative discussion platform with whiteboard, screen-share, analytics and more.",
     "isFeatured": true,
@@ -41,7 +39,6 @@
     ]
   },
   {
-    "id": "3",
     "title": "Resource Management System",
     "description": "A web and mobile application, mainly developed for managing resources at lab facilities.",
     "isFeatured": true,
@@ -60,7 +57,6 @@
     ]
   },
   {
-    "id": "4",
     "title": "Time Sync",
     "description": "An application to assist users regulate screen time with the help of their peers.",
     "isFeatured": false,
@@ -80,7 +76,6 @@
     ]
   },
   {
-    "id": "5",
     "title": "Tiger Compiler",
     "description": "A compiler written in SML for a subset of the tiger language.",
     "isFeatured": false,
@@ -99,7 +94,6 @@
     ]
   },
   {
-    "id": "6",
     "title": "Driver Attention Analyzer",
     "description": "A continuous driver attention analysis system for improved safety.",
     "isFeatured": false,
@@ -118,7 +112,6 @@
     ]
   },
   {
-    "id": "7",
     "title": "Driver Assistance System",
     "description": "A system for detecting and alerting drivers of upcoming potholes and obstacles.",
     "isFeatured": false,
@@ -136,7 +129,6 @@
     ]
   },
   {
-    "id": "8",
     "title": "Malware Detection",
     "description": "An application to differentiate between benign and malicious executables.",
     "isFeatured": false,
@@ -157,7 +149,6 @@
     ]
   },
   {
-    "id": "9",
     "title": "DDoS Detection",
     "description": "Machine learning application to detect DDoS attacks from pcap files.",
     "isFeatured": false,
@@ -177,7 +168,6 @@
     ]
   },
   {
-    "id": "10",
     "title": "RISC-V Simulator",
     "description": "A pipelined RISC-V processor simulator with support for a large subset of the RISC-V instructions.",
     "isFeatured": false,

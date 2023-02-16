@@ -1,6 +1,5 @@
 [
   {
-    "id": "1",
     "name": "Programming Languages",
     "categories": [
       {
@@ -18,7 +17,6 @@
     ]
   },
   {
-    "id": "2",
     "name": "Web Development",
     "categories": [
       {
@@ -40,7 +38,6 @@
     ]
   },
   {
-    "id": "3",
     "name": "Databases",
     "categories": [
       {
@@ -54,7 +51,6 @@
     ]
   },
   {
-    "id": "4",
     "name": "Artificial Intelligence",
     "categories": [
       {
@@ -68,7 +64,6 @@
     ]
   },
   {
-    "id": "5",
     "name": "Others",
     "categories": [
       {
