@@ -55,8 +55,13 @@
       function setTheme() {
           let theme = localStorage.getItem("theme");
           if (!theme) {
-              localStorage.setItem("theme", "dark");
-              theme = "dark";
+              if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                localStorage.setItem("theme", "dark");
+                theme = "dark";
+              } else {
+                localStorage.setItem("theme", "light");
+                theme = "light";
+              }
           }
           const themeLink = document.createElement("link");
           themeLink.setAttribute("id", "theme-link");
@@ -67,7 +72,6 @@
 
       setTheme();
     </script>
-    <script defer data-domain="subhash011.github.io" src="https://plausible.io/js/script.js"></script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

@@ -15,6 +15,9 @@ const FixedMenubar = styled(Menubar)`
   padding-right: 8px;
   width: 100%;
   z-index: 999;
+  .p-menuitem-text, .p-menuitem-icon, .p-submenu-icon {
+    color: var(--text-color) !important;
+  }
   .p-menubar-end {
     margin-right: auto;
     margin-left: 0;
