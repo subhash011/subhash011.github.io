@@ -6,7 +6,8 @@
     "extra": true,
     "expanded": true,
     "workDone": [
-      "Enhanced and upgrade functionality of test infrastructre"
+      "Working on Dynamic Path Selection for network traffic to optimize application performance.",
+      "Improved and advanced test infrastructure capabilities, with a primary focus on AWS."
     ],
     "tags": ["Computer Networks", "AWS", "Python", "C++", "Linux"]
   },
@@ -17,9 +18,9 @@
     "extra": true,
     "expanded": true,
     "workDone": [
-      "Performed a comparative study on code summarization using Deep Learning techniques.",
-      "Developed a baseline model for further research.",
-      "Implemented efficient input pipelines to fetch training data from remote sources using TensorFlow.",
+      "Conducted a comparative analysis of Deep Learning approaches for code summarization.",
+      "Created a foundational model as a starting point for future investigations.",
+      "Established efficient input pipelines using TensorFlow by retrieving training data from remote sources.",
       "Implementation involved converting code to LLVM IR, then building a contextual flow graph (XFG) that was used to train the model."
     ],
     "tags": ["Deep Learning", "Compilers", "LLVM IR", "Tensorflow"]
