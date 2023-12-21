@@ -46,13 +46,13 @@ const items = [
         icon: 'pi pi-fw pi-briefcase',
         items: [
             {
-                label: 'Projects',
-                url: '#projects',
+                label: 'Experience',
+                url: '#experience',
                 template: template
             },
             {
-                label: 'Experience',
-                url: '#experience',
+                label: 'Projects',
+                url: '#projects',
                 template: template
             }
         ]

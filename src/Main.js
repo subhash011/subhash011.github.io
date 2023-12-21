@@ -15,8 +15,8 @@ function Main() {
             <TopBar/>
             <div className="h-6"/>
             <Home/>
-            <Projects/>
             <IndustrialExperience/>
+            <Projects/>
             <Skills/>
             <Education/>
             <Contact/>

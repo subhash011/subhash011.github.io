@@ -7,7 +7,7 @@
     "expanded": true,
     "workDone": [
       "Working on Dynamic Path Selection for network traffic to optimize application performance.",
-      "Improved and advanced test infrastructure capabilities, with a primary focus on AWS."
+      "Improved test infrastructure capabilities, with a primary focus on AWS."
     ],
     "tags": ["Computer Networks", "AWS", "Python", "C++", "Linux"]
   },
@@ -19,7 +19,7 @@
     "expanded": true,
     "workDone": [
       "Conducted a comparative analysis of Deep Learning approaches for code summarization.",
-      "Created a foundational model as a starting point for future investigations.",
+      "Created a baseline model as a starting point for further improvements.",
       "Established efficient input pipelines using TensorFlow by retrieving training data from remote sources.",
       "Implementation involved converting code to LLVM IR, then building a contextual flow graph (XFG) that was used to train the model."
     ],
@@ -34,7 +34,6 @@
     "workDone": [
       "Initiated the migration from manual to automated testing.",
       "Implemented e2e test cases for numerous angular modules.",
-      "Setup auto-documentation for test reports.",
       "Worked on implementing a 3D virtual try-on feature on the website using Three.js."
     ],
     "tags": ["Web Development", "Angular", "Automation Testing", "Protractor.js"]
@@ -47,8 +46,8 @@
     "expanded": false,
     "workDone": [
       "Added core feature updates to the job tracking software",
-      "Influenced the database design for additional features.",
-      "Added features that enhanced communication among the team."
+      "Designed database schema for additional features.",
+      "Added features that improved collaboration among the team."
     ],
     "tags": ["Web Development", "ASP.NET core", "jQuery", "SQL Server"]
   }
