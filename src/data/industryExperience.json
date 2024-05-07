@@ -34,7 +34,7 @@
     "workDone": [
       "Initiated the migration from manual to automated testing.",
       "Implemented e2e test cases for numerous angular modules.",
-      "Worked on implementing a 3D virtual try-on feature on the website using Three.js."
+      "Worked on prototyping a 3D virtual try-on feature on the website using Three.js."
     ],
     "tags": ["Web Development", "Angular", "Automation Testing", "Protractor.js"]
   },

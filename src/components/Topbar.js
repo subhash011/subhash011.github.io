@@ -77,13 +77,13 @@ const items = [
     },
     {
         label: 'Resume',
-        icon: 'pi pi-fw pi-download',
+        icon: 'pi pi-fw pi-file-pdf',
         template: (item, options) => {
 
             return (
                 <React.Fragment>
                     <div role="menuitem" id="resume-download" className={options.className} onClick={() => {
-                        window.open(`/Subhash's Resume.pdf`, "_blank");
+                        window.open(`https://drive.google.com/file/d/16qt9AqoXdDaiuZOf_x34hWtQv4x2VGJD/view?usp=sharing`, "_blank");
                     }}>
                         <span className={options.iconClassName}/>
                         <span className="p-menuitem-text">{item.label}</span>
