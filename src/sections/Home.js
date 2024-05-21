@@ -83,7 +83,7 @@ function Home() {
                                     <Button label="Contact me" icon="pi pi-phone"
                                             className="p-button-raised p-button-primary w-full"/>
                                 </HashLink>
-                                <HashLink smooth to="#projects" className="p-0 ml-2 mt-5 no-underline">
+                                <HashLink smooth to="#experience" className="p-0 ml-2 mt-5 no-underline">
                                     <Button label="Know more" icon="pi pi-user"
                                             className="p-button-raised p-button-info w-full"/>
                                 </HashLink>

@@ -6,10 +6,11 @@
     "extra": true,
     "expanded": true,
     "workDone": [
-      "Working on Dynamic Path Selection for network traffic to optimize application performance.",
-      "Improved test infrastructure capabilities, with a primary focus on AWS."
+      "Working on Dynamic Path Selection to optimize routing for enterprise networks",
+      "Designed and implemented control plane solutions to enhance network visibility and lower operational expenses.",
+      "Enhanced test infrastructure capabilities on AWS and Azure."
     ],
-    "tags": ["Computer Networks", "AWS", "Python", "C++", "Linux"]
+    "tags": ["Computer Networks", "Operating Systems", "Python", "C++", "AWS"]
   },
   {
     "title": "Research Intern",
@@ -18,10 +19,10 @@
     "extra": true,
     "expanded": true,
     "workDone": [
-      "Conducted a comparative analysis of Deep Learning approaches for code summarization.",
-      "Created a baseline model as a starting point for further improvements.",
-      "Established efficient input pipelines using TensorFlow by retrieving training data from remote sources.",
-      "Implementation involved converting code to LLVM IR, then building a contextual flow graph (XFG) that was used to train the model."
+      "Conducted a comparative analysis of deep learning approaches for code summarization.",
+      "Developed a baseline model to serve as a foundation for future enhancements.",
+      "Established efficient input pipelines using TensorFlow to retrieve training data from remote sources.",
+      "Implemented code conversion to LLVM IR and built a contextual flow graph (XFG) for model training."
     ],
     "tags": ["Deep Learning", "Compilers", "LLVM IR", "Tensorflow"]
   },
@@ -32,8 +33,8 @@
     "extra": true,
     "expanded": false,
     "workDone": [
-      "Initiated the migration from manual to automated testing.",
-      "Implemented e2e test cases for numerous angular modules.",
+      "Initiated the migration from manual to automated end-to-end (E2E) testing of an Angular application.",
+      "Tested complex modules like video shopping and implemented auto-documentation to enhance testing workflow.",
       "Worked on prototyping a 3D virtual try-on feature on the website using Three.js."
     ],
     "tags": ["Web Development", "Angular", "Automation Testing", "Protractor.js"]
@@ -46,8 +47,7 @@
     "expanded": false,
     "workDone": [
       "Added core feature updates to the job tracking software",
-      "Designed database schema for additional features.",
-      "Added features that improved collaboration among the team."
+      "Implementing features that improved internal communication among the team."
     ],
     "tags": ["Web Development", "ASP.NET core", "jQuery", "SQL Server"]
   }
