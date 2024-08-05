@@ -292,6 +292,7 @@ function MyProjects() {
                 <animated.div style={styles} className="flex justify-content-center">
                     <TransparentDataview value={projects}
                                          itemTemplate={renderGridItem}
+                                         emptyMessage="Please select atleast one option to see my projects"
                                          layout="grid"/>
                 </animated.div>
             </div>
