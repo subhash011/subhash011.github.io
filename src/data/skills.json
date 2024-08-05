@@ -20,16 +20,16 @@
     "name": "Web Development",
     "categories": [
       {
-        "name": "ExpressJS",
-        "image": "expressjs.png"
+        "name": "React",
+        "image": "reactjs.png"
       },
       {
         "name": "Angular",
         "image": "angular.png"
       },
       {
-        "name": "React",
-        "image": "reactjs.png"
+        "name": "ExpressJS",
+        "image": "expressjs.png"
       },
       {
         "name": "GraphQL",
@@ -51,19 +51,6 @@
     ]
   },
   {
-    "name": "Artificial Intelligence",
-    "categories": [
-      {
-        "name": "TensorFlow",
-        "image": "tensorflow.png"
-      },
-      {
-        "name": "OpenCV",
-        "image": "opencv.png"
-      }
-    ]
-  },
-  {
     "name": "Others",
     "categories": [
       {
@@ -73,6 +60,14 @@
       {
         "name": "Flutter",
         "image": "flutter.png"
+      },
+      {
+        "name": "AWS",
+        "image": "aws.png"
+      },
+      {
+        "name": "Azure",
+        "image": "azure.png"
       }
     ]
   }
