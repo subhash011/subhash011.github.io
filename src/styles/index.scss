@@ -53,3 +53,167 @@ section {
 ::-webkit-scrollbar-corner {
   background-color: transparent;
 }
+
+/* Modern card styling with rounded corners and hover animations */
+.p-card {
+  border-radius: 16px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06) !important;
+  border: 1px solid var(--surface-border) !important;
+}
+
+.p-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Timeline cards specific styling */
+.p-timeline .p-card {
+  border-radius: 16px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.p-timeline .p-card:hover {
+  transform: translateY(-6px) scale(1.02) !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Project cards */
+.project-card {
+  border-radius: 16px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  overflow: hidden !important;
+}
+
+.project-card:hover {
+  transform: translateY(-8px) !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Contact form cards */
+.contact-card {
+  border-radius: 16px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.contact-card:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Button hover effects */
+.p-button {
+  border-radius: 12px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.p-button:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 25px -8px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Chip hover effects */
+.p-chip {
+  border-radius: 20px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.p-chip:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Tag hover effects */
+.p-tag {
+  border-radius: 20px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.p-tag:hover {
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Navbar hover effects */
+.p-menubar {
+  border-radius: 0 0 12px 12px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  backdrop-filter: blur(10px) !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+}
+
+.p-menubar .p-menuitem-link {
+  border-radius: 8px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  margin: 0 2px !important;
+  padding: 0.75rem 1rem !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.p-menubar .p-menuitem-link:hover {
+  transform: translateY(-2px) !important;
+  background-color: rgba(136, 60, 174, 0.1) !important;
+  color: var(--primary-color) !important;
+  box-shadow: 0 8px 25px -8px rgba(0, 0, 0, 0.3) !important;
+}
+
+.p-menubar .p-menuitem-link:hover .p-menuitem-text,
+.p-menubar .p-menuitem-link:hover .p-menuitem-icon {
+  color: var(--primary-color) !important;
+  transform: scale(1.05) !important;
+}
+
+/* Dropdown menu hover effects */
+.p-menubar .p-submenu-list {
+  border-radius: 12px !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04) !important;
+  border: 1px solid var(--surface-border) !important;
+  backdrop-filter: blur(10px) !important;
+}
+
+.p-menubar .p-submenu-list .p-menuitem-link {
+  border-radius: 8px !important;
+  margin: 2px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.p-menubar .p-submenu-list .p-menuitem-link:hover {
+  transform: translateX(4px) !important;
+  background-color: rgba(136, 60, 174, 0.1) !important;
+  color: var(--primary-color) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.p-menubar .p-submenu-list .p-menuitem-link:hover .p-menuitem-text,
+.p-menubar .p-submenu-list .p-menuitem-link:hover .p-menuitem-icon {
+  color: var(--primary-color) !important;
+}
+
+/* Theme toggle button hover effect */
+.p-menubar .p-button {
+  border-radius: 50% !important;
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.p-menubar .p-button:hover {
+  transform: translateY(-2px) rotate(180deg) !important;
+  box-shadow: 0 8px 25px -8px rgba(0, 0, 0, 0.3) !important;
+  background-color: var(--primary-color) !important;
+  color: var(--primary-color-text) !important;
+}
+
+/* Active menu item styling */
+.p-menubar .p-menuitem-link.p-menuitem-link-active {
+  background-color: var(--primary-color) !important;
+  color: var(--primary-color-text) !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.p-menubar .p-menuitem-link.p-menuitem-link-active .p-menuitem-text,
+.p-menubar .p-menuitem-link.p-menuitem-link-active .p-menuitem-icon {
+  color: var(--primary-color-text) !important;
+}

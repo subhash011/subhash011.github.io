@@ -86,7 +86,7 @@ function ContactForm() {
             <BlockUI template={<div className="absolute flex justify-content-center align-items-center col-12 z-5">
                                 <ProgressSpinner className="absolute" style={{width: '50px', height: '50px'}} strokeWidth="8" />
                                </div>} blocked={loading}>
-                <div className="card flex justify-content-center align-items-center">
+                <div className="card contact-card flex justify-content-center align-items-center">
                     <form className="p-2 formgrid grid" onSubmit={formik.handleSubmit}>
                         <div className="field col-12 lg:col-6 mt-4">
                             <span className="p-float-label p-input-icon-right w-full">

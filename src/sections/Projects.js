@@ -12,13 +12,13 @@ import projectsData from "../data/projects.json";
 
 const ScaleOnHoverCard = styled(Card)`
   background-color: var(--surface-card);
-  transition: transform 0.3s ease-in-out;
-  @media (prefers-reduced-motion: no-preference) {
-    &:hover,
-    &:focus-within {
-      transform: scale(1.05);
-      background-color: var(--surface-d);
-    }
+  border-radius: 16px !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  overflow: hidden !important;
+  
+  &:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
   }
 `;
 

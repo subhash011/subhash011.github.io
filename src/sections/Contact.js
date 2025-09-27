@@ -37,9 +37,9 @@ function Contact() {
                         <span onClick={() => window.open("mailto:subhashs0620@gmail.com", "_self")}
                               className="cursor-pointer">
                             <Chip label="subhashs0620@gmail.com" icon="pi pi-envelope"
-                                  className="mr-2 mb-2 surface-card"/>
+                                  className="mr-2 mb-2 surface-card contact-card"/>
                         </span>
-                        <Chip label="(+91) 9188230955" icon="pi pi-phone" className="mr-2 mb-2 surface-card"/>
+                        <Chip label="(+91) 9188230955" icon="pi pi-phone" className="mr-2 mb-2 surface-card contact-card"/>
                     </RowCenteredDiv>
                     <div className="hidden lg:block">
                         <SocialButtons/>
