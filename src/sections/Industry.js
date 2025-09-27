@@ -31,9 +31,13 @@ function IndustrialExperience() {
                 <Ul>
                     {workDone.map((work, index) => {
                         return (
-                            <li key={index}>
-                                {work}
-                            </li>
+                            <React.Fragment key={index}>
+                                <li 
+                                    className="work-item" 
+                                    key={index} >
+                                    {work}
+                                </li>
+                            </React.Fragment>
                         )
                     })}
                 </Ul>

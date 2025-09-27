@@ -1,5 +1,21 @@
 [
   {
+    "title": "Master of Business Administration",
+    "subTitle": "Indian Institute of Management (IIM), Ahmedabad",
+    "date": "June 2025 - Present",
+    "extra": true,
+    "expanded": false,
+    "description": "99.99%ile in CAT 2024 & admits from IIM A, B, C and L",
+    "courses": [
+      "Legal Aspects of Business",
+      "Financial Reporting and Analysis",
+      "Financial Markets",
+      "Operations Management",
+      "Organizational Behavior",
+      "Economics"
+    ]
+  },
+  {
     "title": "B.Tech in Computer Science and Engineering",
     "subTitle": "Indian Institute of Technology (IIT), Palakkad",
     "date": "August 2018 - Present",

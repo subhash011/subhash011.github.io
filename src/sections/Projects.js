@@ -266,7 +266,7 @@ function MyProjects() {
                 {renderDialogItem(dialogVisible, extraContent(dialogVisible))}
             </ItemDialog>
             <div className="flex flex-column justify-content-center align-items-center">
-                <SectionHeading name={"projects"} heading="My Projects"/>
+                <SectionHeading name={"projects"} heading="Technical Projects"/>
                 <div className="flex flex-column align-items-center mb-4">
                     <AnimatedProjectHeading heading={!allVisible ? <h3>Featured projects ({projects.length})</h3> :
                         <h3>Noteworthy projects ({projects.length})</h3>} allVisible={allVisible} setAllVisible={() => {

@@ -58,12 +58,6 @@ const items = [
         ]
     },
     {
-        label: 'Skills',
-        icon: 'pi pi-fw pi-bolt',
-        url: '#skills',
-        template: template
-    },
-    {
         label: 'Education',
         icon: 'pi pi-fw pi-book',
         url: '#education',

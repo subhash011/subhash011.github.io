@@ -6,7 +6,6 @@ import Education from "./sections/Education";
 import Home from "./sections/Home";
 import IndustrialExperience from "./sections/Industry";
 import Projects from "./sections/Projects";
-import Skills from "./sections/Skills";
 
 function Main() {
 
@@ -16,9 +15,8 @@ function Main() {
             <div className="h-6"/>
             <Home/>
             <IndustrialExperience/>
-            <Projects/>
-            <Skills/>
             <Education/>
+            <Projects/>
             <Contact/>
             <ScrollTop threshold={10}/>
         </React.Fragment>
