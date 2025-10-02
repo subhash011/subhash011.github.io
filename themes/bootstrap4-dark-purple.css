@@ -516,40 +516,6 @@
   margin: 0;
 }
 
-.p-button.p-button-secondary, .p-buttonset.p-button-secondary > .p-button {
-  color: #ffffff;
-  background: #6c757d;
-  border: 1px solid #6c757d;
-}
-.p-button.p-button-secondary:enabled:hover, .p-button.p-button-secondary:not(button):not(a):not(.p-disabled):hover, .p-buttonset.p-button-secondary > .p-button:enabled:hover, .p-buttonset.p-button-secondary > .p-button:not(button):not(a):not(.p-disabled):hover {
-  background: #5a6268;
-  color: #ffffff;
-  border-color: #5a6268;
-}
-.p-button.p-button-secondary:enabled:focus, .p-button.p-button-secondary:not(button):not(a):not(.p-disabled):focus, .p-buttonset.p-button-secondary > .p-button:enabled:focus, .p-buttonset.p-button-secondary > .p-button:not(button):not(a):not(.p-disabled):focus {
-  box-shadow: 0 0 0 1px rgba(130, 138, 145, 0.5);
-}
-.p-button.p-button-secondary:enabled:active, .p-button.p-button-secondary:not(button):not(a):not(.p-disabled):active, .p-buttonset.p-button-secondary > .p-button:enabled:active, .p-buttonset.p-button-secondary > .p-button:not(button):not(a):not(.p-disabled):active {
-  background: #545b62;
-  color: #ffffff;
-  border-color: #4e555b;
-}
-.p-button.p-button-secondary.p-button-text, .p-buttonset.p-button-secondary > .p-button.p-button-text {
-  background-color: transparent;
-  color: #6c757d;
-  border-color: transparent;
-}
-.p-button.p-button-secondary.p-button-text:enabled:hover, .p-button.p-button-secondary.p-button-text:not(button):not(a):not(.p-disabled):hover, .p-buttonset.p-button-secondary > .p-button.p-button-text:enabled:hover, .p-buttonset.p-button-secondary > .p-button.p-button-text:not(button):not(a):not(.p-disabled):hover {
-  background: rgba(108, 117, 125, 0.04);
-  border-color: transparent;
-  color: #6c757d;
-}
-.p-button.p-button-secondary.p-button-text:enabled:active, .p-button.p-button-secondary.p-button-text:not(button):not(a):not(.p-disabled):active, .p-buttonset.p-button-secondary > .p-button.p-button-text:enabled:active, .p-buttonset.p-button-secondary > .p-button.p-button-text:not(button):not(a):not(.p-disabled):active {
-  background: rgba(108, 117, 125, 0.16);
-  border-color: transparent;
-  color: #6c757d;
-}
-
 .p-button.p-button-info, .p-buttonset.p-button-info > .p-button {
   color: #151515;
   background: #7fd8e6;
