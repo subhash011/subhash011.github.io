@@ -118,7 +118,8 @@ const AnimatedProjectHeading = ({heading, allVisible, setAllVisible}) => {
 
 function MyProjects() {
 
-    const [dialogVisible, setDialogVisible] = React.useState(null);
+    const [dialogContent, setDialogContent] = React.useState(null);
+    const [dialogVisible, setDialogVisible] = React.useState(false);
     const [allVisible, setAllVisible] = React.useState(false);
     const [projects, setProjects] = React.useState(projectsData.filter(project => project.filters.includes("FEATURED")));
     const [styles, api] = useSpring(() => ({ opacity: 1 }))
@@ -185,7 +186,7 @@ function MyProjects() {
 
     const dialogItemCard = (item, children) => {
         return (
-            <div id={item.id} title={title(item)} className="w-full h-full">
+            <div id={item.id} className="w-full h-full">
                 <div
                     className="flex justify-content-center text-center font-italic font-semibold my-2">{item.description}</div>
                 {children}
@@ -227,7 +228,8 @@ function MyProjects() {
                 {item.extra && <div className="flex justify-content-end mt-3">
                     <Button label="See more" className="p-button-text"
                             onClick={() => {
-                                setDialogVisible(item);
+                                setDialogContent(item);
+                                setDialogVisible(true);
                             }}/>
                 </div>}
             </ScaleOnHoverCard>
@@ -254,16 +256,19 @@ function MyProjects() {
 
     return (
         <section id="projects" className="pt-7">
-            <ItemDialog className="max-h-screen mx-2 lg:mx-0" visible={!!dialogVisible}
-                        header={dialogVisible?.title || ''}
-                        onHide={() => setDialogVisible(null)}
-                        blockScroll
+            <ItemDialog className="max-h-screen mx-2 lg:mx-0" visible={dialogVisible}
+                        header={dialogContent?.title || ''}
+                        onHide={() => {
+                            setDialogVisible(false);
+                            // Clear content after dialog animation completes
+                            setTimeout(() => setDialogContent(null), 300);
+                        }}
                         dismissableMask
                         draggable={false}
                         style={{maxWidth: '600px'}}
                         breakpoints={{'960px': '75vw', '640px': '100vw'}}
                         contentClassName="h-full">
-                {renderDialogItem(dialogVisible, extraContent(dialogVisible))}
+                {dialogContent && renderDialogItem(dialogContent, extraContent(dialogContent))}
             </ItemDialog>
             <div className="flex flex-column justify-content-center align-items-center">
                 <SectionHeading name={"projects"} heading="Technical Projects"/>
