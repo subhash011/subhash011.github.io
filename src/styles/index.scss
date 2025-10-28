@@ -2,6 +2,13 @@
 @import "primeflex/primeflex.css";
 @import "primeicons/primeicons.css";
 
+// Override advertising platform styles when used as standalone page
+.advertising-platform-standalone {
+  margin-top: 0 !important;
+  padding-top: 1rem !important;
+  border-radius: 0 !important;
+}
+
 html {
   font-size: 1rem;
   height: 100%;

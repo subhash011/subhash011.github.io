@@ -64,6 +64,12 @@ const template = (item, options) => {
 
 const items = [
     {
+        label: 'Media.net Case Submission',
+        icon: 'pi pi-fw pi-briefcase',
+        url: '#advertising-platform',
+        template: template
+    },
+    {
         label: 'Home',
         icon: 'pi pi-fw pi-home',
         url: '#',

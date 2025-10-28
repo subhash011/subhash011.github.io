@@ -1,7 +1,9 @@
 .advertising-platform {
-  min-height: 100vh;
+  min-height: 80vh;
   background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
   padding: 2rem;
+  margin: 2rem 0;
+  border-radius: 12px;
 
   .platform-header {
     text-align: center;
