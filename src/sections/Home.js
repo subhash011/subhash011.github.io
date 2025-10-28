@@ -175,6 +175,12 @@ function Home() {
                                 <Button label="Know more" icon="pi pi-user"
                                         className="p-button-raised p-button-info w-full"/>
                             </HashLink>
+                            <span className="p-0 ml-2 mt-5 no-underline">
+                                <Button label="View Portfolio Project" icon="pi pi-briefcase"
+                                        className="p-button-raised bg-purple-400 border-purple-400 w-full"
+                                        onClick={() => window.open("/advertising-platform", "_blank")}
+                                />
+                            </span>
                         </div>
                     </LeftColumn>
                     <RightColumn>
